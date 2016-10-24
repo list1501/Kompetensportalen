@@ -106,11 +106,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Hemsida.aspx" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hemsida.aspx.cs">
+      <DependentUpon>Hemsida.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Hemsida.aspx.designer.cs">
+      <DependentUpon>Hemsida.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>

@@ -11,7 +11,7 @@ namespace Kompetensportalen
 {
 
 
-    public partial class Hemsida
+    public partial class Bankpersonal_Hemsida
     {
 
         /// <summary>

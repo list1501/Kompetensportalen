@@ -14,10 +14,6 @@
         <nav>
              <img src="images/euro-1105411_1920.jpg" alt="Sample Photo" />
 		<ul> 
-<%--<div style="position: relative; left: 0; top: 0;">
-  <img src="images/planet-958935_1920.jpg" style="position: relative; top: 0; left: 0;" width="1080" height="220" title="Silver Moon";=/>
-  <img src="images/Logomakr_14Qb8b.png" style="position: absolute; top: 30px; left: 70px;" width="340" height="70" title="The Fuengirola Teens Logo"/>
-</div>--%>
                    
 		<li><i><strong><a href="#" title="Startsida"><span>Startsida</span></a></strong></i></li>
 		<li><a href="Reviews.html" title="Provhistorik"><span>Provhistorik</span></a></li>
@@ -45,7 +41,7 @@
 <footer>
   <p> Hemsida Skapad av Grupp 12
  Kontaktinformation: <a href="mailto:grupp12@student.miun.se">
-  list1501@student.miun.se</a>.</p>
+ grupp12@student.miun.se</a>.</p>
 </footer>
 </div><!--wrapper-footer-->
     </form>

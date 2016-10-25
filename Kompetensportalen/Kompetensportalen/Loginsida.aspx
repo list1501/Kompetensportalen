@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="kpstyle.css"/>
-    <title>Logga in</title>
+    <title>Inloggningssida</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -24,7 +24,6 @@ PostBackUrl="~/Admin Hemsida.aspx" />
  </div><!--menu-top--> 
  </div><!--main-->
  </div><!--hem-->
-       
 
 <div id="wrapper-footer">
 <footer>

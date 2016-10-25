@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Bankpersonal Hemsida.aspx.cs" Inherits="Kompetensportalen.Bankpersonal_Hemsida" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Bankpersonal Provhistorik.aspx.cs" Inherits="Kompetensportalen.Bankpersonal_Provhistorik" %>
 
 <!DOCTYPE html>
 
@@ -14,25 +14,20 @@
         <nav>
              <img src="images/euro-1105411_1920.jpg" alt="Sample Photo" />
 		<ul>                  
-		<li><i><strong><a href="#" title="Startsida"><span>Startsida</span></a></strong></i></li>
-		<li><a href="Bankpersonal Provhistorik.aspx" title="Provhistorik"><span>Provhistorik</span></a></li>
+		<li><a href="Bankpersonal Hemsida.aspx" title="Startsida"><span>Startsida</span></a></li>
+		<li><i><strong><a href="#" title="Provhistorik"><span>Provhistorik</span></a></strong></i></li>
 		</ul>
         </nav>
 <div id="content">
 
 <div class="main">
-    <h3>Hem</h3>
+    <h3>Provhistorik</h3>
 
-     <asp:Button ID="Button1" runat="server" Text="Ny användare - Licensieringstest"
-PostBackUrl="~/Licensieringstest.aspx" />
-        <asp:Button ID="Button2" runat="server" Text="Veteran - Kunskapstest"
-PostBackUrl="~/Kunskapstest.aspx" /> 
    
  </div><!--menu-top--> 
  </div><!--main-->
  </div><!--hem-->
        
-
 <div id="wrapper-footer">
 <footer>
   <p> Hemsida Skapad av Grupp 12 <br/>

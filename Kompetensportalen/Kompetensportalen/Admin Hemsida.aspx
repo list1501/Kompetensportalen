@@ -6,36 +6,32 @@
 <head runat="server">
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="kpstyle.css"/>
-    <title>Admin Hemsida</title>
+    <title>Administratör Hemsida</title>
 </head>
 <body>
     <form id="form1" runat="server">
    <div id="menu-top">    		
         <nav>
              <img src="images/euro-1105411_1920.jpg" alt="Sample Photo" />
-		<ul> 
-                   
-		<%--<li><i><strong><a href="#" title="Startsida"><span>Startsida</span></a></strong></i></li>
-		<li><a href="Reviews.html" title="Provhistorik"><span>Provhistorik</span></a></li>
-		<li><a href="News.html" title="Nyheter"><span>Nyheter</span></a></li>
-		<li><a href="Books.html" title="Böcker"><span>Böcker</span></a></li>
-        <li><a href="Contact Us.html" title="Kontakta Oss"><span>Kontakta oss</span></a></li>--%>
-		</ul>
+		<ul>                  
+		<li><i><strong><a href="#" title="Startsida"><span>Startsida</span></a></strong></i></li>
+		<li><a href="Admin Prov.aspx" title="Administratör Provsida"><span>Prov Information</span></a></li>
+</ul>
         </nav>
 <div id="content">
 
 <div class="main">
+
     <div class="Section">
-    <h3>Provhistorik</h3>
-    <p>Här kan du söka i provhistoriken.</p>   
+
+    <h3>Startsida</h3>
+    <p>Random info för admin</p>   
 
     </div>
 
     <div class="Section">
-        <%-- image --%>
-    </div>
-       
-   
+
+ </div>       
  </div><!--menu-top--> 
  </div><!--main-->
  </div><!--hem-->

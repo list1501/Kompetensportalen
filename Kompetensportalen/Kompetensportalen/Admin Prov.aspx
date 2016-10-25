@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Bankpersonal Hemsida.aspx.cs" Inherits="Kompetensportalen.Bankpersonal_Hemsida" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin Prov.aspx.cs" Inherits="Kompetensportalen.Admin_Prov" %>
 
 <!DOCTYPE html>
 
@@ -6,33 +6,33 @@
 <head runat="server">
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="kpstyle.css"/>
-    <title>Bankpersonal Hemsida</title>
+    <title>Administratör Provsida</title>
 </head>
 <body>
     <form id="form1" runat="server">
    <div id="menu-top">    		
         <nav>
              <img src="images/euro-1105411_1920.jpg" alt="Sample Photo" />
-		<ul>                  
-		<li><i><strong><a href="#" title="Startsida"><span>Startsida</span></a></strong></i></li>
-		<li><a href="Bankpersonal Provhistorik.aspx" title="Provhistorik"><span>Provhistorik</span></a></li>
-		</ul>
+		<ul> 
+        <li><a href="Admin Hemsida.aspx" title="Administratör Hemsida"><span>Hemsida</span></a></li>    
+		<li><i><strong><a href="#" title="Administratör Provsida"><span>Prov information</span></a></strong></i></li>
+</ul>
         </nav>
 <div id="content">
 
 <div class="main">
-    <h3>Hem</h3>
+        <div class="Section">
+    <h3>Provhistorik</h3>
+    <p>Här kan du söka i provhistoriken.</p>   
 
-     <asp:Button ID="Button1" runat="server" Text="Ny användare - Licensieringstest"
-PostBackUrl="~/Licensieringstest.aspx" />
-        <asp:Button ID="Button2" runat="server" Text="Veteran - Kunskapstest"
-PostBackUrl="~/Kunskapstest.aspx" /> 
-   
+    </div>
+
+    <div class="Section">     
+    </div>   
  </div><!--menu-top--> 
  </div><!--main-->
  </div><!--hem-->
        
-
 <div id="wrapper-footer">
 <footer>
   <p> Hemsida Skapad av Grupp 12 <br/>

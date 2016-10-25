@@ -94,8 +94,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin Prov.aspx" />
     <Content Include="Bankpersonal Hemsida.aspx" />
+    <Content Include="Bankpersonal Provhistorik.aspx" />
     <Content Include="kpstyle.css" />
+    <Content Include="Kunskapstest.aspx" />
+    <Content Include="Licensieringstest.aspx" />
     <Content Include="Loginsida.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -122,12 +126,40 @@
     <Compile Include="Admin Hemsida.aspx.designer.cs">
       <DependentUpon>Admin Hemsida.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin Prov.aspx.cs">
+      <DependentUpon>Admin Prov.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin Prov.aspx.designer.cs">
+      <DependentUpon>Admin Prov.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Bankpersonal Hemsida.aspx.cs">
       <DependentUpon>Bankpersonal Hemsida.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Bankpersonal Hemsida.aspx.designer.cs">
       <DependentUpon>Bankpersonal Hemsida.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bankpersonal Provhistorik.aspx.cs">
+      <DependentUpon>Bankpersonal Provhistorik.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bankpersonal Provhistorik.aspx.designer.cs">
+      <DependentUpon>Bankpersonal Provhistorik.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Kunskapstest.aspx.cs">
+      <DependentUpon>Kunskapstest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kunskapstest.aspx.designer.cs">
+      <DependentUpon>Kunskapstest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Licensieringstest.aspx.cs">
+      <DependentUpon>Licensieringstest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Licensieringstest.aspx.designer.cs">
+      <DependentUpon>Licensieringstest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Loginsida.aspx.cs">
       <DependentUpon>Loginsida.aspx</DependentUpon>

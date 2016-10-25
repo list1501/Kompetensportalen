@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Bankpersonal Hemsida.aspx.cs" Inherits="Kompetensportalen.Bankpersonal_Hemsida" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Kunskapstest.aspx.cs" Inherits="Kompetensportalen.Kunskapstest" %>
 
 <!DOCTYPE html>
 
@@ -6,27 +6,20 @@
 <head runat="server">
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="kpstyle.css"/>
-    <title>Bankpersonal Hemsida</title>
+    <title>Kunskapstest</title>
 </head>
 <body>
     <form id="form1" runat="server">
    <div id="menu-top">    		
         <nav>
-             <img src="images/euro-1105411_1920.jpg" alt="Sample Photo" />
 		<ul>                  
-		<li><i><strong><a href="#" title="Startsida"><span>Startsida</span></a></strong></i></li>
+		<li><a href="Bankpersonal Hemsida.apsx" title="Startsida"><span>Startsida</span></a></li>
 		<li><a href="Bankpersonal Provhistorik.aspx" title="Provhistorik"><span>Provhistorik</span></a></li>
 		</ul>
         </nav>
 <div id="content">
 
 <div class="main">
-    <h3>Hem</h3>
-
-     <asp:Button ID="Button1" runat="server" Text="Ny användare - Licensieringstest"
-PostBackUrl="~/Licensieringstest.aspx" />
-        <asp:Button ID="Button2" runat="server" Text="Veteran - Kunskapstest"
-PostBackUrl="~/Kunskapstest.aspx" /> 
    
  </div><!--menu-top--> 
  </div><!--main-->

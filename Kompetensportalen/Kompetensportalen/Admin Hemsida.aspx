@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="kpstyle.css"/>
-    <title></title>
+    <title>Admin Hemsida</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -25,21 +25,16 @@
 <div id="content">
 
 <div class="main">
-    <h3>Hem</h3>
-
-<div id="signup">
- <p> Om du är intresserad av att få våra nyhetsbrev till din email vänligen fyll i formen nedanför.</p>
-	         
+    <h3>Hem</h3>      
    
  </div><!--menu-top--> 
- </div><!--content-->
  </div><!--main-->
  </div><!--hem-->
        
 
 <div id="wrapper-footer">
 <footer>
-  <p> Hemsida Skapad av Grupp 12
+  <p> Hemsida Skapad av Grupp 12 <br/>
  Kontaktinformation: <a href="mailto:grupp12@student.miun.se">
  grupp12@student.miun.se</a>.</p>
 </footer>

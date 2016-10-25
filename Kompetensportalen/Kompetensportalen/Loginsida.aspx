@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="kpstyle.css"/>
-    <title></title>
+    <title>Logga in</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -28,7 +28,7 @@ PostBackUrl="~/Admin Hemsida.aspx" />
 
 <div id="wrapper-footer">
 <footer>
-  <p> Hemsida Skapad av Grupp 12
+  <p> Hemsida Skapad av Grupp 12 <br/>
  Kontaktinformation: <a href="mailto:grupp12@student.miun.se">
   grupp12@student.miun.se</a>.</p>
 </footer>

@@ -50,7 +50,7 @@ li a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #222;
+    color: #fff;
     font-weight: 600;
     line-height: 0.5em;
 }
@@ -84,3 +84,26 @@ img {
     max-width: 95%;
     margin-right:10px;
     }
+
+div.section{
+    width: 23%;
+    float: left;
+    margin-right: 5%;
+    padding-left: 5%;
+}
+
+div.sections{
+    text-align: center;
+    padding-bottom: 50px;
+    background-color: #fff;
+    height: 200px;
+}
+
+button{
+    width: 250px;
+    background-color: aqua;
+}
+
+.clearfix:before, .clearfix:after {content: "";display: table;}
+.clearfix:after {clear: both;}
+.clearfix{*zoom: 1;}

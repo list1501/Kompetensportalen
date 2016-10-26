@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8"/>
+    
     <link rel="stylesheet" href="kpstyle.css"/>
     <title>Inloggningssida</title>
 </head>
@@ -14,13 +15,25 @@
 <div id="content">
 
 <div class="main">
-    <h3>Inloggningssida</h3>
 
+    <div class="sections clearfix">
+
+        <div class="section">
+   
+    <h3>Inloggningssida</h3>
+        </div>
+
+    <div class="section">
      <asp:Button ID="Button1" runat="server" Text="Bankpersonal"
 PostBackUrl="~/Bankpersonal Hemsida.aspx" />
+        </div>
+
+    <div class="section">
         <asp:Button ID="Button2" runat="server" Text="Administration"
-PostBackUrl="~/Admin Hemsida.aspx" />         
-   
+PostBackUrl="~/Admin Hemsida.aspx" />    
+        </div>     
+        
+ </div><!--sections clearfix-->  
  </div><!--menu-top--> 
  </div><!--main-->
  </div><!--hem-->

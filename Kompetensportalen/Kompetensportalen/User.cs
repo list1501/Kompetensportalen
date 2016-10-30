@@ -7,5 +7,9 @@ namespace Kompetensportalen
 {
     public class User
     {
+        string username { get; set; }
+        int usertype { get; set; }
+        DateTime latestTest { get; set; }
+        bool passed { get; set; }
     }
 }

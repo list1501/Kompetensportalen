@@ -12,5 +12,7 @@ namespace Kompetensportalen
         int usertype { get; set; }
         DateTime latestTest { get; set; }
         bool passed { get; set; }
+
+        List<Test> testHistory = new List<Test>();
     }
 }

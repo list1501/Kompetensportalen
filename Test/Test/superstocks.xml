@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<superstocks>
+  <stocklist name="Small Cap">
+    <stock exchangetype="A">
+      <stockname>Vegan AB</stockname>
+      <buycost>15</buycost>
+      <sellcost>14</sellcost>
+    </stock>
+    <stock exchangetype="A">
+      <stockname>Hopprepsfabriken</stockname>
+      <buycost>23</buycost>
+      <sellcost>26</sellcost>
+    </stock>
+    <stock exchangetype="A">
+      <stockname>Glada Djuren</stockname>
+      <buycost>31</buycost>
+      <sellcost>34</sellcost>
+    </stock>
+    <stock exchangetype="A">
+      <stockname>Studsmatta AB</stockname>
+      <buycost>6</buycost>
+      <sellcost>2</sellcost>
+    </stock>
+    <stock exchangetype="B">
+      <stockname>Isbacka Smedja</stockname>
+      <buycost>37</buycost>
+      <sellcost>30</sellcost>
+    </stock>
+    <stock exchangetype="B">
+      <stockname>Knasiga Idrotten AB</stockname>
+      <buycost>12</buycost>
+      <sellcost>13</sellcost>
+    </stock>
+  </stocklist>
+  <stocklist name="Medium Cap">
+    <stock exchangetype="A">
+      <name>Rosa Rosetten</name>
+      <buycost>66</buycost>
+      <sellcost>65</sellcost>
+    </stock>
+    <stock exchangetype="A">
+      <name>Pyssel och Skoj</name>
+      <buycost>80</buycost>
+      <sellcost>85</sellcost>
+    </stock>
+    <stock exchangetype="B">
+      <name>Lyktor AB</name>
+      <buycost>91</buycost>
+      <sellcost>89</sellcost>
+    </stock>
+    <stock exchangetype="B">
+      <name>Trasdockan </name>
+      <buycost>67</buycost>
+      <sellcost>66</sellcost>
+    </stock>
+    <stock exchangetype="B">
+      <exchangename>B</exchangename>
+      <name>Skridskobutiken</name>
+      <buycost>57</buycost>
+      <sellcost>59</sellcost>
+    </stock>
+  </stocklist>
+  <stocklist name="Large Cap">
+    <stock exchangetype="B">
+      <name>Voltige AB</name>
+      <buycost>452</buycost>
+      <sellcost>450</sellcost>
+    </stock>
+    <stock exchangetype="B">
+      <name>Havregrottan</name>
+      <buycost>560</buycost>
+      <sellcost>569</sellcost>
+    </stock>
+    <stock exchangetype="B">
+      <name>Greenpeace</name>
+      <buycost>235</buycost>
+      <sellcost>238</sellcost>
+    </stock>
+    <stock exchangetype="B">
+      <name>Mysiga Butiken</name>
+      <buycost>432</buycost>
+      <sellcost>444</sellcost>
+    </stock>
+    <stock exchangetype="B">
+      <name>Kul och bus</name>
+      <buycost>128</buycost>
+      <sellcost>120</sellcost>
+    </stock>
+  </stocklist>
+</superstocks>

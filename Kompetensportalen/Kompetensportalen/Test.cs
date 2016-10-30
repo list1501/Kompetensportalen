@@ -7,5 +7,6 @@ namespace Kompetensportalen
 {
     public class Test
     {
+        List<Question> newQuestion = new List<Question>();
     }
 }

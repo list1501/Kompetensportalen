@@ -7,5 +7,7 @@ namespace Kompetensportalen
 {
     public class Question
     {
+        List<Answer> correctAnswer = new List<Answer>();
+        List<Answer> wrongAnswer = new List<Answer>();
     }
 }

@@ -10,7 +10,7 @@
 namespace Kompetensportalen {
     
     
-    public partial class Kunskapstest {
+    public partial class Competency_Test {
         
         /// <summary>
         /// form1 control.

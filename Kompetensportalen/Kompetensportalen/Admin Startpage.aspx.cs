@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Kompetensportalen
 {
-    public partial class Hemsida : System.Web.UI.Page
+    public partial class Admin_Startpage : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

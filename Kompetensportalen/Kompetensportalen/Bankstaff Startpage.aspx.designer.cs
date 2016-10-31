@@ -10,7 +10,7 @@
 namespace Kompetensportalen {
     
     
-    public partial class Bankpersonal_Hemsida {
+    public partial class Bankpersonal_Startpage {
         
         /// <summary>
         /// form1 control.

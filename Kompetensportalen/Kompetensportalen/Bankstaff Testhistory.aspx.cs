@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Kompetensportalen
 {
-    public partial class Bankpersonal_Provhistorik : System.Web.UI.Page
+    public partial class Bankpersonal_Testhistory : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -10,7 +10,7 @@
 namespace Kompetensportalen {
     
     
-    public partial class Licensieringstest {
+    public partial class Qualification_Test {
         
         /// <summary>
         /// form1 control.

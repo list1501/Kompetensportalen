@@ -7,5 +7,6 @@ namespace Kompetensportalen
 {
     public class SQL
     {
+
     }
 }

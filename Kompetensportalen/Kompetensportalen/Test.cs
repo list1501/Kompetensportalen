@@ -7,7 +7,7 @@ namespace Kompetensportalen
 {
     public class Test
     {
-        int testType { get; set; }
+        public int testType { get; set; }
 
         List<Question> newQuestion = new List<Question>();
     }

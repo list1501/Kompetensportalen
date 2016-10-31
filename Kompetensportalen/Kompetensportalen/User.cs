@@ -8,10 +8,10 @@ namespace Kompetensportalen
     public class User
     {
         //Automatic properties
-        string username { get; set; }
-        int usertype { get; set; }
-        DateTime latestTest { get; set; }
-        bool passed { get; set; }
+        public string username { get; set; }
+        public int usertype { get; set; }
+        public DateTime latestTest { get; set; }
+        public bool passed { get; set; }
 
         List<Test> testHistory = new List<Test>();
     }

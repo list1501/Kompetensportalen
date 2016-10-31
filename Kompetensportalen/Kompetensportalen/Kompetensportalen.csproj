@@ -98,10 +98,10 @@
     <Content Include="Bankstaff Startpage.aspx" />
     <Content Include="Bankstaff Testhistory.aspx" />
     <Content Include="kpstyle.css" />
-    <Content Include="Kunskapstest.aspx" />
-    <Content Include="Kunskapstest.xml" />
-    <Content Include="Licensieringstest.aspx" />
-    <Content Include="Licensieringstest.xml" />
+    <Content Include="Competency Test.aspx" />
+    <Content Include="Competency Test.xml" />
+    <Content Include="Qualification Test.aspx" />
+    <Content Include="Qualification Test.xml" />
     <Content Include="Loginpage.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -150,19 +150,19 @@
     <Compile Include="Bankstaff Testhistory.aspx.designer.cs">
       <DependentUpon>Bankstaff Testhistory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Kunskapstest.aspx.cs">
-      <DependentUpon>Kunskapstest.aspx</DependentUpon>
+    <Compile Include="Competency Test.aspx.cs">
+      <DependentUpon>Competency Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Kunskapstest.aspx.designer.cs">
-      <DependentUpon>Kunskapstest.aspx</DependentUpon>
+    <Compile Include="Competency Test.aspx.designer.cs">
+      <DependentUpon>Competency Test.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Licensieringstest.aspx.cs">
-      <DependentUpon>Licensieringstest.aspx</DependentUpon>
+    <Compile Include="Qualification Test.aspx.cs">
+      <DependentUpon>Qualification Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Licensieringstest.aspx.designer.cs">
-      <DependentUpon>Licensieringstest.aspx</DependentUpon>
+    <Compile Include="Qualification Test.aspx.designer.cs">
+      <DependentUpon>Qualification Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="Loginpage.aspx.cs">
       <DependentUpon>Loginpage.aspx</DependentUpon>

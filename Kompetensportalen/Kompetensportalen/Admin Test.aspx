@@ -14,9 +14,9 @@
         <nav>
              <img src="images/euro-1105411_1920.jpg" alt="Sample Photo" />
 		<ul> 
-        <li><a href="Admin Startpage.aspx" title="Administratör Hemsida"><span>Hemsida</span></a></li>    
-		<li><i><strong><a href="#" title="Administratör Provsida"><span>Prov information</span></a></strong></i></li>
-</ul>
+            <li><a href="Admin Startpage.aspx" title="Administratör Hemsida"><span>Hemsida</span></a></li>    
+		    <li><i><strong><a href="#" title="Administratör Provsida"><span>Prov information</span></a></strong></i></li>
+        </ul>
         </nav>
 <div id="content">
 

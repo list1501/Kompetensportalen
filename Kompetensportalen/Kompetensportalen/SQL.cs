@@ -65,18 +65,25 @@ namespace Kompetensportalen
             }
         }
         
-        //Method to get user info
-        public User getUser(string usr)
+        //Method to get login info
+        public User getLogin(string usr)
         {
             User newUser = new Kompetensportalen.User();
-            string sql = "SELECT * FROM users WHERE username = " + usr + "";
+            string sql = "SELECT * FROM users WHERE username = '" + usr + "'";
             _dr = sqlQuery(sql);
             
             while (_dr.Read())
             {
                 newUser.username = _dr["username"].ToString();
-                newUser.usertype = int.Parse(_dr["type"].ToString());                
+                newUser.usertype = int.Parse(_dr["type"].ToString());
             }
+            return newUser;          
+        }
+
+        //Method to get employee info från DB
+        public User getEmployee(string usr)
+        {
+            User newUser = new Kompetensportalen.User();
             return newUser;
         }
     }

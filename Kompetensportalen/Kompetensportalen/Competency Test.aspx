@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Competency Test.aspx.cs" Inherits="Kompetensportalen.Kunskapstest" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Competency Test.aspx.cs" Inherits="Kompetensportalen.Competency_Test" %>
 
 <!DOCTYPE html>
 

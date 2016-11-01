@@ -64,23 +64,20 @@ namespace Kompetensportalen
                 //HÄR SKA DET STÅ NÅGOT FÖR FELMEDDELANDE
             }
         }
-        /*
+        
         //Method to get user info
         public User getUser(string usr)
         {
-            User newUser;
+            User newUser = new Kompetensportalen.User();
             string sql = "SELECT * FROM users WHERE username = " + usr + "";
             _dr = sqlQuery(sql);
             
             while (_dr.Read())
             {
-                newUser = new User()
-                {
-                    username = _dr["username"].ToString(),
-                    usertype = int.Parse(_dr["type"].ToString()),
-                };
+                newUser.username = _dr["username"].ToString();
+                newUser.usertype = int.Parse(_dr["type"].ToString());                
             }
             return newUser;
-        }*/
+        }
     }
 }

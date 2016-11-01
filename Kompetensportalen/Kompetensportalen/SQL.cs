@@ -65,7 +65,7 @@ namespace Kompetensportalen
             }
         }
         
-        //Method to get login info
+        //Method to get user info
         public User getLogin(string usr)
         {
             User newUser = new Kompetensportalen.User();
@@ -76,15 +76,20 @@ namespace Kompetensportalen
             {
                 newUser.username = _dr["username"].ToString();
                 newUser.usertype = int.Parse(_dr["type"].ToString());
+
+                if (newUser.usertype == 2)
+                {
+                    string sqlEmployee = "SELECT latest_test, pass FROM employee WHERE username = '" + usr + "'";
+                    _dr = sqlQuery(sqlEmployee);
+                    
+                    while (_dr.Read())
+                    {
+                        newUser.latestTest = (DateTime)_dr["latest_test"];
+                        newUser.passed = (bool)_dr["pass"];
+                    }
+                }
             }
             return newUser;          
-        }
-
-        //Method to get employee info från DB
-        public User getEmployee(string usr)
-        {
-            User newUser = new Kompetensportalen.User();
-            return newUser;
-        }
+        }        
     }
 }

@@ -10,28 +10,23 @@
     </head>
 
     <body>
-        <form id="form1" runat="server">
-            <div id="menu-top">    		
+        <form id="form1" runat="server">  		
                 <nav>
 		            <ul>                  
 		                <li><a href="Bankstaff Startpage.apsx" title="Startsida"><span>Startsida</span></a></li>
 		                <li><a href="Bankstaff Testhistory.aspx" title="Provhistorik"><span>Provhistorik</span></a></li>
 		            </ul>
                 </nav>
+            <div class="main">
+                <div id="content">               
+                    </div><!--content--> 
+                </div><!--main--> 
 
-                <div id="content">
-                    <div class="main">
-                    </div><!--main--> 
-                </div><!--content-->
-            </div><!--menu-top-->
-
-            <div id="wrapper-footer">
                 <footer>
                     <p> Hemsida Skapad av Grupp 12 <br/>
                         Kontaktinformation: <a href="mailto:grupp12@student.miun.se">grupp12@student.miun.se</a>.
                     </p>
                 </footer>
-            </div><!--wrapper-footer-->
         </form>
     </body>
 </html>

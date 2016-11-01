@@ -69,7 +69,8 @@ namespace Kompetensportalen
         public User getLogin(string usr)
         {
             User newUser = new Kompetensportalen.User();
-            string sql = "SELECT * FROM users WHERE username = '" + usr + "'";
+            string user = usr;
+            string sql = "SELECT * FROM users WHERE username = '" + user + "'";
             _dr = sqlQuery(sql);
             
             while (_dr.Read())
@@ -79,7 +80,7 @@ namespace Kompetensportalen
 
                 if (newUser.usertype == 2)
                 {
-                    string sqlEmployee = "SELECT latest_test, pass FROM employee WHERE username = '" + usr + "'";
+                    string sqlEmployee = "SELECT latest_test, pass FROM employee WHERE username = '" + user + "'";
                     _dr = sqlQuery(sqlEmployee);
                     
                     while (_dr.Read())
@@ -90,6 +91,27 @@ namespace Kompetensportalen
                 }
             }
             return newUser;          
+        }
+        
+        //Method to get selected user's test history
+        public List<Test> getTestHistory(string usr)
+        {
+            List<Test> testHistory = new List<Test>();
+            string user = usr;
+            string sql = "SELECT * FROM finished_tests WHERE employee = '" + user + "' ORDER BY date ASC";
+            _dr = sqlQuery(sql);
+
+            while (_dr.Read())
+            {
+                Test newTest = new Kompetensportalen.Test()
+                {
+                    employee = _dr["employee"].ToString(),
+                    testType = (int)_dr["type"],
+                    date = (DateTime)_dr["date"]
+                };
+                testHistory.Add(newTest);
+            }
+            return testHistory;
         }        
     }
 }

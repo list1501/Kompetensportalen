@@ -10,7 +10,7 @@
 namespace Kompetensportalen {
     
     
-    public partial class Bankpersonal_Startpage {
+    public partial class Bankstaff_Startpage {
         
         /// <summary>
         /// form1 control.

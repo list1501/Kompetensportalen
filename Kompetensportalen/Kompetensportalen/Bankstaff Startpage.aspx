@@ -15,7 +15,7 @@
              <img src="images/euro-1105411_1920.jpg" alt="Sample Photo" />
 		<ul>                  
 		<li><i><strong><a href="#" title="Startsida"><span>Startsida</span></a></strong></i></li>
-		<li><a href="Bankpersonal Provhistorik.aspx" title="Provhistorik"><span>Provhistorik</span></a></li>
+		<li><a href="Bankstaff Testhistory.aspx" title="Provhistorik"><span>Provhistorik</span></a></li>
 		</ul>
         </nav>
 <div id="content">
@@ -24,9 +24,9 @@
     <h3>Hem</h3>
 
      <asp:Button ID="Button1" runat="server" Text="Ny användare - Licensieringstest"
-PostBackUrl="~/Licensieringstest.aspx" />
+PostBackUrl="~/Qualification Test.aspx" />
         <asp:Button ID="Button2" runat="server" Text="Veteran - Kunskapstest"
-PostBackUrl="~/Kunskapstest.aspx" /> 
+PostBackUrl="~/Competency Test.aspx" /> 
    
  </div><!--menu-top--> 
  </div><!--main-->

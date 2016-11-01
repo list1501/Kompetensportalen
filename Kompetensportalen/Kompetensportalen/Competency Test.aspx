@@ -13,8 +13,8 @@
    <div id="menu-top">    		
         <nav>
 		<ul>                  
-		<li><a href="Bankpersonal Hemsida.apsx" title="Startsida"><span>Startsida</span></a></li>
-		<li><a href="Bankpersonal Provhistorik.aspx" title="Provhistorik"><span>Provhistorik</span></a></li>
+		<li><a href="Bankstaff Startpage.apsx" title="Startsida"><span>Startsida</span></a></li>
+		<li><a href="Bankstaff Testhistory.aspx" title="Provhistorik"><span>Provhistorik</span></a></li>
 		</ul>
         </nav>
 <div id="content">

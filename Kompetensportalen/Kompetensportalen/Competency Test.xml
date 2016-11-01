@@ -1,93 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Kunskapstest>
-  <Q1 ID="" category="" answer="">
+<CompetencyTest>
+  <question ID="" category="" answer="">
     <description></description>
     <A></A>
     <B></B>
     <C></C>
-  </Q1>
-  <Q2 ID="" category="" answer="">
+  </question>
+  <question ID="" category="" answer="">
     <description></description>
     <A></A>
     <B></B>
     <C></C>
-  </Q2>
-  <Q3 ID="" category="" answer="">
+  </question>
+  <question ID="" category="" answer="">
     <description></description>
     <A></A>
     <B></B>
     <C></C>
-  </Q3>
-  <Q4 ID="" category="" answer="">
+  </question>
+  <question ID="" category="" answer="">
     <description></description>
     <A></A>
     <B></B>
     <C></C>
-  </Q4>
-  <Q5 ID="" category="" answer="">
+  </question>
+  <question ID="" category="" answer="">
     <description></description>
     <A></A>
     <B></B>
     <C></C>
-  </Q5>
-  <Q6 ID="" category="" answer="">
+  </question>
+  <question ID="" category="" answer="">
     <description></description>
     <A></A>
     <B></B>
     <C></C>
-  </Q6>
-  <Q7 ID="" category="" answer="">
+  </question>
+  <question ID="" category="" answer="">
     <description></description>
     <A></A>
     <B></B>
     <C></C>
-  </Q7>
-  <Q8 ID="" category="" answer="">
+  </question>
+  <question ID="" category="" answer="">
     <description></description>
     <A></A>
     <B></B>
     <C></C>
-  </Q8>
-  <Q9 ID="" category="" answer="">
+  </question>
+  <question ID="" category="" answer="">
     <description></description>
     <A></A>
     <B></B>
     <C></C>
-  </Q9>
-  <Q10 ID="" category="" answer="">
+  </question>
+  <question ID="" category="" answer="">
     <description></description>
     <A></A>
     <B></B>
     <C></C>
-  </Q10>
-  <Q11 ID="" category="" answer="">
+  </question>
+  <question ID="" category="" answer="">
     <description></description>
     <A></A>
     <B></B>
     <C></C>
-  </Q11>
-  <Q12 ID="" category="" answer="">
+  </question>
+  <question ID="" category="" answer="">
     <description></description>
     <A></A>
     <B></B>
     <C></C>
-  </Q12>
-  <Q13 ID="" category="" answer="">
+  </question>
+  <question ID="" category="" answer="">
     <description></description>
     <A></A>
     <B></B>
     <C></C>
-  </Q13>
-  <Q14 ID="" category="" answer="">
+  </question>
+  <question ID="" category="" answer="">
     <description></description>
     <A></A>
     <B></B>
     <C></C>
-  </Q14>
-  <Q15 ID="" category="" answer="">
+  </question>
+  <question ID="" category="" answer="">
     <description></description>
     <A></A>
     <B></B>
     <C></C>
-  </Q15>
-</Kunskapstest>
+  </question>
+</CompetencyTest>

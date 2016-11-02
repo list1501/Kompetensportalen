@@ -11,7 +11,10 @@ namespace Kompetensportalen
         public DateTime date { get; set; }
         public int testType { get; set; }
         public bool passed { get; set; }
-
-        List<Question> newQuestion = new List<Question>();
+        public int category1 { get; set; }
+        public int category2 { get; set; }
+        public int category3 { get; set; }
+        public int totalPoints { get; set; }
+        public List<Question> questions { get; set; }
     }
 }

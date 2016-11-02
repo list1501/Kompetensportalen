@@ -21,5 +21,7 @@ namespace Kompetensportalen
         {
             testHistory = newSQL.getTestHistory(username);
         }
+
+        //Method to create new test
     }
 }

@@ -68,6 +68,7 @@ namespace Kompetensportalen
         //Method to get user info
         public User getLogin(string usr)
         {
+            openConn();
             User newUser = new Kompetensportalen.User();
             string user = usr;
             string sql = "SELECT * FROM users WHERE username = '" + user + "'";
@@ -81,21 +82,23 @@ namespace Kompetensportalen
                 if (newUser.usertype == 2)
                 {
                     string sqlEmployee = "SELECT latest_test, passed FROM employee WHERE username = '" + user + "'";
-                    _dr = sqlQuery(sqlEmployee);
+                    NpgsqlDataReader _dr1 = sqlQuery(sqlEmployee);
                     
-                    while (_dr.Read())
+                    while (_dr1.Read())
                     {
-                        newUser.latestTest = (DateTime)_dr["latest_test"];
-                        newUser.qualified = (bool)_dr["qualified"];
+                        newUser.latestTest = (DateTime)_dr1["latest_test"];
+                        newUser.qualified = (bool)_dr1["qualified"];
                     }
                 }
             }
-            return newUser;          
+            return newUser;
+            closeConn();          
         }
         
         //Method to get selected user's test history
         public List<Test> getTestHistory(string usr)
         {
+            openConn();
             List<Test> testHistory = new List<Test>();
             string user = usr;
             string sql = "SELECT * FROM finished_tests WHERE employee = '" + user + "' SORT BY username ASC ORDER BY date DESC";
@@ -113,6 +116,7 @@ namespace Kompetensportalen
                 testHistory.Add(newTest);
             }
             return testHistory;
+            closeConn();
         }        
     }
 }

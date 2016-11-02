@@ -18,7 +18,7 @@ namespace Kompetensportalen
         public List<Question> questions { get; set; }
 
         //Method to get questions in random order from database
-        public Question getQuestion()
+        public Question getQuestion(int type)
         {
             Question newQuestion = new Question();
             return newQuestion;

@@ -15,5 +15,11 @@ namespace Kompetensportalen
         public bool passed { get; set; }
 
         List<Test> testHistory = new List<Test>();
+        SQL newSQL = new SQL();
+
+        public void createTestHistory()
+        {
+            testHistory = newSQL.getTestHistory(username);
+        }
     }
 }

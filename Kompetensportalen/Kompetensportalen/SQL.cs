@@ -105,9 +105,10 @@ namespace Kompetensportalen
             {
                 Test newTest = new Kompetensportalen.Test()
                 {
-                    employee = _dr["employee"].ToString(),
+                    employee = _dr["employee"].ToString(),                    
+                    date = (DateTime)_dr["date"],
                     testType = (int)_dr["type"],
-                    date = (DateTime)_dr["date"]
+                    passed = (bool)_dr["passed"]
                 };
                 testHistory.Add(newTest);
             }

@@ -72,10 +72,11 @@ namespace Kompetensportalen
         //Method to get user info
         public User getLogin(string usr)
         {
-            openConn();
             User newUser = new Kompetensportalen.User();
             string user = usr;
             string sql = "SELECT * FROM users WHERE username = '" + user + "'";
+
+            openConn();
             _dr = sqlQuery(sql);
             
             while (_dr.Read())
@@ -95,17 +96,18 @@ namespace Kompetensportalen
                     }
                 }
             }
+            closeConn();
             return newUser;
-            closeConn();          
         }
         
         //Method to get selected user's test history
         public List<Test> getTestHistory(string usr)
         {
-            openConn();
             List<Test> testHistory = new List<Test>();
             string user = usr;
             string sql = "SELECT * FROM finished_tests WHERE employee = '" + user + "' SORT BY username ASC ORDER BY date DESC";
+
+            openConn();
             _dr = sqlQuery(sql);
 
             while (_dr.Read())
@@ -119,8 +121,46 @@ namespace Kompetensportalen
                 };
                 testHistory.Add(newTest);
             }
-            return testHistory;
             closeConn();
-        }        
+            return testHistory;            
+        }
+
+        //Method to get test question
+        public Question getQuestion(int dbID, int type)
+        {
+            Question newQuestion = new Question();
+            string sql;
+            string id = dbID.ToString();
+            int testType = type;
+
+            if (testType == 1)
+            {
+                sql = "SELECT * FROM questions_qualifying WHERE id = '" + id + "'";
+
+                openConn();
+                _dr = sqlQuery(sql);
+
+                while (_dr.Read())
+                {
+                    newQuestion.
+                }
+            }
+            else if (testType == 2)
+            {
+                sql = "SELECT * FROM questions_competence WHERE id = '" + id + "'";
+
+                openConn();
+                _dr = sqlQuery(sql);
+
+                while (_dr.Read())
+                {
+
+                }
+            }
+
+            
+
+            return newQuestion;
+        }
     }
 }

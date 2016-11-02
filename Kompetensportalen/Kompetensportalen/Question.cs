@@ -7,9 +7,12 @@ namespace Kompetensportalen
 {
     public class Question
     {
+        public int id { get; set; }
+        public string question { get; set; }
+        public int category { get; set; }
+        public List<Answer> correctAnswer { get; set; }
+        public List<Answer> wrongAnswer { get; set; }
+        public List<Answer> userAnswer { get; set; }
         public bool correct { get; set; }
-        List<Answer> correctAnswer = new List<Answer>();
-        List<Answer> wrongAnswer = new List<Answer>();
-        List<Answer> userAnswer = new List<Answer>();
     }
 }

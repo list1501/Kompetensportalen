@@ -87,6 +87,7 @@ namespace Kompetensportalen
                     {
                         newUser.latestTest = (DateTime)_dr["latest_test"];
                         newUser.passed = (bool)_dr["pass"];
+                        newUser.qualified = (bool)_dr["qualified"];
                     }
                 }
             }

@@ -10,6 +10,7 @@ namespace Kompetensportalen
         //Automatic properties
         public string username { get; set; }
         public int usertype { get; set; }
+        public bool qualified { get; set; }
         public DateTime latestTest { get; set; }
         public bool passed { get; set; }
 

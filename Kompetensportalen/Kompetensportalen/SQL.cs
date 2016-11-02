@@ -6,6 +6,7 @@ using Mono.Security;
 using Npgsql;
 using System.Web.Configuration;
 using System.Web.UI;
+using System.Data;
 
 namespace Kompetensportalen
 {
@@ -33,7 +34,10 @@ namespace Kompetensportalen
         //Method to close DB connection
         public void closeConn()
         {
-            _conn.Close();
+            if (_conn.State == ConnectionState.Open)
+            {
+                _conn.Close();
+            }
         }
 
         //Method to execute Query in DB

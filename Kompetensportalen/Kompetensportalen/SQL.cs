@@ -98,7 +98,7 @@ namespace Kompetensportalen
         {
             List<Test> testHistory = new List<Test>();
             string user = usr;
-            string sql = "SELECT * FROM finished_tests WHERE employee = '" + user + "' ORDER BY date ASC";
+            string sql = "SELECT * FROM finished_tests WHERE employee = '" + user + "' SORT BY username ASC ORDER BY date DESC";
             _dr = sqlQuery(sql);
 
             while (_dr.Read())

@@ -17,11 +17,42 @@ namespace Kompetensportalen
         public int totalPoints { get; set; }
         public List<Question> questions { get; set; }
 
+        SQL newSQL = new SQL();
+
         //Method to get questions in random order from database
-        public Question getQuestion(int type)
+        public void getQuestion(int type)
         {
-            Question newQuestion = new Question();
-            return newQuestion;
+            int testType = type;
+            int n = 25;
+            int c = 0;
+
+            if (testType == 2)
+            {
+                n = 15;
+            }
+            else
+            {
+                n = n;
+            }
+
+            while (c < n)
+            {
+                Random rand = new Random();
+                int r = rand.Next(1, n);
+                foreach (Question q in questions)
+                {
+                    if (r != q.id)
+                    {
+                        Question newQuestion = newSQL.getQuestion(r, testType);
+                        questions.Add(newQuestion);
+                        c++;
+                    }
+                    else
+                    {
+                        c = c;
+                    }
+                }
+            }
         }
     }
 }

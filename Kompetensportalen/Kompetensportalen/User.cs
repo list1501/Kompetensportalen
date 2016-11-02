@@ -23,6 +23,9 @@ namespace Kompetensportalen
         }
 
         //Method to create new test
-        
+        public void createNewTest()
+        {
+
+        }
     }
 }

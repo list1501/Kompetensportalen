@@ -13,6 +13,7 @@ namespace Kompetensportalen
         public bool qualified { get; set; }
         public DateTime latestTest { get; set; }
 
+        Test newTest = new Test();
         List<Test> testHistory = new List<Test>();
         SQL newSQL = new SQL();
 

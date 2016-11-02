@@ -10,5 +10,6 @@ namespace Kompetensportalen
         public bool correct { get; set; }
         List<Answer> correctAnswer = new List<Answer>();
         List<Answer> wrongAnswer = new List<Answer>();
+        List<Answer> userAnswer = new List<Answer>();
     }
 }

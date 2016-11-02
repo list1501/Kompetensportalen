@@ -105,6 +105,7 @@
     <Content Include="Admin Test.aspx" />
     <Content Include="Bankstaff Startpage.aspx" />
     <Content Include="Bankstaff Testhistory.aspx" />
+    <Content Include="Completed Test.xml" />
     <Content Include="kpstyle.css" />
     <Content Include="Competency Test.aspx" />
     <Content Include="Competency Test.xml" />

@@ -80,7 +80,7 @@ namespace Kompetensportalen
 
                 if (newUser.usertype == 2)
                 {
-                    string sqlEmployee = "SELECT latest_test, pass FROM employee WHERE username = '" + user + "'";
+                    string sqlEmployee = "SELECT latest_test, passed FROM employee WHERE username = '" + user + "'";
                     _dr = sqlQuery(sqlEmployee);
                     
                     while (_dr.Read())

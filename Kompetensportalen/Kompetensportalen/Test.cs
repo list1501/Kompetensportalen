@@ -16,5 +16,12 @@ namespace Kompetensportalen
         public int category3 { get; set; }
         public int totalPoints { get; set; }
         public List<Question> questions { get; set; }
+
+        //Method to get questions in random order from database
+        public Question getQuestion()
+        {
+            Question newQuestion = new Question();
+            return newQuestion;
+        }
     }
 }

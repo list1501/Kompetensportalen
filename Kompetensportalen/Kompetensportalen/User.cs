@@ -12,7 +12,6 @@ namespace Kompetensportalen
         public int usertype { get; set; }
         public bool qualified { get; set; }
         public DateTime latestTest { get; set; }
-        public bool passed { get; set; }
 
         List<Test> testHistory = new List<Test>();
         SQL newSQL = new SQL();

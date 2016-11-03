@@ -18,17 +18,21 @@
                             <div class="section">
                                 <h3>Inloggningssida</h3>
                             </div>
+
+                            <div class="section">
+                                <asp:Button ID="btnLoginAdmin" runat="server" Text="Logga in Admin" OnClick="btnLoginAdmin_Click" PostBackUrl="~/Admin Startpage.aspx" />
+                            </div>"
                             
                             <div class="section">
                                 <asp:Button ID="btnLoginEmma" runat="server" Text="Logga in Emma" OnClick="btnLoginEmma_Click" PostBackUrl="~/Bankstaff Startpage.aspx" />
                             </div>
 
                             <div class="section">
-                                <asp:Button ID="btnLoginLinda" runat="server" Text="Logga in Linda" OnClick="btnLoginLinda_Click" PostBackUrl="~/Admin Startpage.aspx" />    
+                                <asp:Button ID="btnLoginLinda" runat="server" Text="Logga in Linda" OnClick="btnLoginLinda_Click" PostBackUrl="~/Bankstaff Startpage.aspx" />    
                             </div>
 
                             <div class="section">
-                                <asp:Button ID="btnLoginMartin" runat="server" Text="Logga in Martin" OnClick="btnLoginMartin_Click" />
+                                <asp:Button ID="btnLoginMartin" runat="server" Text="Logga in Martin" OnClick="btnLoginMartin_Click" PostBackUrl="~/Bankstaff Startpage.aspx" />
                             </div>
                         </div><!--sections clearfix-->  
                     </div><!--main--> 

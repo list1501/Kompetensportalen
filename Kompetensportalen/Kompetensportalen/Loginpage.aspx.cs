@@ -16,7 +16,12 @@ namespace Kompetensportalen
         {
 
         }
-        
+
+        protected void btnLoginAdmin_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //Login for user: Emma
         protected void btnLoginEmma_Click(object sender, EventArgs e)
         {

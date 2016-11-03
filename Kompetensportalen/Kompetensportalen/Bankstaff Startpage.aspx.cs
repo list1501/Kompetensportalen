@@ -15,5 +15,10 @@ namespace Kompetensportalen
         {
             
         }
+
+        protected void btnStartTest_Click(object sender, EventArgs e)
+        {
+            //Här hämtar vi metoden för att fylla XML med testfrågor. Därefter kör vi JS som startar provet.... ?...
+        }
     }
 }

@@ -23,8 +23,7 @@
                     <div id="content">                  
                         <h3>Hem</h3>
 
-                        <asp:Button ID="Button1" runat="server" Text="Ny användare - Licensieringstest" PostBackUrl="~/Qualification Test.aspx" />
-                        <asp:Button ID="Button2" runat="server" Text="Veteran - Kunskapstest" PostBackUrl="~/Competency Test.aspx" />
+                        <asp:Button ID="btnStartTest" runat="server" Text="Starta testet" OnClick="btnStartTest_Click" PostBackUrl="#" />
                     </div><!--content-->
                 </div><!--main--> 
             

@@ -20,7 +20,7 @@ namespace Kompetensportalen
         SQL newSQL = new SQL();
 
         //Method to get questions in random order from database
-        public void getQuestion(int type)
+        public void getQuestions(int type)
         {
             int testType = type;
             int n = 25;
@@ -39,19 +39,24 @@ namespace Kompetensportalen
             {
                 Random rand = new Random();
                 int r = rand.Next(1, n);
+                bool unique = true;
                 foreach (Question q in questions)
                 {
-                    if (r != q.id)
+                    if (r == q.id)
                     {
-                        Question newQuestion = newSQL.getQuestion(r, testType);
-                        questions.Add(newQuestion);
-                        c++;
+                        unique = false;
                     }
                     else
                     {
-                        c = c;
+                        unique = true;
                     }
                 }
+                if (unique == true)
+                {
+                    Question newQuestion = newSQL.getQuestion(r, testType);
+                    questions.Add(newQuestion);
+                }
+                c++;
             }
         }
     }

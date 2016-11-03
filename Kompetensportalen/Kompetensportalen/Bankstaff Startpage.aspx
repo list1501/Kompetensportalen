@@ -6,6 +6,7 @@
     <head runat="server">
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="kpstyle.css"/>
+        <link rel="stylesheet" href="modal.css" />
         <title>Bankpersonal Hemsida</title>
     </head>
 
@@ -25,6 +26,16 @@
 
                         <asp:Button ID="btnStartTest" runat="server" Text="Starta testet" OnClick="btnStartTest_Click" PostBackUrl="#" />
                     </div><!--content-->
+
+                    <!--Modal for test-->
+                    <div id="testModal" class="modal">
+                        
+                        <!--Modal content-->
+                        <div class="modal-content">
+                            <span class="close">&times</span>
+                            <p>Här skriver vi testfrågorna</p>
+                        </div>
+                    </div>
                 </div><!--main--> 
             
                 <footer>

@@ -109,6 +109,7 @@
     <Content Include="kpstyle.css" />
     <Content Include="Competency Test.aspx" />
     <Content Include="Competency Test.xml" />
+    <Content Include="modal.css" />
     <Content Include="Qualification Test.aspx" />
     <Content Include="Qualification Test.xml" />
     <Content Include="Loginpage.aspx" />

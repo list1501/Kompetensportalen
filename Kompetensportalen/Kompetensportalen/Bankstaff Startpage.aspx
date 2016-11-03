@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Bankstaff Startpage.aspx.cs" Inherits="Kompetensportalen.Bankstaff_Startpage" %>
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %> <!-- ASSEMBLY REFERENCE FOR AjaxControlToolkit -->
 
 <!DOCTYPE html>
 
@@ -7,13 +8,14 @@
     <head runat="server">
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="kpstyle.css"/>
-        <link rel="stylesheet" href="modal.css" />
-        <script src="~/scripts/test.js"></script>
+        <link rel="stylesheet" href="modal.css" />        
         <title>Bankpersonal Hemsida</title>
     </head>
 
     <body>
         <form id="form1" runat="server">	
+            <asp:ScriptManager ID="scriptMan" runat="server"></asp:ScriptManager> <!-- SCRIPT MANAGER FOR USING Ajax SCRIPTS -->
+
             <nav>
                 <img src="images/euro-1105411_1920.jpg" alt="Sample Photo" />
 
@@ -28,6 +30,16 @@
                     
                     <asp:Button ID="btnStartTest" runat="server" Text="Starta testet" OnClick="btnStartTest_Click"/>
                 </div><!--content-->
+
+                <!-- MODAL POPUP STARTS HERE -->
+                <ajax:ModalPopupExtender ID="mpeTest" runat="server" PopupControlID="panelTest" TargetControlID="btnStartTest" CancelControlID="btnCancel" BackgroundCssClass="modalBackground">
+                </ajax:ModalPopupExtender>
+
+                <asp:Panel ID="panelTest" runat="server" CssClass="modalPopup" align="center" style="display:none">
+                    Detta är ett test av en modal popup med hjälp av AJAX Toolkit<br />
+                    <asp:Button ID="btnCancel" runat="server" Text="Avbryt test" />
+                </asp:Panel>
+                <!-- END OF MODAL POPUP -->
                                        
             </div><!--main--> 
             

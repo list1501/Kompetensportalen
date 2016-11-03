@@ -1,8 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Bankstaff Startpage.aspx.cs" Inherits="Kompetensportalen.Bankstaff_Startpage" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="sv-se" xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="kpstyle.css"/>
@@ -25,7 +26,7 @@
                     <div id="content">                  
                         <h3>Hem</h3>
 
-                        <asp:Button ID="btnStartTest" runat="server" Text="Starta testet" OnClick="btnStartTest_Click" PostBackUrl="#" />
+                        <asp:Button ID="btnStartTest" runat="server" Text="Starta testet" OnClick="btnStartTest_Click"/>
                     </div><!--content-->
 
                     <!--Modal for test-->

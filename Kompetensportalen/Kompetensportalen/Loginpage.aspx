@@ -20,11 +20,15 @@
                             </div>
                             
                             <div class="section">
-                                <asp:Button ID="Button1" runat="server" Text="Bankstaff" PostBackUrl="~/Bankstaff Startpage.aspx" />
+                                <asp:Button ID="btnLoginEmma" runat="server" Text="Logga in Emma" OnClick="btnLoginEmma_Click" PostBackUrl="~/Bankstaff Startpage.aspx" />
                             </div>
 
                             <div class="section">
-                                <asp:Button ID="Button2" runat="server" Text="Administration" PostBackUrl="~/Admin Startpage.aspx" />    
+                                <asp:Button ID="btnLoginLinda" runat="server" Text="Logga in Linda" OnClick="btnLoginLinda_Click" PostBackUrl="~/Admin Startpage.aspx" />    
+                            </div>
+
+                            <div class="section">
+                                <asp:Button ID="btnLoginMartin" runat="server" Text="Logga in Martin" OnClick="btnLoginMartin_Click" />
                             </div>
                         </div><!--sections clearfix-->  
                     </div><!--main--> 

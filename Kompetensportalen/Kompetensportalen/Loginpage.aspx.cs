@@ -13,5 +13,23 @@ namespace Kompetensportalen
         {
 
         }
+        
+        //Login for user: Emma
+        protected void btnLoginEmma_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Login for user: Linda
+        protected void btnLoginLinda_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Login for user: Martin
+        protected void btnLoginMartin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace Kompetensportalen
         //Login for user: Admin
         protected void btnLoginAdmin_Click(object sender, EventArgs e)
         {
-
+            currentLogin = newSQL.getLogin("admin");
         }
 
         //Login for user: Emma

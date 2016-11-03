@@ -9,7 +9,7 @@ namespace Kompetensportalen
 {
     public partial class Loginpage : System.Web.UI.Page
     {
-        User newLogin = new User();
+        public static User currentLogin = new User();
         SQL newSQL = new SQL();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -26,19 +26,19 @@ namespace Kompetensportalen
         //Login for user: Emma
         protected void btnLoginEmma_Click(object sender, EventArgs e)
         {
-            newLogin = newSQL.getLogin("emsu101");
+            currentLogin = newSQL.getLogin("emsu101");
         }
 
         //Login for user: Linda
         protected void btnLoginLinda_Click(object sender, EventArgs e)
         {
-            newLogin = newSQL.getLogin("list069");
+            currentLogin = newSQL.getLogin("list069");
         }
 
         //Login for user: Martin
         protected void btnLoginMartin_Click(object sender, EventArgs e)
         {
-            newLogin = newSQL.getLogin("maca007");
+            currentLogin = newSQL.getLogin("maca007");
         }
     }
 }

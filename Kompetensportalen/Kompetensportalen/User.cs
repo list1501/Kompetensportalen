@@ -25,7 +25,18 @@ namespace Kompetensportalen
         //Method to create new test
         public void createNewTest()
         {
+            bool qual = qualified;
+            int testType = 1;
+            if (qual == true)
+            {
+                testType = 2;
+            }
+            else
+            {
+                testType = 1;
+            }
 
+            newTest.getQuestions(testType);
         }
     }
 }

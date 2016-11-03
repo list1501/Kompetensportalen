@@ -72,7 +72,7 @@ namespace Kompetensportalen
         //Method to get user info
         public User getLogin(string usr)
         {
-            User newUser = new Kompetensportalen.User();
+            User newUser = new User();
             string user = usr;
             string sql = "SELECT * FROM users WHERE username = '" + user + "'";
 
@@ -86,7 +86,7 @@ namespace Kompetensportalen
 
                 if (newUser.usertype == 2)
                 {
-                    string sqlEmployee = "SELECT latest_test, passed FROM employee WHERE username = '" + user + "'";
+                    string sqlEmployee = "SELECT latest_test, qualified FROM employee WHERE username = '" + user + "'";
                     NpgsqlDataReader _dr1 = sqlQuery(sqlEmployee);
                     
                     while (_dr1.Read())

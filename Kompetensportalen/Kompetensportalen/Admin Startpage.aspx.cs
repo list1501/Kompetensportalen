@@ -11,7 +11,7 @@ namespace Kompetensportalen
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            User currentUser = Loginpage.currentLogin;
         }
     }
 }

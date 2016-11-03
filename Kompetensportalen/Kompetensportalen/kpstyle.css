@@ -85,18 +85,25 @@ img {
     margin-right:10px;
     }
 
-div.section{
+/*div.section{
     width: 23%;
     float: left;
     margin-right: 5%;
     padding-left: 5%;
-}
+}*/
 
 div.sections{
     text-align: center;
     padding-bottom: 50px;
     background-color: #fff;
     height: 200px;
+    width: 100%;
+}
+
+.loginButton {
+    display: inline;
+    margin: 5px auto;
+    width: 20%;
 }
 
 #button1{

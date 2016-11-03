@@ -9,9 +9,13 @@ namespace Kompetensportalen
 {
     public partial class Bankstaff_Testhistory : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+        User currentUser = Loginpage.currentLogin;
+        List<Test> testHistory = new List<Test>();
 
+        protected void Page_Load(object sender, EventArgs e)
+        {            
+            currentUser.createTestHistory();
+            testHistory = currentUser.testHistory;
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Kompetensportalen
 {
     public partial class Bankstaff_Startpage : System.Web.UI.Page
     {
+        User currentUser = Loginpage.currentLogin;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

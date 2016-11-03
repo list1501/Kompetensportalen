@@ -7,6 +7,7 @@
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="kpstyle.css"/>
         <link rel="stylesheet" href="modal.css" />
+        <script src="~/scripts/test.js"></script>
         <title>Bankpersonal Hemsida</title>
     </head>
 

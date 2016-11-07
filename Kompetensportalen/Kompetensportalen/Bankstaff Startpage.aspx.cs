@@ -43,29 +43,27 @@ namespace Kompetensportalen
          
             foreach (Question q in newQuestionsList)
             {             
-                Question newQuestion = new Question();
-
                 XmlNode root = doc.DocumentElement;
-                XmlElement nyQ = doc.CreateElement("question");
+                XmlElement newQ = doc.CreateElement("question");
 
                 XmlElement qID = doc.CreateElement("ID");
-                qID.InnerText = newQuestion.id.ToString();
+                qID.InnerText = q.id.ToString();
                 XmlElement qCat = doc.CreateElement("category");
-                qCat.InnerText = newQuestion.category.ToString();
+                qCat.InnerText = q.category.ToString();
                 XmlElement qDescr = doc.CreateElement("description");
-                qDescr.InnerText = newQuestion.question;
+                qDescr.InnerText = q.question;
                 XmlElement qAns = doc.CreateElement("answer");
-                qAns.InnerText = newQuestion.correctAnswer.ToString();
+                qAns.InnerText = q.correctAnswer.ToString();
 
-                nyQ.AppendChild(qID);
-                nyQ.AppendChild(qCat);
-                nyQ.AppendChild(qDescr);
-                nyQ.AppendChild(qAns);
-                root.AppendChild(nyQ);
+                newQ.AppendChild(qID);
+                newQ.AppendChild(qCat);
+                newQ.AppendChild(qDescr);
+                newQ.AppendChild(qAns);
+                root.AppendChild(newQ);
 
                 doc.Save(path);
 
-                string xml = GetXMLFromObject(newQuestion);
+                string xml = GetXMLFromObject(newQ);
             }
         }
 

@@ -32,7 +32,7 @@ namespace Kompetensportalen
             }
             else
             {
-                n = n;
+                n = 25;
             }
 
             while (c < n)

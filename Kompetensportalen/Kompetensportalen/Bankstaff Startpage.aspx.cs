@@ -24,13 +24,13 @@ namespace Kompetensportalen
             currentUser.createNewTest();
             Test newTest = currentUser.newTest;
             List<Question> newQuestionsList = newTest.questions;
-           int type = newTest.testType;
+            int type = newTest.testType;
             XmlDocument doc = new XmlDocument();
             string path;
 
             if (type == 2)
             {
-               path = Server.MapPath("Competency Test.xml");
+                path = Server.MapPath("Competency Test.xml");
                 doc.Load(path);
                 foreach (Question q in newQuestionsList)
                 {
@@ -59,32 +59,32 @@ namespace Kompetensportalen
             }
             else if (type == 1)
             {
-               path = Server.MapPath("Qualification Test.xml");
+                path = Server.MapPath("Qualification Test.xml");
                 doc.Load(path);
-                    foreach (Question q in newQuestionsList)
-                    {
-                        XmlNode root = doc.DocumentElement;
-                        XmlElement newQ = doc.CreateElement("question");
+                foreach (Question q in newQuestionsList)
+                {
+                    XmlNode root = doc.DocumentElement;
+                    XmlElement newQ = doc.CreateElement("question");
 
-                        XmlElement qID = doc.CreateElement("ID");
-                        qID.InnerText = q.id.ToString();
-                        XmlElement qCat = doc.CreateElement("category");
-                        qCat.InnerText = q.category.ToString();
-                        XmlElement qDescr = doc.CreateElement("description");
-                        qDescr.InnerText = q.question;
-                        XmlElement qAns = doc.CreateElement("answer");
-                        qAns.InnerText = q.correctAnswer.ToString();
+                    XmlElement qID = doc.CreateElement("ID");
+                    qID.InnerText = q.id.ToString();
+                    XmlElement qCat = doc.CreateElement("category");
+                    qCat.InnerText = q.category.ToString();
+                    XmlElement qDescr = doc.CreateElement("description");
+                    qDescr.InnerText = q.question;
+                    XmlElement qAns = doc.CreateElement("answer");
+                    qAns.InnerText = q.correctAnswer.ToString();
 
-                        newQ.AppendChild(qID);
-                        newQ.AppendChild(qCat);
-                        newQ.AppendChild(qDescr);
-                        newQ.AppendChild(qAns);
-                        root.AppendChild(newQ);
+                    newQ.AppendChild(qID);
+                    newQ.AppendChild(qCat);
+                    newQ.AppendChild(qDescr);
+                    newQ.AppendChild(qAns);
+                    root.AppendChild(newQ);
 
-                        doc.Save(path);
+                    doc.Save(path);
 
-                        string xml = GetXMLFromObject(newQ);
-                    }                  
+                    string xml = GetXMLFromObject(newQ);
+                }                  
             }
         }
 

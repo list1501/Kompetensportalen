@@ -114,6 +114,7 @@
     <Content Include="Competency Test.aspx" />
     <Content Include="Competency Test.xml" />
     <Content Include="modal.css" />
+    <Content Include="pictures\background.jpg" />
     <Content Include="pictures\dosa1.jpg" />
     <Content Include="pictures\dosa2.jpg" />
     <Content Include="pictures\dosa3.jpg" />

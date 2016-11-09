@@ -31,96 +31,54 @@ namespace Kompetensportalen
             if (type == 2)
             {
                 path = Server.MapPath("Competency Test.xml");
-                doc.Load(path);
-                int i = 1;
-                foreach (Question q in newQuestionsList)
-                {                    
-                    List<Answer> newCorrectList = q.correctAnswer;
-                    List<Answer> newWrongList = q.wrongAnswer;
-
-                    XmlNode root = doc.DocumentElement;
-                    XmlElement newQ = doc.CreateElement("question");
-
-                    XmlElement qID = doc.CreateElement("ID");
-                    qID.InnerText = i.ToString();
-                    XmlElement qDbID = doc.CreateElement("dbID");
-                    qDbID.InnerText = q.id.ToString();
-                    XmlElement qCat = doc.CreateElement("category");
-                    qCat.InnerText = q.category.ToString();
-                    XmlElement qDescr = doc.CreateElement("description");
-                    qDescr.InnerText = q.question;
-
-                    newQ.AppendChild(qID);
-                    newQ.AppendChild(qCat);
-                    newQ.AppendChild(qDescr);
-
-                    foreach (Answer a in newCorrectList)
-                    {
-                        XmlElement qAns = doc.CreateElement("answer");
-                        qAns.InnerText = a.ToString();
-                        newQ.AppendChild(qAns);
-                    }
-                    foreach (Answer a in newWrongList)
-                    {
-                        XmlElement qAns = doc.CreateElement("answer");
-                        qAns.InnerText = a.ToString();
-                        newQ.AppendChild(qAns);
-                    }
-
-                    root.AppendChild(newQ);
-
-                    doc.Save(path);
-
-                    GetXMLFromObject(newQ);
-                    i++;
-                }
-                
             }
-            else if (type == 1)
+            else
             {
                 path = Server.MapPath("Qualification Test.xml");
-                doc.Load(path);
-                int i = 1;
-                foreach (Question q in newQuestionsList)
+            }
+            doc.Load(path);
+
+            int i = 1;
+            foreach (Question q in newQuestionsList)
+            {                    
+                List<Answer> newCorrectList = q.correctAnswer;
+                List<Answer> newWrongList = q.wrongAnswer;
+
+                XmlNode root = doc.DocumentElement;
+                XmlElement newQ = doc.CreateElement("question");
+
+                XmlElement qID = doc.CreateElement("ID");
+                qID.InnerText = i.ToString();
+                XmlElement qDbID = doc.CreateElement("dbID");
+                qDbID.InnerText = q.id.ToString();
+                XmlElement qCat = doc.CreateElement("category");
+                qCat.InnerText = q.category.ToString();
+                XmlElement qDescr = doc.CreateElement("description");
+                qDescr.InnerText = q.question;
+
+                newQ.AppendChild(qID);
+                newQ.AppendChild(qCat);
+                newQ.AppendChild(qDescr);
+
+                foreach (Answer a in newCorrectList)
                 {
-                    List<Answer> newCorrectList = q.correctAnswer;
-                    List<Answer> newWrongList = q.wrongAnswer;
+                    XmlElement qAns = doc.CreateElement("correctAnswer");
+                    qAns.InnerText = a.ToString();
+                    newQ.AppendChild(qAns);
+                }
+                foreach (Answer a in newWrongList)
+                {
+                    XmlElement qAns = doc.CreateElement("wrongAnswer");
+                    qAns.InnerText = a.ToString();
+                    newQ.AppendChild(qAns);
+                }
 
-                    XmlNode root = doc.DocumentElement;
-                    XmlElement newQ = doc.CreateElement("question");
+                root.AppendChild(newQ);
 
-                    XmlElement qID = doc.CreateElement("ID");
-                    qID.InnerText = i.ToString();
-                    XmlElement qDbID = doc.CreateElement("dbID");
-                    qDbID.InnerText = q.id.ToString();
-                    XmlElement qCat = doc.CreateElement("category");
-                    qCat.InnerText = q.category.ToString();
-                    XmlElement qDescr = doc.CreateElement("description");
-                    qDescr.InnerText = q.question;
-                    
-                    newQ.AppendChild(qID);
-                    newQ.AppendChild(qCat);
-                    newQ.AppendChild(qDescr);
+                doc.Save(path);
 
-                    foreach (Answer a in newCorrectList)
-                    {
-                        XmlElement qAns = doc.CreateElement("answer");
-                        qAns.InnerText = a.ToString();
-                        newQ.AppendChild(qAns);
-                    }
-                    foreach (Answer a in newWrongList)
-                    {
-                        XmlElement qAns = doc.CreateElement("answer");
-                        qAns.InnerText = a.ToString();
-                        newQ.AppendChild(qAns);
-                    }
-                    root.AppendChild(newQ);
-
-                    doc.Save(path);
-
-                    GetXMLFromObject(newQ);
-                    i++;
-                }                  
+                GetXMLFromObject(newQ);
+                i++;
             }
         }
 

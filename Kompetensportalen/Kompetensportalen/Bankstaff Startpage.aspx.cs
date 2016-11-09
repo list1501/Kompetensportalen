@@ -23,7 +23,7 @@ namespace Kompetensportalen
         {          
             currentUser.createNewTest();
             Test newTest = currentUser.newTest;
-            List<Question> newQuestionsList = newTest.questions;
+            List<Question> newQuestionsList = newTest.questions;            
             int type = newTest.testType;
             XmlDocument doc = new XmlDocument();
             string path;
@@ -34,6 +34,9 @@ namespace Kompetensportalen
                 doc.Load(path);
                 foreach (Question q in newQuestionsList)
                 {
+                    List<Answer> newCorrectList = q.correctAnswer;
+                    List<Answer> newWrongList = q.wrongAnswer;
+
                     XmlNode root = doc.DocumentElement;
                     XmlElement newQ = doc.CreateElement("question");
 

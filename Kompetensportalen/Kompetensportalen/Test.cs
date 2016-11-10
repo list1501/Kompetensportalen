@@ -18,6 +18,7 @@ namespace Kompetensportalen
         public List<Question> questions { get; set; }
 
         SQL newSQL = new SQL();
+        
 
         //Method to get questions in random order from database
         public void getQuestions(int type)
@@ -58,6 +59,12 @@ namespace Kompetensportalen
                 }
                 c++;
             }
-        }
+    }
+       
+
+        //public void passOrFail()
+        //{
+        //    if ()
+        //}
     }
 }

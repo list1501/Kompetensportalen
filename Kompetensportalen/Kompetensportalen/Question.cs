@@ -14,5 +14,18 @@ namespace Kompetensportalen
         public List<Answer> wrongAnswer { get; set; }
         public List<Answer> userAnswer { get; set; }
         public bool correct { get; set; }
+
+        public void countPoints()
+        {
+            int c = 0;
+            if (correct == true)
+            {
+                c++;
+            }            
+        }
+        
     }
+
+    
+
 }

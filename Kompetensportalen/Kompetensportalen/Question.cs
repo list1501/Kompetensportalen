@@ -17,14 +17,13 @@ namespace Kompetensportalen
 
         public void countPoints()
         {
-            int c = 0;
-            if (correct == true)
+            int counter = 0;
+            while (correct == true)
             {
-                c++;
-            }            
+                counter++;
+            }
+
         }
-        
-    }
 
     
 

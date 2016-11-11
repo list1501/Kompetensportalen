@@ -109,15 +109,12 @@
     <Content Include="Admin Test.aspx" />
     <Content Include="Bankstaff Startpage.aspx" />
     <Content Include="Bankstaff Testhistory.aspx" />
-    <Content Include="Completed Test.xml" />
     <Content Include="kpstyle.css" />
-    <Content Include="Competency Test.xml" />
     <Content Include="modal.css" />
     <Content Include="pictures\background.jpg" />
     <Content Include="pictures\dosa1.jpg" />
     <Content Include="pictures\dosa2.jpg" />
     <Content Include="pictures\dosa3.jpg" />
-    <Content Include="Qualification Test.xml" />
     <Content Include="Loginpage.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">

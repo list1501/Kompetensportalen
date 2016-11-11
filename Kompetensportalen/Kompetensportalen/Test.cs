@@ -54,8 +54,8 @@ namespace Kompetensportalen
                 }
                 if (unique == true)
                 {
-                    Question newQuestion = newSQL.getQuestion(r, testType);
-                    questions.Add(newQuestion);
+                    //Question newQuestion = newSQL.getQuestion(r, testType);
+                   // questions.Add(newQuestion);
                 }
                 c++;
             }

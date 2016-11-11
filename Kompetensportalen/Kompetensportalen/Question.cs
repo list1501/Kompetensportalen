@@ -10,9 +10,9 @@ namespace Kompetensportalen
         public int id { get; set; }
         public string question { get; set; }
         public int category { get; set; }
-        public List<Answer> correctAnswer { get; set; }
-        public List<Answer> wrongAnswer { get; set; }
-        public List<Answer> userAnswer { get; set; }
+        public string catdescription { get; set; }
+        public List<Answer> answerList { get; set; }
+        public List<Answer> userAnswerList { get; set; }
         public bool correct { get; set; }
 
         public void countPoints()
@@ -22,9 +22,6 @@ namespace Kompetensportalen
             {
                 counter++;
             }
-
         }
-
-    
-
-}
+    }
+    }

@@ -20,7 +20,7 @@ namespace Kompetensportalen
 
         public void createTestHistory()
         {
-            testHistory = newSQL.getTestHistory(username);
+     //       testHistory = newSQL.getTestHistory(username);
         }
 
         //Method to create new test

@@ -7,6 +7,7 @@ using Npgsql;
 using System.Web.Configuration;
 using System.Web.UI;
 using System.Data;
+using System.Xml;
 
 namespace Kompetensportalen
 {
@@ -15,7 +16,7 @@ namespace Kompetensportalen
         public NpgsqlConnection _conn;
         public NpgsqlCommand _cmd;
         public NpgsqlDataReader _dr;
-
+        
         //Method to open DB connection
         public void openConn()
         {
@@ -126,9 +127,9 @@ namespace Kompetensportalen
         }
 
         //Method to get test question with multiple answers
-        public Question getQuestion(int dbID, int type)
+        public Question getXML(int dbID, int type)
         {
-            Question newQuestion = new Question();
+            
             string sql;
             string id = dbID.ToString();
             int testType = type;
@@ -142,54 +143,7 @@ namespace Kompetensportalen
 
                 while (_dr.Read())
                 {
-                    newQuestion.id = (int)_dr["id"];
-                    newQuestion.question = _dr["question"].ToString();
-                    newQuestion.category = (int)_dr["category"];
-
-                    int arrayLengthCorrect;
-
-                    string sqlCorrect = "SELECT array_length(correct_answer, 1) FROM questions_qualifying WHERE id = '" + id + "'";
-                    NpgsqlDataReader _correct = sqlQuery(sqlCorrect);
-
-                    while (_correct.Read())
-                    {
-                        arrayLengthCorrect = (int)_correct["array_length"];
-
-                        int c = 0;
-
-                        while (c != arrayLengthCorrect)
-                        {
-                            Answer newCorrectAnswer = new Answer()
-                            {
-                                type = 0,
-                                text = _dr["correct_answer[" + c + "]"].ToString(),
-                            };
-                            newQuestion.correctAnswer.Add(newCorrectAnswer);
-                            c++;
-                        }
-                    }
-
-                    int arrayLengthWrong;
-                    string sqlWrong = "SELECT array_length(wrong_answer, 1) FROM questions_qualifying WHERE id = '" + id + "'";
-                    NpgsqlDataReader _wrong = sqlQuery(sqlWrong);
-
-                    while (_wrong.Read())
-                    {
-                        arrayLengthWrong = (int)_wrong["array_length"];
-
-                        int w = 0;
-
-                        while (w != arrayLengthWrong)
-                        {
-                            Answer newWrongAnswer = new Answer()
-                            {
-                                type = 1,
-                                text = _dr["wrong_answer[" + w + "]"].ToString(),
-                            };
-                            newQuestion.wrongAnswer.Add(newWrongAnswer);
-                            w++;
-                        }
-                    }
+                    
                 }
                 closeConn();
             }
@@ -202,57 +156,11 @@ namespace Kompetensportalen
 
                 while (_dr.Read())
                 {
-                    newQuestion.id = (int)_dr["id"];
-                    newQuestion.question = _dr["question"].ToString();
-                    newQuestion.category = (int)_dr["category"];
-
-                    int arrayLengthCorrect;
-
-                    string sqlCorrect = "SELECT array_length(correct_answer, 1) FROM questions_competence WHERE id = '" + id + "'";
-                    NpgsqlDataReader _correct = sqlQuery(sqlCorrect);
-
-                    while (_correct.Read())
-                    {
-                        arrayLengthCorrect = (int)_correct["array_length"];
-
-                        int c = 0;
-
-                        while (c != arrayLengthCorrect)
-                        {
-                            Answer newCorrectAnswer = new Answer()
-                            {
-                                type = 0,
-                                text = _dr["correct_answer[" + c + "]"].ToString(),
-                            };
-                            newQuestion.correctAnswer.Add(newCorrectAnswer);
-                            c++;
-                        }
-                    }
-
-                    int arrayLengthWrong;
-                    string sqlWrong = "SELECT array_length(wrong_answer, 1) FROM questions_competence WHERE id = '" + id + "'";
-                    NpgsqlDataReader _wrong = sqlQuery(sqlWrong);
-
-                    while (_wrong.Read())
-                    {
-                        arrayLengthWrong = (int)_wrong["array_length"];
-
-                        int w = 0;
-                        while (w != arrayLengthWrong)
-                        {
-                            Answer newWrongAnswer = new Answer()
-                            {
-                                type = 1,
-                                text = _dr["wrong_answer[" + w + "]"].ToString(),
-                            };
-                            newQuestion.wrongAnswer.Add(newWrongAnswer);
-                            w++;
-                        }
-                    }
+                    
                 }
                 closeConn();
             }
-            return newQuestion;
+            return newXML;
         }
     }
 }

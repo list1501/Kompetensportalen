@@ -127,7 +127,7 @@ namespace Kompetensportalen
         }
 
         //Method to get test question with multiple answers
-        public Question getXML(int dbID, int type)
+        public void getXML(int dbID, int type)
         {
             
             string sql;
@@ -160,7 +160,26 @@ namespace Kompetensportalen
                 }
                 closeConn();
             }
-            return newXML;
+        }
+
+        //Method to get current user's latest test
+        public DateTime getLatestTest(string user, DateTime date)
+        {
+            string username = user;
+            string testDate = date.ToString();
+            string sql = "SELECT * FROM finished_tests WHERE username = '" + username + "' AND date = '" + testDate + "'";
+            DateTime latestTestDate;
+            string testXML;
+
+            openConn();
+            _dr = sqlQuery(sql);
+
+            while (_dr.Read())
+            {
+
+            }
+
+            return latestTestDate;
         }
     }
 }

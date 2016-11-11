@@ -36,7 +36,7 @@
                 </ajax:ModalPopupExtender>
 
                 <asp:Panel ID="panelTest" runat="server" CssClass="modalPopup" align="center" style="display:none">
-                    Detta är ett test av en modal popup med hjälp av AJAX Toolkit<br />
+                   <br />
                     <asp:Button ID="btnCancel" runat="server" Text="Avbryt test" />
                 </asp:Panel>
                 <!-- END OF MODAL POPUP -->

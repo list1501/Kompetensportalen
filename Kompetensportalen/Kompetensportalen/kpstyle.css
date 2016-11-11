@@ -95,7 +95,7 @@ img {
 div.sections{
     text-align: center;
     padding-bottom: 50px;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.12);
     height: 200px;
     width: 100%;
 }

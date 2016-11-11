@@ -20,8 +20,8 @@ namespace Kompetensportalen
         }
 
         protected void btnStartTest_Click(object sender, EventArgs e)
-        {          
-            currentUser.createNewTest();
+        {
+            currentUser.createTest();
             Test newTest = currentUser.newTest;
             List<Question> newQuestionsList = newTest.questions;            
             int type = newTest.testType;

@@ -16,6 +16,7 @@ namespace Kompetensportalen
         public List<Test> testHistory = new List<Test>();
         public Test newTest = new Test();
         SQL newSQL = new SQL();
+        DateTime today = new DateTime();
 
         public void createTestHistory()
         {
@@ -23,20 +24,31 @@ namespace Kompetensportalen
         }
 
         //Method to create new test
-        public void createNewTest()
+        public void createTest()
         {
-            bool qual = qualified;
-            int testType = 1;
-            if (qual == true)
-            {
-                testType = 2;
-            }
-            else
-            {
-                testType = 1;
-            }
+            today = DateTime.Today;
+            DateTime testDate = latestTest;
+            string user = username;
 
-            newTest.getQuestions(testType);
+            if (testDate.Year != today.Year)
+            {
+                bool qual = qualified;
+                int testType = 1;
+                if (qual == true)
+                {
+                    testType = 2;
+                }
+                else
+                {
+                    testType = 1;
+                }
+
+                newTest.getQuestions(testType);
+            }
+            else if (testDate.Year == today.Year)
+            {
+                newTest.getLastTest(user, testDate);
+            }
         }
     }
 }

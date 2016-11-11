@@ -83,7 +83,7 @@ namespace Kompetensportalen
             while (_dr.Read())
             {
                 newUser.username = _dr["username"].ToString();
-                newUser.usertype = int.Parse(_dr["type"].ToString());
+                newUser.usertype = (int)_dr["type"];
 
                 if (newUser.usertype == 2)
                 {
@@ -113,7 +113,7 @@ namespace Kompetensportalen
 
             while (_dr.Read())
             {
-                Test newTest = new Kompetensportalen.Test()
+                Test newTest = new Test()
                 {
                     employee = _dr["employee"].ToString(),                    
                     date = (DateTime)_dr["date"],
@@ -136,7 +136,7 @@ namespace Kompetensportalen
 
             if (testType == 1)
             {
-                sql = "SELECT * FROM questions_qualifying WHERE id = '" + id + "'";
+                sql = "SELECT * FROM tests WHERE id = '" + id + "'";
 
                 openConn();
                 _dr = sqlQuery(sql);

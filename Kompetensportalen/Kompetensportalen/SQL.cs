@@ -130,89 +130,88 @@ namespace Kompetensportalen
             }
             closeConn();
             return doc;
-        }
-    }
+        }   
     #endregion Get XML from Database
 
-    //    //Method to get selected user's test history
-    //    public List<Test> getTestHistory(string usr)
-    //    {
-    //        List<Test> testHistory = new List<Test>();
-    //        string user = usr;
-    //        string sql = "SELECT * FROM finished_tests WHERE employee = '" + user + "' SORT BY username ASC ORDER BY date DESC";
+    //Method to get selected user's test history
+    public List<Test> getTestHistory(string usr)
+    {
+        List<Test> testHistory = new List<Test>();
+        string user = usr;
+        string sql = "SELECT * FROM finished_tests WHERE employee = '" + user + "' SORT BY username ASC ORDER BY date DESC";
 
-    //        openConn();
-    //        _dr = sqlQuery(sql);
+        openConn();
+        _dr = sqlQuery(sql);
 
-    //        while (_dr.Read())
-    //        {
-    //            Test newTest = new Test()
-    //            {
-    //                employee = _dr["employee"].ToString(),                    
-    //                date = (DateTime)_dr["date"],
-    //                testType = (int)_dr["type"],
-    //                passed = (bool)_dr["passed"]
-    //            };
-    //            testHistory.Add(newTest);
-    //        }
-    //        closeConn();
-    //        return testHistory;            
-    //    }
+        while (_dr.Read())
+        {
+            Test newTest = new Test()
+            {
+                employee = _dr["employee"].ToString(),
+                date = (DateTime)_dr["date"],
+                testType = (int)_dr["type"],
+                passed = (bool)_dr["passed"]
+            };
+            testHistory.Add(newTest);
+        }
+        closeConn();
+        return testHistory;
+    }
 
-    //    //Method to get test question with multiple answers
-    //    public void getXML(int dbID, int type)
-    //    {
+    //Method to get test question with multiple answers
+    public void getXML(int dbID, int type)
+    {
 
-    //        string sql;
-    //        string id = dbID.ToString();
-    //        int testType = type;
+        string sql;
+        string id = dbID.ToString();
+        int testType = type;
 
-    //        if (testType == 1)
-    //        {
-    //            sql = "SELECT * FROM tests WHERE id = '" + id + "'";
+        if (testType == 1)
+        {
+            sql = "SELECT * FROM tests WHERE id = '" + id + "'";
 
-    //            openConn();
-    //            _dr = sqlQuery(sql);
+            openConn();
+            _dr = sqlQuery(sql);
 
-    //            while (_dr.Read())
-    //            {
+            while (_dr.Read())
+            {
 
-    //            }
-    //            closeConn();
-    //        }
-    //        else if (testType == 2)
-    //        {
-    //            sql = "SELECT * FROM questions_competence WHERE id = '" + id + "'";
+            }
+            closeConn();
+        }
+        else if (testType == 2)
+        {
+            sql = "SELECT * FROM questions_competence WHERE id = '" + id + "'";
 
-    //            openConn();
-    //            _dr = sqlQuery(sql);
+            openConn();
+            _dr = sqlQuery(sql);
 
-    //            while (_dr.Read())
-    //            {
+            while (_dr.Read())
+            {
 
-    //            }
-    //            closeConn();
-    //        }
-    //    }
+            }
+            closeConn();
+        }
+    }
 
-    //    //Method to get current user's latest test
-    //    public DateTime getLatestTest(string user, DateTime date)
-    //    {
-    //        string username = user;
-    //        string testDate = date.ToString();
-    //        string sql = "SELECT * FROM finished_tests WHERE username = '" + username + "' AND date = '" + testDate + "'";
-    //        DateTime latestTestDate;
-    //        string testXML;
+    //Method to get current user's latest test
+    public DateTime getLatestTest(string user, DateTime date)
+    {
+        string username = user;
+        string testDate = date.ToString();
+        string sql = "SELECT * FROM finished_tests WHERE username = '" + username + "' AND date = '" + testDate + "'";
+        DateTime latestTestDate;
+        string testXML;
 
-    //        openConn();
-    //        _dr = sqlQuery(sql);
+        openConn();
+        _dr = sqlQuery(sql);
 
-    //        while (_dr.Read())
-    //        {
+        while (_dr.Read())
+        {
 
-    //        }
+        }
 
-    //        return latestTestDate;
-    //    }
-    //}
+        return date;
+    }
+}
 }

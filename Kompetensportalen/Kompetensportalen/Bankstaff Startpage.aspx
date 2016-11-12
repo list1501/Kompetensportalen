@@ -31,7 +31,7 @@
                     <asp:Button ID="btnStartTest" runat="server" Text="Starta testet" OnClick="btnStartTest_Click"/>
                 </div><!--content-->
 
-               <%-- <!-- MODAL POPUP STARTS HERE -->
+                <!-- MODAL POPUP STARTS HERE -->
                 <ajax:ModalPopupExtender ID="mpeTest" runat="server" PopupControlID="panelTest" TargetControlID="btnStartTest" CancelControlID="btnCancel" BackgroundCssClass="modalBackground">
                 </ajax:ModalPopupExtender>
 
@@ -39,7 +39,7 @@
                    <br />
                     <asp:Button ID="btnCancel" runat="server" Text="Avbryt test" />
                 </asp:Panel>
-                <!-- END OF MODAL POPUP -->--%>
+                <!-- END OF MODAL POPUP -->
                                        
             </div><!--main--> 
             

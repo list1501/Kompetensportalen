@@ -20,49 +20,77 @@ namespace Kompetensportalen
 
         protected void btnStartTest_Click(object sender, EventArgs e)
         {
-            //User newUser = new User();
+            User newUser = new User();
             SQL newSQL = new SQL();
             //här behövs en if sats för att se om usern ska ha test 1 eller 2(qualifying eller competency)
 
 
-            //if (newUser.usertype == 1)
-            //{
+            if (newUser.qualified)
+            {
+                XmlDocument test = newSQL.DbToXml((1));
+                List<Question> newQuestionsList = new List<Question>();
+                List<Answer> AnswerList = new List<Answer>();
 
-            //}
+                foreach (XmlNode xTest in test["Test"])
+                {
+                    Question q = new Question();
+                    q.category = Int32.Parse(xTest.Attributes["ID"].Value);
+                    q.catdescription = xTest["description"].Value;
+                    q.id = Int32.Parse(xTest.Attributes["ID"].Value);
+                    q.question = xTest["description"].Value;
 
-            //else if (newUser.usertype == 2)
-            //{
-
-            //}
-
-            XmlDocument test = newSQL.DbToXml((1));
-            List<Question> newQuestionsList = new List<Question>();
-            List<Answer> AnswerList = new List<Answer>();
-
-            foreach (XmlNode xTest in test["Test"])
-            {               
-                Question q = new Question();
-                q.category = Int32.Parse(xTest.Attributes["ID"].Value);
-                q.catdescription = xTest["description"].Value;                             
-                q.id = Int32.Parse(xTest.Attributes["ID"].Value);
-                q.question = xTest["description"].Value;
-
-                labelQuestion.Text = xTest["description"].InnerText;
+                    labelQuestion.Text = xTest["description"].InnerText;
 
                     foreach (XmlNode xA in xTest["Answer"])
                     {
                         Answer a = new Answer();
                         a.text = xA.InnerText;
-                    //a.correctOrNot = Int32.Parse(xA.Attributes["correct"].Value);
+                        //a.correctOrNot = Int32.Parse(xA.Attributes["correct"].Value);
 
-                    chBAnswers.Items.Add(xA.InnerText);
- 
-                }
+                        chBAnswers.Items.Add(xA.InnerText);
+
+                    }
                     newQuestionsList.Add(q);
-                RbAnswers.DataBind();
-            }
-                return;
+                    RbAnswers.DataBind();
+                }
+                return;            
         }
+
+            else 
+            {
+                XmlDocument test = newSQL.DbToXml((2));
+                List<Question> newQuestionsList = new List<Question>();
+                List<Answer> AnswerList = new List<Answer>();
+
+                foreach (XmlNode xTest in test["Test"])
+                {
+                    Question q = new Question();
+                    q.category = Int32.Parse(xTest.Attributes["ID"].Value);
+                    q.catdescription = xTest["description"].Value;
+                    q.id = Int32.Parse(xTest.Attributes["ID"].Value);
+                    q.question = xTest["description"].Value;
+
+                    labelQuestion.Text = xTest["description"].InnerText;
+
+                    foreach (XmlNode xA in xTest["Answer"])
+                    {
+                        Answer a = new Answer();
+                        a.text = xA.InnerText;
+                        //a.correctOrNot = Int32.Parse(xA.Attributes["correct"].Value);
+
+                        chBAnswers.Items.Add(xA.InnerText);
+
+                    }
+                    newQuestionsList.Add(q);
+                    RbAnswers.DataBind();
+                }
+                return;
+            }
+
+        }
+
+          
+            
  
 
         //currentUser.createTest();

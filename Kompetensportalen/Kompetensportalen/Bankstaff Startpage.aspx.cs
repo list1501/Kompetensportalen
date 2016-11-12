@@ -24,7 +24,6 @@ namespace Kompetensportalen
             SQL newSQL = new SQL();
             //här behövs en if sats för att se om usern ska ha test 1 eller 2(qualifying eller competency)
 
-
             if (newUser.qualified == true)
             {
                 XmlDocument test = newSQL.DbToXml((1));

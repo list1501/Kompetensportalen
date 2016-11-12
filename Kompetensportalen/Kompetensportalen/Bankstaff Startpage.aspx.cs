@@ -20,8 +20,21 @@ namespace Kompetensportalen
 
         protected void btnStartTest_Click(object sender, EventArgs e)
         {
+            //User newUser = new User();
             SQL newSQL = new SQL();
-            // här behövs en if sats för att se om usern ska ha test 1 eller 2(qualifying eller competency)
+            //här behövs en if sats för att se om usern ska ha test 1 eller 2(qualifying eller competency)
+
+
+            //if (newUser.usertype == 1)
+            //{
+
+            //}
+
+            //else if (newUser.usertype == 2)
+            //{
+
+            //}
+
             XmlDocument test = newSQL.DbToXml((1));
             List<Question> newQuestionsList = new List<Question>();
             List<Answer> AnswerList = new List<Answer>();

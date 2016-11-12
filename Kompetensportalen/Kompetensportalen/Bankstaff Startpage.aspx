@@ -35,12 +35,15 @@
                     <asp:CheckBoxList ID="chBAnswers" runat="server"></asp:CheckBoxList>
                 </div><!--content-->
 
-               <%-- <!-- MODAL POPUP STARTS HERE -->
+                <%--<!-- MODAL POPUP STARTS HERE -->
                 <ajax:ModalPopupExtender ID="mpeTest" runat="server" PopupControlID="panelTest" TargetControlID="btnStartTest" CancelControlID="btnCancel" BackgroundCssClass="modalBackground">
                 </ajax:ModalPopupExtender>
 
+                <asp:Label ID="label1" runat="server" Text=""></asp:Label>
                 <asp:Panel ID="panelTest" runat="server" CssClass="modalPopup" align="center" style="display:none">
                    <br />
+                    <asp:RadioButtonList ID="RadioButtonList1" runat="server"></asp:RadioButtonList>
+                    <asp:CheckBoxList ID="CheckBoxList1" runat="server"></asp:CheckBoxList>
                     <asp:Button ID="btnCancel" runat="server" Text="Avbryt test" />
                 </asp:Panel>
                 <!-- END OF MODAL POPUP -->--%>

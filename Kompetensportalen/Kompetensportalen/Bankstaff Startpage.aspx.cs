@@ -70,6 +70,7 @@ namespace Kompetensportalen
                     foreach (XmlNode xA in xTest["Answer"])
                     {
                         Answer a = new Answer();
+                        
                         a.text = xA.InnerText;
                         //a.correctOrNot = Int32.Parse(xA.Attributes["correct"].Value);
 

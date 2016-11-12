@@ -25,7 +25,7 @@ namespace Kompetensportalen
             //här behövs en if sats för att se om usern ska ha test 1 eller 2(qualifying eller competency)
 
 
-            if (newUser.qualified)
+            if (newUser.qualified == true)
             {
                 XmlDocument test = newSQL.DbToXml((1));
                 List<Question> newQuestionsList = new List<Question>();

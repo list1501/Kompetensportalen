@@ -35,6 +35,7 @@ namespace Kompetensportalen
         {
             currentLogin = newSQL.getLogin("list069");
             System.Diagnostics.Debug.WriteLine(currentLogin.qualified.ToString());
+            
         }
 
         //Login for user: Martin

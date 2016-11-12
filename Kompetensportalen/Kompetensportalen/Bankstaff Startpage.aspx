@@ -32,6 +32,7 @@
 
                     <asp:Label ID="labelQuestion" runat="server" Text=""></asp:Label>
                     <asp:RadioButtonList ID="RbAnswers" runat="server"></asp:RadioButtonList>
+                    <asp:CheckBoxList ID="chBAnswers" runat="server"></asp:CheckBoxList>
                 </div><!--content-->
 
                <%-- <!-- MODAL POPUP STARTS HERE -->

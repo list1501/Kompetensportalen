@@ -42,7 +42,8 @@ namespace Kompetensportalen
                         a.text = xA.InnerText;
                     //a.correctOrNot = Int32.Parse(xA.Attributes["correct"].Value);
 
-                    RbAnswers.Items.Add(xA.InnerText);
+                    chBAnswers.Items.Add(xA.InnerText);
+ 
                 }
                     newQuestionsList.Add(q);
                 RbAnswers.DataBind();

@@ -16,7 +16,8 @@ namespace Kompetensportalen
         public NpgsqlConnection _conn;
         public NpgsqlCommand _cmd;
         public NpgsqlDataReader _dr;
-        
+
+        #region Open, Close and execute Query SQL
         //Method to open DB connection
         public void openConn()
         {
@@ -69,7 +70,11 @@ namespace Kompetensportalen
                 //HÄR SKA DET STÅ NÅGOT FÖR FELMEDDELANDE
             }
         }
-        
+
+        #endregion Open, Close and execute Query SQL
+
+        #region Get User info
+
         //Method to get user info
         public User getLogin(string usr)
         {
@@ -99,10 +104,14 @@ namespace Kompetensportalen
             }
             closeConn();
             return newUser;
-        }       
+        }
 
-            //Method to get xml from database to asp.net
-    public XmlDocument DbToXml(int testIDs)
+        #endregion Get User info    
+
+
+        #region Get XML from Database
+        //Method to get xml from database to asp.net
+        public XmlDocument DbToXml(int testIDs)
     {
         XmlDocument doc = new XmlDocument();
 
@@ -126,6 +135,7 @@ namespace Kompetensportalen
         return doc;
     }
 }
+    #endregion Get XML from Database
 
     //    //Method to get selected user's test history
     //    public List<Test> getTestHistory(string usr)

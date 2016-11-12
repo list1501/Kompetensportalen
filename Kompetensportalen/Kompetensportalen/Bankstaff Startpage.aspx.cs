@@ -25,6 +25,7 @@ namespace Kompetensportalen
             
             XmlDocument test = newSQL.DbToXml((1));
             List<Question> newQuestionsList = new List<Question>();
+            List<Answer> AnswerList = new List<Answer>();
 
             foreach (XmlNode xTest in test["Test"])
             {               
@@ -43,10 +44,11 @@ namespace Kompetensportalen
                                     a.text = xA.InnerText;
                                     a.correctOrNot = Int32.Parse(xA.Attributes["correct"].Value);
                                 }
-                               //newQuestionsList.Add();
+                              newQuestionsList.Add(q);              
+                }
+                return;
             }
-            //return newQuestionsList;
-        }
+               
 
             //currentUser.createTest();
             //Test newTest = currentUser.newTest;
@@ -107,33 +109,33 @@ namespace Kompetensportalen
             //    GetXMLFromObject(newQ);
             //    i++;
             //}
-        //}
+            //}
 
-        //public static string GetXMLFromObject(object o)
-        //{
-        //    StringWriter sw = new StringWriter();
-        //    XmlTextWriter tw = null;
-        //    try
-        //    {
-        //        XmlSerializer serializer = new XmlSerializer(o.GetType());
-        //        tw = new XmlTextWriter(sw);
-        //        serializer.Serialize(tw, o);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        //Handle Exception Code
-        //    }
-        //    finally
-        //    {
-        //        sw.Close();
-        //        if (tw != null)
-        //        {
-        //            tw.Close();
-        //        }
-        //    }
-        //    return sw.ToString();
-        //}
-    }
+            //public static string GetXMLFromObject(object o)
+            //{
+            //    StringWriter sw = new StringWriter();
+            //    XmlTextWriter tw = null;
+            //    try
+            //    {
+            //        XmlSerializer serializer = new XmlSerializer(o.GetType());
+            //        tw = new XmlTextWriter(sw);
+            //        serializer.Serialize(tw, o);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        //Handle Exception Code
+            //    }
+            //    finally
+            //    {
+            //        sw.Close();
+            //        if (tw != null)
+            //        {
+            //            tw.Close();
+            //        }
+            //    }
+            //    return sw.ToString();
+            //}
+        }
 }
 }
 

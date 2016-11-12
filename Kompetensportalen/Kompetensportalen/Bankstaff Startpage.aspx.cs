@@ -56,7 +56,7 @@ namespace Kompetensportalen
                 return;            
         }
 
-            else 
+            else if (newUser.qualified == false)
             {
                 XmlDocument test = newSQL.DbToXml((2));
                 List<Question> newQuestionsList = new List<Question>();

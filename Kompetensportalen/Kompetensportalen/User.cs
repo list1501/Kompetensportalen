@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace Kompetensportalen
 {
@@ -11,7 +13,8 @@ namespace Kompetensportalen
         public string username { get; set; }
         public int usertype { get; set; }
         public bool qualified { get; set; }
-        public DateTime latestTest { get; set; }
+        public DateTime lastTestDate { get; set; }
+        public XmlDocument latestTest { get; set; }
 
         public List<Test> testHistory = new List<Test>();
         public Test newTest = new Test();
@@ -26,10 +29,10 @@ namespace Kompetensportalen
         //Method to create new test
         public void createTest()
         {           
-            DateTime testDate = latestTest;
+            DateTime testDate = lastTestDate;
             string user = username;
 
-            if (testDate.Year != today.Year || testDate != null)
+            if (testDate.Year != today.Year || testDate == null)
             {
                 bool qual = qualified;
                 int testType = 1;

@@ -15,13 +15,13 @@ namespace Kompetensportalen
         public List<Answer> userAnswerList { get; set; }
         public bool correct { get; set; }
 
-        public void countPoints()
-        {
-            int counter = 0;
-            while (correct == true)
-            {
-                counter++;
-            }
-        }
+        //public void countPoints()
+        //{
+        //    int counter = 0;
+        //    while (correct == true)
+        //    {
+        //        counter++;
+        //    }
+        //}
     }
     }

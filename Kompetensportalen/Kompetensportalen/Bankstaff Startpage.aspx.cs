@@ -24,7 +24,8 @@ namespace Kompetensportalen
             //om currentUser är qualified ska testID 2 ut, som är Competency testet
             if (currentUser.qualified == true)
             {
-                XmlDocument test = newSQL.DbToXml((2));
+                int testType = 2;
+                XmlDocument test = newSQL.DbToXml(testType);
                 List<Question> newQuestionsList = new List<Question>();
                 List<Answer> AnswerList = new List<Answer>();
 

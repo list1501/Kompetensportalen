@@ -15,8 +15,7 @@ namespace Kompetensportalen
         User currentUser = Loginpage.currentLogin;
 
         protected void Page_Load(object sender, EventArgs e)
-        {
-            
+        {        
         }
 
         protected void btnStartTest_Click(object sender, EventArgs e)
@@ -35,17 +34,24 @@ namespace Kompetensportalen
                 q.id = Int32.Parse(xTest.Attributes["ID"].Value);
                 q.question = xTest["description"].Value;
 
+                labelQuestion.Text = xTest["description"].InnerText;
+
                     foreach (XmlNode xA in xTest["Answer"])
                     {
                         Answer a = new Answer();
                         a.text = xA.InnerText;
-                        //a.correctOrNot = Int32.Parse(xA.Attributes["correct"].Value);
-                    }
-                    newQuestionsList.Add(q);              
+                    //a.correctOrNot = Int32.Parse(xA.Attributes["correct"].Value);
+
+                    RbAnswers.Items.Add(xA.InnerText);
+
+                    //RbAnswers.DataSource = xA.InnerText;
                 }
+                    newQuestionsList.Add(q);
+                RbAnswers.DataBind();
+            }
                 return;
         }
-
+ 
 
         //currentUser.createTest();
         //Test newTest = currentUser.newTest;

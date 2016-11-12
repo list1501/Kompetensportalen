@@ -29,6 +29,9 @@
                     <h3>Hem</h3>
                     
                     <asp:Button ID="btnStartTest" runat="server" Text="Starta testet" OnClick="btnStartTest_Click"/>
+
+                    <asp:Label ID="labelQuestion" runat="server" Text=""></asp:Label>
+                    <asp:RadioButtonList ID="RbAnswers" runat="server"></asp:RadioButtonList>
                 </div><!--content-->
 
                <%-- <!-- MODAL POPUP STARTS HERE -->

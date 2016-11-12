@@ -115,23 +115,23 @@ namespace Kompetensportalen
     {
         XmlDocument doc = new XmlDocument();
 
-        NpgsqlConnection conn = new NpgsqlConnection(WebConfigurationManager.ConnectionStrings["interaktiva_g12"].ConnectionString);           
+        //NpgsqlConnection conn = new NpgsqlConnection(WebConfigurationManager.ConnectionStrings["interaktiva_g12"].ConnectionString);           
 
             string getTests = "SELECT * FROM tests WHERE id = @id";
 
-        NpgsqlCommand cmd = new NpgsqlCommand(getTests, conn);
-         cmd.Parameters.AddWithValue("id", Convert.ToInt16(testIDs));
+        _cmd = new NpgsqlCommand(getTests, _conn);
+         _cmd.Parameters.AddWithValue("id", Convert.ToInt16(testIDs));
 
-        conn.Open();
+        openConn();
 
-        NpgsqlDataReader dr = cmd.ExecuteReader();
+        NpgsqlDataReader dr = _cmd.ExecuteReader();
 
         if (dr.Read())
         {
                 doc.LoadXml(dr["xml"].ToString());
 
         }
-        conn.Close();
+        closeConn();
         return doc;
     }
 }

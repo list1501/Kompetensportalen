@@ -15,7 +15,9 @@ namespace Kompetensportalen
         User currentUser = Loginpage.currentLogin;
 
         protected void Page_Load(object sender, EventArgs e)
-        {        
+        {
+
+            System.Diagnostics.Debug.WriteLine(currentUser.qualified.ToString());
         }
 
         protected void btnStartTest_Click(object sender, EventArgs e)

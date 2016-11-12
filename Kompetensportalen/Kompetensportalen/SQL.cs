@@ -84,30 +84,33 @@ namespace Kompetensportalen
 
             openConn();
             _dr = sqlQuery(sql);
-            
+
             while (_dr.Read())
             {
                 newUser.username = _dr["username"].ToString();
                 newUser.usertype = (int)_dr["type"];
+            }
+            closeConn();
 
-                if (newUser.usertype == 2)
+            if (newUser.usertype == 2)
+            {
+                string sqlEmployee = "SELECT latest_test, qualified FROM employee WHERE username = '" + user + "'";
+                
+                openConn();
+                _dr = sqlQuery(sqlEmployee);
+                while (_dr.Read())
                 {
-                    string sqlEmployee = "SELECT latest_test, qualified FROM employee WHERE username = '" + user + "'";
-                    NpgsqlDataReader _dr1 = sqlQuery(sqlEmployee);
-                    
-                    while (_dr1.Read())
+                    if (_dr["latest_test"] != null)
                     {
-                        if (_dr1["latest_test"] != null)
-                        {
-                            newUser.lastTestDate = (DateTime)_dr1["latest_test"];
-                        }
-                        if (_dr1["qualified"] != null)
-                        {
-                            newUser.qualified = Convert.ToBoolean(_dr1["qualified"].ToString());
-                        }
+                        newUser.lastTestDate = (DateTime)_dr["latest_test"];
+                    }
+                    if (_dr["qualified"] != null)
+                    {
+                        newUser.qualified = Convert.ToBoolean(_dr["qualified"].ToString());
                     }
                 }
             }
+            
             closeConn();
             return newUser;
         }

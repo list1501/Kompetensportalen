@@ -27,12 +27,14 @@ namespace Kompetensportalen
         protected void btnLoginEmma_Click(object sender, EventArgs e)
         {
             currentLogin = newSQL.getLogin("emsu101");
+            System.Diagnostics.Debug.WriteLine(currentLogin.qualified.ToString());
         }
 
         //Login for user: Linda
         protected void btnLoginLinda_Click(object sender, EventArgs e)
         {
             currentLogin = newSQL.getLogin("list069");
+            System.Diagnostics.Debug.WriteLine(currentLogin.qualified.ToString());
         }
 
         //Login for user: Martin

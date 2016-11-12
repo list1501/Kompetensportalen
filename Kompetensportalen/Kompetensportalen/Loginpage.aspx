@@ -24,11 +24,11 @@
                             </div>
                             
                             <div class="loginButton">
-                                <asp:Button ID="btnLoginEmma" runat="server" Text="Logga in Emma" OnClick="btnLoginEmma_Click" PostBackUrl="~/Bankstaff Startpage.aspx" />
+                                <asp:Button ID="btnLoginEmma" runat="server" Text="Logga in Emma" OnClick="btnLoginEmma_Click" />
                             </div>
 
                             <div class="loginButton">
-                                <asp:Button ID="btnLoginLinda" runat="server" Text="Logga in Linda" OnClick="btnLoginLinda_Click" PostBackUrl="~/Bankstaff Startpage.aspx" />    
+                                <asp:Button ID="btnLoginLinda" runat="server" Text="Logga in Linda" OnClick="btnLoginLinda_Click" />    
                             </div>
 
                             <div class="loginButton">

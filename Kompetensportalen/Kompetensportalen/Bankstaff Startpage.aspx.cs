@@ -19,12 +19,39 @@ namespace Kompetensportalen
         }
 
         protected void btnStartTest_Click(object sender, EventArgs e)
-        {
-            User newUser = new User();
+        {            
             SQL newSQL = new SQL();
-            //här behövs en if sats för att se om usern ska ha test 1 eller 2(qualifying eller competency)
+            //om currentUser är qualified ska testID 2 ut, som är Competency testet
+            if (currentUser.qualified == true)
+            {
+                XmlDocument test = newSQL.DbToXml((2));
+                List<Question> newQuestionsList = new List<Question>();
+                List<Answer> AnswerList = new List<Answer>();
 
-            if (newUser.qualified == true)
+                foreach (XmlNode xTest in test["Test"])
+                {
+                    Question q = new Question();
+                    q.category = Int32.Parse(xTest.Attributes["ID"].Value);
+                    q.catdescription = xTest["description"].Value;
+                    q.id = Int32.Parse(xTest.Attributes["ID"].Value);
+                    q.question = xTest["description"].Value;
+
+                    labelQuestion.Text = xTest["description"].InnerText;
+
+                    foreach (XmlNode xA in xTest["Answer"])
+                    {
+                        Answer a = new Answer();
+                        a.text = xA.InnerText;
+                        //a.correctOrNot = Int32.Parse(xA.Attributes["correct"].Value);
+
+                        chBAnswers.Items.Add(xA.InnerText);
+                    }
+                    newQuestionsList.Add(q);
+                    RbAnswers.DataBind();
+                }
+            }
+            //om currentUser INTE är qualified ska testID 1 ut, som är qualification testet
+            else if (currentUser.qualified == false)
             {
                 XmlDocument test = newSQL.DbToXml((1));
                 List<Question> newQuestionsList = new List<Question>();
@@ -52,38 +79,6 @@ namespace Kompetensportalen
                     newQuestionsList.Add(q);
                     RbAnswers.DataBind();
                 }
-                return;            
-        }
-
-            else if (newUser.qualified == false)
-            {
-                XmlDocument test = newSQL.DbToXml((2));
-                List<Question> newQuestionsList = new List<Question>();
-                List<Answer> AnswerList = new List<Answer>();
-
-                foreach (XmlNode xTest in test["Test"])
-                {
-                    Question q = new Question();
-                    q.category = Int32.Parse(xTest.Attributes["ID"].Value);
-                    q.catdescription = xTest["description"].Value;
-                    q.id = Int32.Parse(xTest.Attributes["ID"].Value);
-                    q.question = xTest["description"].Value;
-
-                    labelQuestion.Text = xTest["description"].InnerText;
-
-                    foreach (XmlNode xA in xTest["Answer"])
-                    {
-                        Answer a = new Answer();
-                        a.text = xA.InnerText;
-                        //a.correctOrNot = Int32.Parse(xA.Attributes["correct"].Value);
-
-                        chBAnswers.Items.Add(xA.InnerText);
-
-                    }
-                    newQuestionsList.Add(q);
-                    RbAnswers.DataBind();
-                }
-                return;
             }
 
         }

@@ -47,7 +47,7 @@ namespace Kompetensportalen
                         chBAnswers.Items.Add(xA.InnerText);
                     }
                     newQuestionsList.Add(q);
-                    RbAnswers.DataBind();
+                    chBAnswers.DataBind();
                 }
             }
             //om currentUser INTE är qualified ska testID 1 ut, som är qualification testet
@@ -77,7 +77,7 @@ namespace Kompetensportalen
 
                     }
                     newQuestionsList.Add(q);
-                    RbAnswers.DataBind();
+                    chBAnswers.DataBind();
                 }
             }
 

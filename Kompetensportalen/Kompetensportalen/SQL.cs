@@ -112,29 +112,26 @@ namespace Kompetensportalen
         #region Get XML from Database
         //Method to get xml from database to asp.net
         public XmlDocument DbToXml(int testIDs)
-    {
-        XmlDocument doc = new XmlDocument();
+        {
+            XmlDocument doc = new XmlDocument();
 
-        //NpgsqlConnection conn = new NpgsqlConnection(WebConfigurationManager.ConnectionStrings["interaktiva_g12"].ConnectionString);           
+            //NpgsqlConnection conn = new NpgsqlConnection(WebConfigurationManager.ConnectionStrings["interaktiva_g12"].ConnectionString);           
 
             string getTests = "SELECT * FROM tests WHERE id = @id";
+            openConn();
+            _cmd = new NpgsqlCommand(getTests, _conn);
+            _cmd.Parameters.AddWithValue("id", Convert.ToInt16(testIDs));        
 
-        _cmd = new NpgsqlCommand(getTests, _conn);
-         _cmd.Parameters.AddWithValue("id", Convert.ToInt16(testIDs));
+            _dr = _cmd.ExecuteReader();
 
-        openConn();
-
-        NpgsqlDataReader dr = _cmd.ExecuteReader();
-
-        if (dr.Read())
-        {
-                doc.LoadXml(dr["xml"].ToString());
-
+            if (_dr.Read())
+            {
+                doc.LoadXml(_dr["xml"].ToString());
+            }
+            closeConn();
+            return doc;
         }
-        closeConn();
-        return doc;
     }
-}
     #endregion Get XML from Database
 
     //    //Method to get selected user's test history

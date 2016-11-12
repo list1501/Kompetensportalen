@@ -29,22 +29,22 @@ namespace Kompetensportalen
 
             foreach (XmlNode xTest in test["Test"])
             {               
-                    Question q = new Question();
-                    q.category = Int32.Parse(xTest.Attributes["ID"].Value);
-                    q.catdescription = xTest["description"].Value;
+                Question q = new Question();
+                q.category = Int32.Parse(xTest.Attributes["ID"].Value);
+                q.catdescription = xTest["description"].Value;
 
-                    foreach (XmlNode xNode in xTest["question"])
-             {                               
-                q.id = Int32.Parse(xNode.Attributes["ID"].Value);
-                q.question = xNode["description"].Value;
+                foreach (XmlNode xNode in xTest["question"])
+                {                               
+                    q.id = Int32.Parse(xNode.Attributes["ID"].Value);
+                    q.question = xNode["description"].Value;
 
-                             foreach (XmlNode xA in xNode["Answer"])
-                                {
-                                    Answer a = new Answer();
-                                    a.text = xA.InnerText;
-                                    a.correctOrNot = Int32.Parse(xA.Attributes["correct"].Value);
-                                }
-                              newQuestionsList.Add(q);              
+                    foreach (XmlNode xA in xNode["Answer"])
+                    {
+                        Answer a = new Answer();
+                        a.text = xA.InnerText;
+                        a.correctOrNot = Int32.Parse(xA.Attributes["correct"].Value);
+                    }
+                    newQuestionsList.Add(q);              
                 }
                 return;
             }

@@ -16,16 +16,15 @@
                     <img src="images/euro-1105411_1920.jpg" alt="Sample Photo" />
 
 		            <ul>                  
-		                <li><i><strong><a href="#" title="Startpage"><span>Startsida</span></a></strong></i></li>
-		                <li><a href="Admin Test.aspx" title="Admin Test"><span>Prov Information</span></a></li>
+		                <li><i><strong><a href="#" title="Startpage"><span>Hemsida</span></a></strong></i></li>
                     </ul>
                 </nav>
 
                 <div id="content">
                     <div class="main">
                         <div class="Section">
-                            <h3>Startsida</h3>
-                            <asp:Button ID="btnSeeTests" runat="server" Text="Se list över användare och deras prov" OnClick="btnSeeTests_Click"/>
+                            <h3>Hemsida</h3>
+                            <asp:Button ID="btnSeeTests" runat="server" Text="Se lista över användare och deras prov" OnClick="btnSeeTests_Click"/>
                         </div>
 
                         <div class="Section">

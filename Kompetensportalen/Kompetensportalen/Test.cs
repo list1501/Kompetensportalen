@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace Kompetensportalen
 {
@@ -15,6 +17,7 @@ namespace Kompetensportalen
         public int category2 { get; set; }
         public int category3 { get; set; }
         public int totalPoints { get; set; }
+        public XmlDocument sourceFile { get; set; }
         public List<Question> questions { get; set; }
 
         SQL newSQL = new SQL();

@@ -14,15 +14,17 @@ namespace Kompetensportalen
         public int usertype { get; set; }
         public bool qualified { get; set; }
         public DateTime lastTestDate { get; set; }
-        public XmlDocument latestTest { get; set; }
+        
 
-        public List<Test> testHistory = new List<Test>();
+        //public List<Test> testHistory = new List<Test>();
         public Test newTest = new Test();
+        public Test latestTest = new Test();
         SQL newSQL = new SQL();
         DateTime today = DateTime.Today;
         User currentUser = Loginpage.currentLogin;
 
         #region Get test for user
+
         //Method to get new test for user
         public void getNewTest()
         {
@@ -36,6 +38,7 @@ namespace Kompetensportalen
             DateTime date = lastTestDate;
             latestTest = newSQL.getLastTest(user, date);
         }
+
         #endregion Get test for user
 
         //public void ShowXMLTestforUser()

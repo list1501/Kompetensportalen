@@ -16,6 +16,7 @@ namespace Kompetensportalen
         public NpgsqlConnection _conn;
         public NpgsqlCommand _cmd;
         public NpgsqlDataReader _dr;
+        public User currentUser = Loginpage.currentLogin;
 
         #region Open, Close and execute Query SQL
         //Method to open DB connection
@@ -85,10 +86,13 @@ namespace Kompetensportalen
             openConn();
             _dr = sqlQuery(sql);
 
-            while (_dr.Read())
+            if (_dr.Read())
             {
-                newUser.username = _dr["username"].ToString();
-                newUser.usertype = (int)_dr["type"];
+                while (_dr.Read())
+                {
+                    newUser.username = _dr["username"].ToString();
+                    newUser.usertype = (int)_dr["type"];
+                }
             }
             closeConn();
 
@@ -98,20 +102,24 @@ namespace Kompetensportalen
                 
                 openConn();
                 _dr = sqlQuery(sqlEmployee);
-                while (_dr.Read())
+
+                if (_dr.Read())
                 {
-                    if (_dr["latest_test"] != null)
+                    while (_dr.Read())
                     {
-                        newUser.lastTestDate = (DateTime)_dr["latest_test"];
-                    }
-                    if (_dr["qualified"] != null)
-                    {
-                        newUser.qualified = Convert.ToBoolean(_dr["qualified"].ToString());
+                        if (_dr["latest_test"] != null)
+                        {
+                            newUser.lastTestDate = (DateTime)_dr["latest_test"];
+                        }
+                        if (_dr["qualified"] != null)
+                        {
+                            newUser.qualified = Convert.ToBoolean(_dr["qualified"].ToString());
+                        }
                     }
                 }
+                closeConn();
             }
-            
-            closeConn();
+
             return newUser;
         }
 
@@ -139,11 +147,40 @@ namespace Kompetensportalen
             return doc;
         }
         
-        public XmlDocument getLastTest(string user, DateTime date)
+        public Test getLastTest(string user, DateTime date)
         {
+            Test newTest = new Test();
             XmlDocument doc = new XmlDocument();
+            string username = user;
+            string testDate = date.ToShortDateString();
+            string sql = "SELECT * FROM finished_tests WHERE username = @username AND date = @date";
 
-            return doc;
+            openConn();
+            _cmd = new NpgsqlCommand(sql, _conn);
+            _cmd.Parameters.AddWithValue("username", username);
+            _cmd.Parameters.AddWithValue("date", testDate);
+
+            _dr = _cmd.ExecuteReader();
+
+            if (_dr.Read())
+            {
+                while (_dr.Read())
+                {
+                    newTest.employee = _dr["username"].ToString();
+                    newTest.date = (DateTime)_dr["date"];
+                    newTest.testType = (int)_dr["type"];
+                    newTest.passed = Convert.ToBoolean(_dr["passed"]);
+                    newTest.totalPoints = (int)_dr["total_points"];
+                    newTest.category1 = (int)_dr["points_category1"];
+                    newTest.category2 = (int)_dr["points_category2"];
+                    newTest.category3 = (int)_dr["points_category3"];
+                    doc.LoadXml(_dr["xml"].ToString());
+                    newTest.sourceFile = doc;
+                }
+            }
+            closeConn();
+
+            return newTest;
         }   
         #endregion Get XML from Database
 

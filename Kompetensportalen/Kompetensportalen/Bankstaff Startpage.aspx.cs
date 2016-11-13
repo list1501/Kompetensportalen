@@ -22,9 +22,14 @@ namespace Kompetensportalen
                 btnStartTest.Text = "Titta på senaste testet";
                 currentUser.getLastTest();
             }
-            else if (currentUser.qualified == false || currentUser.lastTestDate.Year != today.Year)
+            else if (currentUser.qualified && currentUser.lastTestDate.Year != today.Year)
             {
-                btnStartTest.Text = "Starta testet";
+                btnStartTest.Text = "Starta ÅKU-test";
+                currentUser.getNewTest();
+            }
+            else if (currentUser.qualified == false) //Här kan vi lägga till en metodjämförelse om vi vill för att kolla om den som inte är godkänd får göra provet än. /Martin
+            {
+                btnStartTest.Text = "Starta licensieringstest";
                 currentUser.getNewTest();
             }
         }

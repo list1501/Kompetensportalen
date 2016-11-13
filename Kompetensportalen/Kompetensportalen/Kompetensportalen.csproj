@@ -108,7 +108,6 @@
   <ItemGroup>
     <Content Include="Admin Test.aspx" />
     <Content Include="Bankstaff Startpage.aspx" />
-    <Content Include="Bankstaff Testhistory.aspx" />
     <Content Include="kpstyle.css" />
     <Content Include="modal.css" />
     <Content Include="pictures\background.jpg" />
@@ -155,13 +154,6 @@
     </Compile>
     <Compile Include="Bankstaff Startpage.aspx.designer.cs">
       <DependentUpon>Bankstaff Startpage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Bankstaff Testhistory.aspx.cs">
-      <DependentUpon>Bankstaff Testhistory.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Bankstaff Testhistory.aspx.designer.cs">
-      <DependentUpon>Bankstaff Testhistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Loginpage.aspx.cs">
       <DependentUpon>Loginpage.aspx</DependentUpon>

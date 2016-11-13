@@ -52,6 +52,7 @@ namespace Kompetensportalen
             //Read from XML to temp object before randomising
             List<Question> tempQList = new List<Question>();
             XmlDocument tempX = newTest.sourceFile;
+
             foreach (XmlNode xQ in tempX["question"])
             {
                 Question q = new Question()

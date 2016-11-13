@@ -29,10 +29,14 @@
                     
                     <asp:Button ID="btnStartTest" runat="server" Text="Starta testet" OnClick="btnStartTest_Click"/>
 
+                    <div runat="server" id="questionWAnswer">
+
                     <asp:Label ID="labelQuestion" runat="server" Text=""></asp:Label>
-                    <asp:RadioButtonList ID="RbAnswers" runat="server"></asp:RadioButtonList>
                     <asp:CheckBoxList ID="chBAnswers" runat="server"></asp:CheckBoxList>
-                </div><!--content-->
+                       
+                    </div><!--questionWAnswer-->
+              
+                      </div><!--content-->
 
                 <%--<!-- MODAL POPUP STARTS HERE -->
                 <ajax:ModalPopupExtender ID="mpeTest" runat="server" PopupControlID="panelTest" TargetControlID="btnStartTest" CancelControlID="btnCancel" BackgroundCssClass="modalBackground">

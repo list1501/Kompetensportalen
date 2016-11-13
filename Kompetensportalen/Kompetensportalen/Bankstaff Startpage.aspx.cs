@@ -37,13 +37,15 @@ namespace Kompetensportalen
 
         protected void btnStartTest_Click(object sender, EventArgs e)
         {
-            currentUser.getNewTest(1);
+           currentUser.getNewTest(1);
+            
+            foreach (Question quest in getNewTest)
+            {
+                labelQuestion.Text = quest.question;
+               // chBAnswers.Items.Add(Answer.description);
+                questionWAnswer.Controls.Add(labelQuestion);
 
-        //    foreach (Question question in testToPage)
-        //    {
-        //    labelQuestion.Text = testToPage;
-        //    chBAnswers.Items.Add(xA.InnerText);
-        //}
+            }
         }
     }
 }

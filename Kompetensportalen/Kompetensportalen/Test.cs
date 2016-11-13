@@ -20,17 +20,14 @@ namespace Kompetensportalen
         public XmlDocument sourceFile { get; set; }
         public List<Question> questions { get; set; }
 
-        SQL newSQL = new SQL();
-        
-
-        //Method to get questions in random order from database
-        public void getQuestions(int type)
+        //Method to get questions in random order from XML source file
+        public void createTest()
         {
-            int testType = type;
+            int type = testType;
             int n = 25;
             int c = 0;
 
-            if (testType == 2)
+            if (type == 2)
             {
                 n = 15;
             }
@@ -57,8 +54,11 @@ namespace Kompetensportalen
                 }
                 if (unique == true)
                 {
-                    //Question newQuestion = newSQL.getQuestion(r, testType);
-                   // questions.Add(newQuestion);
+                    Question newQuestion = new Question()
+                    {
+                        id = int.Parse(sourceFile.GetElementById(r.ToString()).GetAttribute("ID")),
+                        question = sourceFile.GetElementById(r.ToString()).GetElementsByTagName("description").
+                    };
                 }
                 c++;
             }

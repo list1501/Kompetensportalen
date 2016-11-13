@@ -21,14 +21,61 @@ namespace Kompetensportalen
         public Test latestTest = new Test();
         SQL newSQL = new SQL();
         DateTime today = DateTime.Today;
-        User currentUser = Loginpage.currentLogin;
 
         #region Get test for user
 
         //Method to get new test for user
-        public void getNewTest()
+        public void getNewTest(int type)
         {
+            int testType = type;
+            newTest.employee = username;
+            newTest.date = today;
+            newTest.testType = testType;
 
+            //Create source file from XML stored in database
+            newTest.sourceFile = newSQL.DbToXml(testType);
+
+            #region Randomise questions and add to object from XML
+
+            int n = 25;
+            int c = 0;
+
+            if (testType == 2)
+            {
+                n = 15;
+            }
+            else if (testType == 1)
+            {
+                n = 25;
+            }
+
+            //Read from XML to temp object before randomising
+            List<Question> tempQList = new List<Question>();
+            XmlDocument tempX = newTest.sourceFile;
+            foreach (XmlNode xQ in tempX["question"])
+            {
+                Question q = new Question()
+                {
+                    id = Int32.Parse(tempX.Attributes["ID"].Value),
+                    category = Int32.Parse(tempX.Attributes["categoryID"].Value),
+                    question = tempX["description"].InnerText,
+                    feedbackCorrect = tempX["feedbackCorrect"].InnerText,
+                    feedbackWrong = tempX["feedbackWrong"].InnerText
+                };
+                foreach (XmlNode xA in tempX["question"])
+                {
+                    Answer a = new Answer()
+                    {
+                        id = tempX.Attributes["ID"].Value,
+                        correct = Convert.ToBoolean(tempX.Attributes["correct"].Value),
+                        text = tempX["answer"].InnerText
+                    };
+                    q.answerList.Add(a);
+                }
+                tempQList.Add(q);
+            }
+            
+            #endregion
         }
 
         //Method to get user's latest test
@@ -37,6 +84,8 @@ namespace Kompetensportalen
             string user = username;
             DateTime date = lastTestDate;
             latestTest = newSQL.getLastTest(user, date);
+
+            //latestTest.createLastTest();
         }
 
         #endregion Get test for user
@@ -113,36 +162,36 @@ namespace Kompetensportalen
         }
 
         //Method to create new test
-        public void createTest()
-        {           
-            DateTime testDate = lastTestDate;
-            string user = username;
+        //public void createTest()
+        //{           
+        //    DateTime testDate = lastTestDate;
+        //    string user = username;
 
-            if (testDate.Year != today.Year || testDate == null)
-            {
-                bool qual = qualified;
-                int testType = 1;
-                if (qual == true)
-                {
-                    testType = 2;
-                }
-                else
-                {
-                    testType = 1;
-                }
+        //    if (testDate.Year != today.Year || testDate == null)
+        //    {
+        //        bool qual = qualified;
+        //        int testType = 1;
+        //        if (qual == true)
+        //        {
+        //            testType = 2;
+        //        }
+        //        else
+        //        {
+        //            testType = 1;
+        //        }
 
-                newTest.getQuestions(testType);
-            }
-            else if (testDate.Year == today.Year)
-            {
-                getLastTest(user, testDate);
-            }
-        }
+        //        newTest.getQuestions(testType);
+        //    }
+        //    else if (testDate.Year == today.Year)
+        //    {
+        //        getLastTest(user, testDate);
+        //    }
+        //}
 
-        public void getLastTest(string user, DateTime date)
-        {
-            string username = user;
-            DateTime latestDate = date;
-        }
+        //public void getLastTest(string user, DateTime date)
+        //{
+        //    string username = user;
+        //    DateTime latestDate = date;
+        //}
     }
 }

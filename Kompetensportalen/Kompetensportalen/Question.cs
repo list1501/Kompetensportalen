@@ -8,8 +8,10 @@ namespace Kompetensportalen
     public class Question
     {
         public int id { get; set; }
-        public string question { get; set; }
         public int category { get; set; }
+        public string question { get; set; }
+        public string feedbackCorrect { get; set; }
+        public string feedbackWrong { get; set; }
         public string catdescription { get; set; }
         public List<Answer> answerList { get; set; }
         public List<Answer> userAnswerList { get; set; }

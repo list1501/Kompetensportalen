@@ -52,24 +52,28 @@ namespace Kompetensportalen
             //Read from XML to temp object before randomising
             List<Question> tempQList = new List<Question>();
             XmlDocument tempX = newTest.sourceFile;
-
-            foreach (XmlNode xQ in tempX["question"])
+            XmlNodeList xQList = tempX.SelectNodes("Test/question");
+            
+            foreach (XmlNode xQ in xQList)
             {
                 Question q = new Question()
                 {
-                    id = Int32.Parse(tempX.Attributes["ID"].Value),
-                    category = Int32.Parse(tempX.Attributes["categoryID"].Value),
-                    question = tempX["description"].InnerText,
-                    feedbackCorrect = tempX["feedbackCorrect"].InnerText,
-                    feedbackWrong = tempX["feedbackWrong"].InnerText
+                    id = int.Parse(xQ.Attributes["ID"].Value),
+                    category = int.Parse(xQ.Attributes["categoryID"].Value),
+                    question = xQ["description"].InnerText,
+                    feedbackCorrect = xQ["feedbackCorrect"].InnerText,
+                    feedbackWrong = xQ["feedbackWrong"].InnerText
                 };
-                foreach (XmlNode xA in tempX["question"])
+
+                XmlNodeList xAList = xQ.SelectNodes("answer");
+
+                foreach (XmlNode xA in xAList)
                 {
                     Answer a = new Answer()
                     {
-                        id = tempX.Attributes["ID"].Value,
-                        correct = Convert.ToBoolean(tempX.Attributes["correct"].Value),
-                        text = tempX["answer"].InnerText
+                        id = xA.Attributes["ID"].Value,
+                        correct = Convert.ToBoolean(xA.Attributes["correct"].Value),
+                        text = xA["answer"].InnerText
                     };
                     q.answerList.Add(a);
                 }

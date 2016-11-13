@@ -14,8 +14,7 @@ namespace Kompetensportalen
 
         protected void Page_Load(object sender, EventArgs e)
         {            
-            currentUser.createTestHistory();
-            testHistory = currentUser.testHistory;
+            
         }
     }
 }

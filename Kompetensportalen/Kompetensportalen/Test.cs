@@ -23,45 +23,45 @@ namespace Kompetensportalen
         //Method to get questions in random order from XML source file
         public void createTest()
         {
-            int type = testType;
-            int n = 25;
-            int c = 0;
+            //int type = testType;
+            //int n = 25;
+            //int c = 0;
 
-            if (type == 2)
-            {
-                n = 15;
-            }
-            else
-            {
-                n = 25;
-            }
+            //if (type == 2)
+            //{
+            //    n = 15;
+            //}
+            //else
+            //{
+            //    n = 25;
+            //}
 
-            while (c < n)
-            {
-                Random rand = new Random();
-                int r = rand.Next(1, n);
-                bool unique = true;
-                foreach (Question q in questions)
-                {
-                    if (r == q.id)
-                    {
-                        unique = false;
-                    }
-                    else
-                    {
-                        unique = true;
-                    }
-                }
-                if (unique == true)
-                {
-                    Question newQuestion = new Question()
-                    {
-                        id = int.Parse(sourceFile.GetElementById(r.ToString()).GetAttribute("ID")),
-                        question = sourceFile.GetElementById(r.ToString()).GetElementsByTagName("description").
-                    };
-                }
-                c++;
-            }
+            //while (c < n)
+            //{
+            //    Random rand = new Random();
+            //    int r = rand.Next(1, n);
+            //    bool unique = true;
+            //    foreach (Question q in questions)
+            //    {
+            //        if (r == q.id)
+            //        {
+            //            unique = false;
+            //        }
+            //        else
+            //        {
+            //            unique = true;
+            //        }
+            //    }
+            //    if (unique == true)
+            //    {
+            //        Question newQuestion = new Question()
+            //        {
+            //            id = int.Parse(sourceFile.GetElementById(r.ToString()).GetAttribute("ID")),
+            //            question = sourceFile.GetElementById(r.ToString()).GetElementsByTagName("description").
+            //        };
+            //    }
+            //    c++;
+            //}
     }
        
 

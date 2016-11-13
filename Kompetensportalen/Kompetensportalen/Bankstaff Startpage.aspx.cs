@@ -39,13 +39,13 @@ namespace Kompetensportalen
         {
            currentUser.getNewTest(1);
             
-            foreach (Question quest in getNewTest)
-            {
-                labelQuestion.Text = quest.question;
-               // chBAnswers.Items.Add(Answer.description);
-                questionWAnswer.Controls.Add(labelQuestion);
+            //foreach (Question quest in getNewTest)
+            //{
+            //    labelQuestion.Text = quest.question;
+            //    chBAnswers.Items.Add(Answer.description);
+            //    questionWAnswer.Controls.Add(labelQuestion);
 
-            }
+            //}
         }
     }
 }

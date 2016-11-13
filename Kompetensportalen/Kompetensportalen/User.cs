@@ -72,7 +72,7 @@ namespace Kompetensportalen
                     Answer a = new Answer()
                     {
                         id = xA.Attributes["ID"].Value,
-                        //correct = Convert.ToBoolean(xA.Attributes["correct"].Value),
+                        correct = Convert.ToBoolean(xA.Attributes["correct"].Value),
                         text = xA["Answer"].InnerText
                     };
                     q.answerList.Add(a);
@@ -96,6 +96,7 @@ namespace Kompetensportalen
 
         #endregion Get test for user
 
+        #region old code, might be useful
         //public void ShowXMLTestforUser()
         //{
         //    SQL newSQL = new SQL();
@@ -161,6 +162,7 @@ namespace Kompetensportalen
         //        }
         //    }
         //}
+        #endregion old code, might be useful
 
         public void createTestHistory()
         {

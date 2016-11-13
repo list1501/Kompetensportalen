@@ -106,7 +106,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin Test.aspx" />
     <Content Include="Bankstaff Startpage.aspx" />
     <Content Include="kpstyle.css" />
     <Content Include="modal.css" />
@@ -139,13 +138,6 @@
     </Compile>
     <Compile Include="Admin Startpage.aspx.designer.cs">
       <DependentUpon>Admin Startpage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin Test.aspx.cs">
-      <DependentUpon>Admin Test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin Test.aspx.designer.cs">
-      <DependentUpon>Admin Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="Answer.cs" />
     <Compile Include="Bankstaff Startpage.aspx.cs">

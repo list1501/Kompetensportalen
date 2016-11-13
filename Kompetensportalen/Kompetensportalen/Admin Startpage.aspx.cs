@@ -13,5 +13,10 @@ namespace Kompetensportalen
         {
             User currentUser = Loginpage.currentLogin;
         }
+
+        protected void btnSeeTests_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

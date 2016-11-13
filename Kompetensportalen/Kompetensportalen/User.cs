@@ -67,19 +67,19 @@ namespace Kompetensportalen
 
                 XmlNodeList xAList = xQ.SelectNodes("Answer");
 
-                foreach (XmlNode xA in xAList)
-                {
-                    Answer a = new Answer()
-                    {
-                        id = xA.Attributes["ID"].Value,
-                        correct = Convert.ToBoolean(xA.Attributes["correct"].Value),
-                        text = xA["Answer"].InnerText
-                    };
-                    q.answerList.Add(a);
-                }
+                //foreach (XmlNode xA in xAList)
+                //{
+                //    Answer a = new Answer()
+                //    {                    
+                //        id = xA.Attributes["ID"].Value,
+                //        correct = Convert.ToBoolean(xA.Attributes["correct"].Value),
+                //        text = xA["Answer"].InnerText
+                //    };
+                //    q.answerList.Add(a);
+                
                 tempQList.Add(q);
             }
-            System.Diagnostics.Debug.WriteLine(tempQList[5].answerList[1].text);
+            //System.Diagnostics.Debug.WriteLine(tempQList[5].answerList[1].text);
             
             #endregion
         }

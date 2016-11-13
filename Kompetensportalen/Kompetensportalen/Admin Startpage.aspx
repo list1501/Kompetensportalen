@@ -25,7 +25,7 @@
                     <div class="main">
                         <div class="Section">
                             <h3>Startsida</h3>
-                            <p>Random info för admin</p>
+                            <asp:Button ID="btnSeeTests" runat="server" Text="Se list över användare och deras prov" OnClick="btnSeeTests_Click"/>
                         </div>
 
                         <div class="Section">

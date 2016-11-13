@@ -21,7 +21,6 @@
 
 		        <ul>                  
 		            <li><i><strong><a href="#" title="Startsida"><span>Startsida</span></a></strong></i></li>
-		            <li><a href="Bankstaff Testhistory.aspx" title="Provhistorik"><span>Provhistorik</span></a></li>
 		        </ul>
             </nav>
             <div class="main">

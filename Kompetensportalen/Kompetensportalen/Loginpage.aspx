@@ -20,7 +20,7 @@
                             </div>
 
                             <div class="loginButton">
-                                <asp:Button ID="btnLoginAdmin" runat="server" Text="Logga in Admin" OnClick="btnLoginAdmin_Click" PostBackUrl="~/Admin Startpage.aspx" />
+                                <asp:Button ID="btnLoginAdmin" runat="server" Text="Logga in Admin" OnClick="btnLoginAdmin_Click" />
                             </div>
                             
                             <div class="loginButton">
@@ -32,7 +32,7 @@
                             </div>
 
                             <div class="loginButton">
-                                <asp:Button ID="btnLoginMartin" runat="server" Text="Logga in Martin" OnClick="btnLoginMartin_Click" PostBackUrl="~/Bankstaff Startpage.aspx" />
+                                <asp:Button ID="btnLoginMartin" runat="server" Text="Logga in Martin" OnClick="btnLoginMartin_Click" />
                             </div>
                         </div><!--sections clearfix-->  
                     </div><!--main--> 

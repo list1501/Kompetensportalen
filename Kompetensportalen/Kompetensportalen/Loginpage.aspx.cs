@@ -21,27 +21,29 @@ namespace Kompetensportalen
         protected void btnLoginAdmin_Click(object sender, EventArgs e)
         {
             currentLogin = newSQL.getLogin("admin");
+            Server.Transfer("Admin Startpage.aspx");
         }
 
         //Login for user: Emma
         protected void btnLoginEmma_Click(object sender, EventArgs e)
         {
             currentLogin = newSQL.getLogin("emsu101");
-            System.Diagnostics.Debug.WriteLine(currentLogin.qualified.ToString());
+            Server.Transfer("Bankstaff Startpage.aspx");
         }
 
         //Login for user: Linda
         protected void btnLoginLinda_Click(object sender, EventArgs e)
         {
             currentLogin = newSQL.getLogin("list069");
-            System.Diagnostics.Debug.WriteLine(currentLogin.qualified.ToString());
-            
+            Server.Transfer("Bankstaff Startpage.aspx");
+
         }
 
         //Login for user: Martin
         protected void btnLoginMartin_Click(object sender, EventArgs e)
         {
             currentLogin = newSQL.getLogin("maca007");
+            Server.Transfer("Bankstaff Startpage.aspx");
         }
     }
 }

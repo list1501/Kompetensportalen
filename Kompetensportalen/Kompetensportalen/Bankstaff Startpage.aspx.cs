@@ -13,11 +13,20 @@ namespace Kompetensportalen
     public partial class Bankstaff_Startpage : System.Web.UI.Page
     {
         User currentUser = Loginpage.currentLogin;
+        DateTime today = DateTime.Today;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            System.Diagnostics.Debug.WriteLine(currentUser.qualified.ToString());
+            if (currentUser.qualified && currentUser.lastTestDate.Year == today.Year)
+            {
+                btnStartTest.Text = "Titta på senaste testet";
+                currentUser.getLastTest();
+            }
+            else if (currentUser.qualified == false || currentUser.lastTestDate.Year != today.Year)
+            {
+                btnStartTest.Text = "Starta testet";
+                currentUser.getNewTest();
+            }
         }
 
         protected void btnStartTest_Click(object sender, EventArgs e)

@@ -124,9 +124,9 @@ namespace Kompetensportalen
         {
             XmlDocument doc = new XmlDocument();          
 
-            string getTests = "SELECT * FROM tests WHERE id = @id";
+            string getTest = "SELECT * FROM tests WHERE id = @id";
             openConn();
-            _cmd = new NpgsqlCommand(getTests, _conn);
+            _cmd = new NpgsqlCommand(getTest, _conn);
             _cmd.Parameters.AddWithValue("id", Convert.ToInt16(testIDs));        
 
             _dr = _cmd.ExecuteReader();
@@ -137,8 +137,15 @@ namespace Kompetensportalen
             }
             closeConn();
             return doc;
+        }
+        
+        public XmlDocument getLastTest(string user, DateTime date)
+        {
+            XmlDocument doc = new XmlDocument();
+
+            return doc;
         }   
-    #endregion Get XML from Database
+        #endregion Get XML from Database
 
         //Method to get selected user's test history
         public List<Test> getTestHistory(string usr)

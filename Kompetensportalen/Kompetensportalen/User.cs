@@ -22,6 +22,22 @@ namespace Kompetensportalen
         DateTime today = DateTime.Today;
         User currentUser = Loginpage.currentLogin;
 
+        #region Get test for user
+        //Method to get new test for user
+        public void getNewTest()
+        {
+
+        }
+
+        //Method to get user's latest test
+        public void getLastTest()
+        {
+            string user = username;
+            DateTime date = lastTestDate;
+            latestTest = newSQL.getLastTest(user, date);
+        }
+        #endregion Get test for user
+
         //public void ShowXMLTestforUser()
         //{
         //    SQL newSQL = new SQL();

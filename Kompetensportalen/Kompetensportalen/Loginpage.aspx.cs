@@ -21,24 +21,24 @@ namespace Kompetensportalen
         protected void btnLoginAdmin_Click(object sender, EventArgs e)
         {
             currentLogin = newSQL.getLogin("admin");
-            Server.Transfer("Admin Startpage.aspx");
             System.Diagnostics.Debug.WriteLine(currentLogin.username);
+            Server.Transfer("Admin Startpage.aspx");
         }
 
         //Login for user: Emma
         protected void btnLoginEmma_Click(object sender, EventArgs e)
         {
             currentLogin = newSQL.getLogin("emsu101");
-            Server.Transfer("Bankstaff Startpage.aspx");
             System.Diagnostics.Debug.WriteLine(currentLogin.username);
+            Server.Transfer("Bankstaff Startpage.aspx");
         }
 
         //Login for user: Linda
         protected void btnLoginLinda_Click(object sender, EventArgs e)
         {
             currentLogin = newSQL.getLogin("list069");
-            Server.Transfer("Bankstaff Startpage.aspx");
             System.Diagnostics.Debug.WriteLine(currentLogin.username);
+            Server.Transfer("Bankstaff Startpage.aspx");
 
         }
 
@@ -46,8 +46,8 @@ namespace Kompetensportalen
         protected void btnLoginMartin_Click(object sender, EventArgs e)
         {
             currentLogin = newSQL.getLogin("maca007");
-            Server.Transfer("Bankstaff Startpage.aspx");
             System.Diagnostics.Debug.WriteLine(currentLogin.username);
+            Server.Transfer("Bankstaff Startpage.aspx");
         }
     }
 }

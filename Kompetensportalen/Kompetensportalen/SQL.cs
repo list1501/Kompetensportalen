@@ -44,11 +44,10 @@ namespace Kompetensportalen
         }
 
         //Method to execute Query in DB
-        public NpgsqlDataReader sqlQuery(string sql)
+        public NpgsqlDataReader sqlQuery()
         {
             try
             {
-                _cmd = new NpgsqlCommand(sql, _conn);
                 _dr = _cmd.ExecuteReader();
                 return _dr;
             }
@@ -81,10 +80,13 @@ namespace Kompetensportalen
         {
             User newUser = new User();
             string user = usr;
-            string sql = "SELECT * FROM users WHERE username = '" + user + "'";
 
             openConn();
-            _dr = sqlQuery(sql);
+            string sql = "SELECT * FROM users WHERE username = @user";
+            _cmd = new NpgsqlCommand(sql, _conn);
+            _cmd.Parameters.AddWithValue("user", user);
+            
+            _dr = sqlQuery();
 
           
             while (_dr.Read())
@@ -96,10 +98,12 @@ namespace Kompetensportalen
 
             if (newUser.usertype == 2)
             {
-                string sqlEmployee = "SELECT latest_test, qualified FROM employee WHERE username = '" + user + "'";
-                
                 openConn();
-                _dr = sqlQuery(sqlEmployee);
+                string sqlEmployee = "SELECT latest_test, qualified FROM employee WHERE username = @user";
+                _cmd = new NpgsqlCommand(sqlEmployee, _conn);
+                _cmd.Parameters.AddWithValue("user", user);
+                
+                _dr = sqlQuery();
                 
                 while (_dr.Read())
                 {
@@ -182,10 +186,12 @@ namespace Kompetensportalen
         {
             List<Test> testHistory = new List<Test>();
             string user = usr;
-            string sql = "SELECT * FROM finished_tests WHERE employee = '" + user + "' SORT BY username ASC ORDER BY date DESC";
-
             openConn();
-            _dr = sqlQuery(sql);
+            string sql = "SELECT * FROM finished_tests WHERE employee = @user SORT BY username ASC ORDER BY date DESC";
+            _cmd = new NpgsqlCommand(sql, _conn);
+            _cmd.Parameters.AddWithValue("user", user);
+
+            _dr = sqlQuery();
 
             while (_dr.Read())
             {

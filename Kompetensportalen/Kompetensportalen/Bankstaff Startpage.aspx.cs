@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -37,18 +38,35 @@ namespace Kompetensportalen
 
         protected void btnStartTest_Click(object sender, EventArgs e)
         {
-           currentUser.getNewTest(1);
-            
-            //foreach (Question quest in getNewTest)
-            //{
-            //    labelQuestion.Text = quest.question;
-            //    chBAnswers.Items.Add(Answer.description);
-            //    questionWAnswer.Controls.Add(labelQuestion);
+            //TimerforTest.Enabled = true;
+            //TimerforTest.Interval = 300000;
+            //double counter = TimerforTest.Interval;
 
+            //counter++;
+            //if (counter >= 300000)
+            //{
+            //    panelTest.Close;
+            //    MessageBox.Show("Tiden är slut!");
             //}
-        }
+            
+            //int questions = currentUser.tempQList();
+
+            //for (int q = 0 < questions++)
+            //{
+            //    qlabel.Text(currentUser.getNewTest);
+            //    chBAnswers.Items.Add(a);
+            //}
+
+                //when pressing button "End test" timer is stopped;
+                //if (btnStopTest_Click = true)
+                //{
+                //    TimerforTest.Enabled = false;
+                //}
+                }
+            }
     }
-}
+    
+
 
 
 

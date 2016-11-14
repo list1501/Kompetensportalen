@@ -53,31 +53,55 @@ namespace Kompetensportalen
             XmlNodeList xQList = tempX.SelectNodes("Test/question");
             
             foreach (XmlNode xQ in xQList)
-            {
-                List<Answer> answerList = new List<Answer>();
-                XmlNodeList xAList = xQ.SelectNodes("question/Answer");
+            {   
                 Question q = new Question()
                 {
                     id = int.Parse(xQ.Attributes["ID"].Value),
                     category = int.Parse(xQ.Attributes["categoryID"].Value),
                     question = xQ["description"].InnerText,
                     feedbackCorrect = xQ["feedbackCorrect"].InnerText,
-                    feedbackWrong = xQ["feedbackWrong"].InnerText
+                    feedbackWrong = xQ["feedbackWrong"].InnerText                    
                 };
-                foreach (XmlNode xA in xAList)
-                {
-                    Answer a = new Answer()
-                    {
-                        id = xA.Attributes["ansID"].Value,
-                        correct = Convert.ToBoolean(xA.Attributes["correct"].Value),
-                        text = xA["Answer"].InnerText
-                    };
-                    answerList.Add(a);
-                }
-                q.answerList = answerList;
+
+                List<XmlNode> aNodes = new List<XmlNode>();
+                List<Answer> answerList = new List<Answer>();
+
+                
+
+                //foreach (XmlNode xA in xAList)
+                //{
+                //    if (xA.InnerXml == "Answer")
+                //    {
+                //        Answer a = new Answer()
+                //        {
+                //            id = xA.Attributes["ansID"].Value,
+                //            correct = Convert.ToBoolean(xA.Attributes["correct"].Value),
+                //            text = xA.InnerText
+                //        };
+                //        answerList.Add(a);
+                //        System.Diagnostics.Debug.WriteLine(a.text);
+                //    }
+                //}
+                //q.answerList = answerList;
                 tempQList.Add(q);
             }
-            System.Diagnostics.Debug.WriteLine(tempQList[5].answerList);
+
+            foreach (Question q in tempQList)
+            {
+                int id = q.id;
+                
+                foreach (XmlNode xQ in xQList)
+                {
+                    if (xQ.Attributes["ID"].Value == id.ToString())
+                    {
+                        
+                        Answer a = new Answer()
+                        {
+                            id = xQ
+                        };
+                    }
+                }
+            }
             
             #endregion
         }

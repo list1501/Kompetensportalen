@@ -18,8 +18,7 @@ namespace Kompetensportalen
         public int category3 { get; set; }
         public int totalPoints { get; set; }
         public XmlDocument sourceFile { get; set; }
-
-        public List<Question> questions = new List<Question>();
+        public List<Question> questions { get; set; }
 
         //Method to get questions in random order from XML source file
         public void createTest()

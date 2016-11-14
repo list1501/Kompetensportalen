@@ -63,11 +63,27 @@ namespace Kompetensportalen
             //    c++;
             //}
     }
-       
 
-        //public void passOrFail()
+
+        //Question answerlist = new Question();
+        ////method pass och fail
+        //public void passorfail()
         //{
-        //    if ()
-        //}
+        //    //om man först själv räknar ut hur många frågor som är antal rätt % osv...
+        //    if (category1 == 13 && category2 == 13 && category3 == 10 && totalPoints < 50)
+        //    {
+        //        label1.text = "grattis du klarade testet";
+        //        answerlist.userAnswerList.Add(answer);
+        //        XmlElement svar = new XmlElement("Svar",
+        //        new XmlAttribute("answer"));
+        //        Doc.Root.Add(svar);
+        //        doc.save(answer.xml);
+        //    }
+
+        //    else
+        //    {
+        //        label1.text = "Du klarade inte detta test.";
+        //    }
+        }
     }
 }

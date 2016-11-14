@@ -62,9 +62,8 @@ namespace Kompetensportalen
                     feedbackCorrect = xQ["feedbackCorrect"].InnerText,
                     feedbackWrong = xQ["feedbackWrong"].InnerText                    
                 };
-
-                List<XmlNode> aNodes = new List<XmlNode>();
-                List<Answer> answerList = new List<Answer>();
+                System.Diagnostics.Debug.WriteLine(q.feedbackWrong);
+                //for (int i = 0; i < )
 
                 
 
@@ -84,24 +83,7 @@ namespace Kompetensportalen
                 //}
                 //q.answerList = answerList;
                 tempQList.Add(q);
-            }
-
-            foreach (Question q in tempQList)
-            {
-                int id = q.id;
-                
-                foreach (XmlNode xQ in xQList)
-                {
-                    if (xQ.Attributes["ID"].Value == id.ToString())
-                    {
-                        
-                        Answer a = new Answer()
-                        {
-                            id = xQ
-                        };
-                    }
-                }
-            }
+            }           
             
             #endregion
         }

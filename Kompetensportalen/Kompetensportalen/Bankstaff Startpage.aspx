@@ -28,6 +28,7 @@
                     <h3>Hem</h3>
                     
                     <asp:Button ID="btnStartTest" runat="server" Text="Starta testet" OnClick="btnStartTest_Click"/>
+                    <asp:Timer ID="TimerforTest" runat="server" Enabled="false" Interval="1000"></asp:Timer>
 
                     <div runat="server" id="questionWAnswer">
 

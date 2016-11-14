@@ -84,24 +84,25 @@ namespace Kompetensportalen
                 //}
                 //q.answerList = answerList;
                 tempQList.Add(q);
+                
             }
 
-            foreach (Question q in tempQList)
-            {
-                int id = q.id;
+            //foreach (Question q in tempQList)
+            //{
+            //    int id = q.id;
                 
-                foreach (XmlNode xQ in xQList)
-                {
-                    if (xQ.Attributes["ID"].Value == id.ToString())
-                    {
+            //    foreach (XmlNode xQ in xQList)
+            //    {
+            //        if (xQ.Attributes["ID"].Value == id.ToString())
+            //        {
                         
-                        Answer a = new Answer()
-                        {
-                            id = xQ
-                        };
-                    }
-                }
-            }
+            //            Answer a = new Answer()
+            //            {
+            //                id = xQ
+            //            };
+            //        }
+            //    }
+            //}
             
             #endregion
         }

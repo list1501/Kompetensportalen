@@ -53,17 +53,17 @@ namespace Kompetensportalen
             XmlNodeList xQList = tempX.SelectNodes("Test/question");
             
             foreach (XmlNode xQ in xQList)
-            {   
+            {
+
                 Question q = new Question()
                 {
                     id = int.Parse(xQ.Attributes["ID"].Value),
                     category = int.Parse(xQ.Attributes["categoryID"].Value),
                     question = xQ["description"].InnerText,
                     feedbackCorrect = xQ["feedbackCorrect"].InnerText,
-                    feedbackWrong = xQ["feedbackWrong"].InnerText                    
+                    feedbackWrong = xQ["feedbackWrong"].InnerText,
+                    answerList = new List<Answer>()                    
                 };
-
-                List<Answer> aList = new List<Answer>();
 
                 foreach (XmlNode node in xQ.ChildNodes)
                 {
@@ -71,18 +71,16 @@ namespace Kompetensportalen
                     {
                         Answer a = new Answer()
                         {
-                            id = node.Attributes["ansID"].Value,
+                            id = node.Attributes["ansId"].Value,
                             correct = Convert.ToBoolean(node.Attributes["correct"].Value),
                             text = node.InnerText
                         };
-                        aList.Add(a);
+                        q.answerList.Add(a);
                     }
                 }
-                q.answerList = aList;
                 tempQList.Add(q);
             }
-            System.Diagnostics.Debug.WriteLine(tempQList[3].answerList[1].text);           
-            
+            System.Diagnostics.Debug.WriteLine(tempQList[5].answerList[1].text);
             #endregion
         }
 

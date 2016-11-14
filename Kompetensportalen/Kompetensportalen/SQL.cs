@@ -86,13 +86,11 @@ namespace Kompetensportalen
             openConn();
             _dr = sqlQuery(sql);
 
-            if (_dr.Read())
+          
+            while (_dr.Read())
             {
-                while (_dr.Read())
-                {
-                    newUser.username = _dr["username"].ToString();
-                    newUser.usertype = (int)_dr["type"];
-                }
+                newUser.username = _dr["username"].ToString();
+                newUser.usertype = (int)_dr["type"];
             }
             closeConn();
 
@@ -102,19 +100,16 @@ namespace Kompetensportalen
                 
                 openConn();
                 _dr = sqlQuery(sqlEmployee);
-
-                if (_dr.Read())
+                
+                while (_dr.Read())
                 {
-                    while (_dr.Read())
+                    if (_dr["latest_test"] != null)
                     {
-                        if (_dr["latest_test"] != null)
-                        {
-                            newUser.lastTestDate = (DateTime)_dr["latest_test"];
-                        }
-                        if (_dr["qualified"] != null)
-                        {
-                            newUser.qualified = Convert.ToBoolean(_dr["qualified"].ToString());
-                        }
+                        newUser.lastTestDate = (DateTime)_dr["latest_test"];
+                    }
+                    if (_dr["qualified"] != null)
+                    {
+                        newUser.qualified = Convert.ToBoolean(_dr["qualified"].ToString());
                     }
                 }
                 closeConn();
@@ -149,7 +144,7 @@ namespace Kompetensportalen
         
         public Test getLastTest(string user, DateTime date)
         {
-            Test newTest = new Test();
+            Test oldTest = new Test();
             XmlDocument doc = new XmlDocument();
             string username = user;
             string testDate = date.ToShortDateString();
@@ -162,25 +157,23 @@ namespace Kompetensportalen
 
             _dr = _cmd.ExecuteReader();
 
-            if (_dr.Read())
+            
+            while (_dr.Read())
             {
-                while (_dr.Read())
-                {
-                    newTest.employee = _dr["username"].ToString();
-                    newTest.date = (DateTime)_dr["date"];
-                    newTest.testType = (int)_dr["type"];
-                    newTest.passed = Convert.ToBoolean(_dr["passed"]);
-                    newTest.totalPoints = (int)_dr["total_points"];
-                    newTest.category1 = (int)_dr["points_category1"];
-                    newTest.category2 = (int)_dr["points_category2"];
-                    newTest.category3 = (int)_dr["points_category3"];
-                    doc.LoadXml(_dr["xml"].ToString());
-                    newTest.sourceFile = doc;
-                }
+                oldTest.employee = _dr["username"].ToString();
+                oldTest.date = (DateTime)_dr["date"];
+                oldTest.testType = (int)_dr["type"];
+                oldTest.passed = Convert.ToBoolean(_dr["passed"]);
+                oldTest.totalPoints = (int)_dr["total_points"];
+                oldTest.category1 = (int)_dr["points_category1"];
+                oldTest.category2 = (int)_dr["points_category2"];
+                oldTest.category3 = (int)_dr["points_category3"];
+                doc.LoadXml(_dr["xml"].ToString());
+                oldTest.sourceFile = doc;
             }
             closeConn();
 
-            return newTest;
+            return oldTest;
         }   
         #endregion Get XML from Database
 

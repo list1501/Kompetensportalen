@@ -15,8 +15,7 @@ namespace Kompetensportalen
         public bool qualified { get; set; }
         public DateTime lastTestDate { get; set; }
         
-
-        //public List<Test> testHistory = new List<Test>();
+        //Objects        
         public Test newTest = new Test();
         public Test latestTest = new Test();
         SQL newSQL = new SQL();
@@ -28,12 +27,11 @@ namespace Kompetensportalen
         public void getNewTest(int type)
         {
             int testType = type;
+
             newTest.employee = username;
             newTest.date = today;
             newTest.testType = testType;
-
-            //Create source file from XML stored in database
-            newTest.sourceFile = newSQL.DbToXml(testType);
+            newTest.sourceFile = newSQL.DbToXml(testType); //Create source file from XML stored in database
 
             #region Randomise questions and add to object from XML
 
@@ -67,19 +65,20 @@ namespace Kompetensportalen
 
                 XmlNodeList xAList = xQ.SelectNodes("Answer");
 
-                foreach (XmlNode xA in xAList)
-                {
-                    Answer a = new Answer()
-                    {                    
-                        id = xA.Attributes["ID"].Value,
-                        correct = Convert.ToBoolean(xA.Attributes["correct"].Value),
-                        text = xA["Answer"].InnerText
-                    };
-                    q.answerList.Add(a);
-                }
+                //foreach (XmlNode xA in xAList)
+                //{
+
+                //    Answer a = new Answer()
+                //    {                    
+                //        id = xA.Attributes["ID"].Value,
+                //        correct = Convert.ToBoolean(xA.Attributes["correct"].Value),
+                //        text = xA["Answer"].InnerText
+                //    };
+                //    q.answerList.Add(a);
+                //}
                 tempQList.Add(q);
             }
-            System.Diagnostics.Debug.WriteLine(tempQList[5].answerList[1].text);
+            System.Diagnostics.Debug.WriteLine(tempQList[5].question);
             
             #endregion
         }

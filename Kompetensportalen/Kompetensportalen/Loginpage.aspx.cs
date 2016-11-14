@@ -22,6 +22,7 @@ namespace Kompetensportalen
         {
             currentLogin = newSQL.getLogin("admin");
             Server.Transfer("Admin Startpage.aspx");
+            System.Diagnostics.Debug.WriteLine(currentLogin.username);
         }
 
         //Login for user: Emma
@@ -29,6 +30,7 @@ namespace Kompetensportalen
         {
             currentLogin = newSQL.getLogin("emsu101");
             Server.Transfer("Bankstaff Startpage.aspx");
+            System.Diagnostics.Debug.WriteLine(currentLogin.username);
         }
 
         //Login for user: Linda
@@ -36,6 +38,7 @@ namespace Kompetensportalen
         {
             currentLogin = newSQL.getLogin("list069");
             Server.Transfer("Bankstaff Startpage.aspx");
+            System.Diagnostics.Debug.WriteLine(currentLogin.username);
 
         }
 
@@ -44,6 +47,7 @@ namespace Kompetensportalen
         {
             currentLogin = newSQL.getLogin("maca007");
             Server.Transfer("Bankstaff Startpage.aspx");
+            System.Diagnostics.Debug.WriteLine(currentLogin.username);
         }
     }
 }

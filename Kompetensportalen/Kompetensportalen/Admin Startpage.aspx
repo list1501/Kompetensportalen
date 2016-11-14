@@ -20,12 +20,16 @@
                     </ul>
                 </nav>
 
+
+
                 <div id="content">
                     <div class="main">
                         <div class="Section">
                             <h3>Hemsida</h3>
                             <asp:Button ID="btnSeeTests" runat="server" Text="Se lista över användare och deras prov" OnClick="btnSeeTests_Click"/>
                         </div>
+
+                <table id="table" runat="server" border="1" visible="false"></table> 
 
                         <div class="Section">
                         </div>       

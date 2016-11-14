@@ -78,7 +78,7 @@ namespace Kompetensportalen
                         q.answerList.Add(a);
                     }
                 }
-                tempQList.Add(q);
+                tempQList.Add(q);              
             }
             System.Diagnostics.Debug.WriteLine(tempQList[5].answerList[1].text);
             #endregion

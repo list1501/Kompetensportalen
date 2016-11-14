@@ -29,12 +29,12 @@
                     
                     <asp:Button ID="btnStartTest" runat="server" Text="Starta testet" OnClick="btnStartTest_Click"/>
                     <asp:Timer ID="TimerforTest" runat="server" Enabled="false" Interval="1000"></asp:Timer>
+                    
 
                     <div runat="server" id="questionWAnswer">
-
                     <asp:Label ID="labelQuestion" runat="server" Text=""></asp:Label>
                     <asp:CheckBoxList ID="chBAnswers" runat="server"></asp:CheckBoxList>
-                       
+                    <asp:RadioButtonList ID="rBAnswers" runat="server"></asp:RadioButtonList>
                     </div><!--questionWAnswer-->
               
                       </div><!--content-->

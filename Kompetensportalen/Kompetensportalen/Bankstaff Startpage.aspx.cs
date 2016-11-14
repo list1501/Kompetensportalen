@@ -38,33 +38,52 @@ namespace Kompetensportalen
 
         protected void btnStartTest_Click(object sender, EventArgs e)
         {
-            //TimerforTest.Enabled = true;
-            //TimerforTest.Interval = 300000;
-            //double counter = TimerforTest.Interval;
+            TimerforTest.Enabled = true;
+            TimerforTest.Interval = 300000;
+            double counter = TimerforTest.Interval;
 
-            //counter++;
-            //if (counter >= 300000)
-            //{
-            //    panelTest.Close;
-            //    MessageBox.Show("Tiden är slut!");
-            //}
-            
-            //int questions = currentUser.tempQList();
-
-            //for (int q = 0 < questions++)
-            //{
-            //    qlabel.Text(currentUser.getNewTest);
-            //    chBAnswers.Items.Add(a);
-            //}
-
-                //when pressing button "End test" timer is stopped;
-                //if (btnStopTest_Click = true)
-                //{
-                //    TimerforTest.Enabled = false;
-                //}
-                }
+            counter++;
+            if (counter >= 300000)
+            {                
+               MessageBox.Show("Tiden är slut!");
             }
+
+
+            //when pressing button "End test" timer is stopped;
+            //if (btnStopTest_Click = true)
+            //{
+            //    TimerforTest.Enabled = false;
+            //}
+       } 
+
+    public void DisplayTest(Question test, int questionnumber)
+        {
+            labelQuestion.Text = "";
+
+            rBAnswers.Items.Clear();
+            chBAnswers.Items.Clear();
+
+            var currentQuestion = test.question[questionnumber];
+
+            //if (NrOfCorrectAnswersForQuest(currentQuestion) == 1) //Finns det bara 1 rätt svar blir det radiobutton
+            //{
+            //    foreach (var answer in currentQuestion.answers)
+            //    {
+            //        rBAnswers.Items.Add(answer.AnswerText);
+
+            //    }
+            //}
+            //else if (NrOfCorrectAnswersForQuest(currentQuestion) > 1) //Finns det fler än 1 rätt svar blir det checkbox
+            //{
+            //    foreach (var answer in currentQuestion.answers)
+            //    {
+            //        chBAnswers.Items.Add(answer.AnswerText);
+            //    }
+            //    labelQuestion.Text = "ID: " + currentQuestion.id +  "Fråga: " + currentQuestion.text;
+            }
+        }
     }
+    
     
 
 

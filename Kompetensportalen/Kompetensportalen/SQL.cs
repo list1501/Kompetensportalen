@@ -207,5 +207,34 @@ namespace Kompetensportalen
             closeConn();
             return testHistory;
         }
+
+        public List<Test> getTestsAdmin()
+        {
+            List<Test> userTestsforAdmin = new List<Test>();
+            openConn();
+            string sql = "SELECT employee, date, passed, total_points, points_category1, points_category2, points_category3 FROM finished_tests ORDER BY date DESC";
+            _cmd = new NpgsqlCommand(sql, _conn);
+
+            _dr = sqlQuery();
+
+            while (_dr.Read())
+            {
+                Test seeTests = new Test()
+                {
+                    employee = _dr["employee"].ToString(),
+                    date = (DateTime)_dr["date"],
+                    passed = (bool)_dr["passed"],
+                    totalPoints = (int)_dr["total_points"],
+                    category1 = (int)_dr["points_category1"],
+                    category2 = (int)_dr["points_category2"],
+                    category3 = (int)_dr["points_category3"],
+                   
+            };
+                userTestsforAdmin.Add(seeTests);
+            }
+            closeConn();
+            return userTestsforAdmin;
+        }
+        
     }
 }

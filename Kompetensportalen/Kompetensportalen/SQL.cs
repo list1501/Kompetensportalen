@@ -53,8 +53,8 @@ namespace Kompetensportalen
             }
             catch (NpgsqlException ex)
             {
-                //HÄR SKA DET STÅ NÅGOT FÖR FELMEDDELANDE
-                return null;
+                System.Diagnostics.Debug.WriteLine(ex);
+                return _dr;
             }
         }
 
@@ -151,8 +151,8 @@ namespace Kompetensportalen
             Test oldTest = new Test();
             XmlDocument doc = new XmlDocument();
             string username = user;
-            string testDate = date.ToShortDateString();
-            string sql = "SELECT * FROM finished_tests WHERE username = @username AND date = @date";
+            DateTime testDate = date;
+            string sql = "SELECT * FROM finished_tests WHERE employee = @username AND date = @date";
 
             openConn();
             _cmd = new NpgsqlCommand(sql, _conn);
@@ -164,7 +164,7 @@ namespace Kompetensportalen
             
             while (_dr.Read())
             {
-                oldTest.employee = _dr["username"].ToString();
+                oldTest.employee = _dr["employee"].ToString();
                 oldTest.date = (DateTime)_dr["date"];
                 oldTest.testType = (int)_dr["type"];
                 oldTest.passed = Convert.ToBoolean(_dr["passed"]);

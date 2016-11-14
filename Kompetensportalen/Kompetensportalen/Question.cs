@@ -13,9 +13,8 @@ namespace Kompetensportalen
         public string feedbackCorrect { get; set; }
         public string feedbackWrong { get; set; }
         public bool correct { get; set; }
-
-        public List<Answer> answerList = new List<Answer>();
-        public List<Answer> userAnswerList = new List<Answer>();
+        public List<Answer> answerList { get; set; }
+        public List<Answer> userAnswerList { get; set; }
 
         //public void countPoints()
         //{

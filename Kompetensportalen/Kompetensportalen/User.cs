@@ -54,6 +54,8 @@ namespace Kompetensportalen
             
             foreach (XmlNode xQ in xQList)
             {
+                List<Answer> answerList = new List<Answer>();
+                XmlNodeList xAList = xQ.SelectNodes("question/Answer");
                 Question q = new Question()
                 {
                     id = int.Parse(xQ.Attributes["ID"].Value),
@@ -62,23 +64,20 @@ namespace Kompetensportalen
                     feedbackCorrect = xQ["feedbackCorrect"].InnerText,
                     feedbackWrong = xQ["feedbackWrong"].InnerText
                 };
-
-                XmlNodeList xAList = xQ.SelectNodes("Answer");
-
-                //foreach (XmlNode xA in xAList)
-                //{
-
-                //    Answer a = new Answer()
-                //    {                    
-                //        id = xA.Attributes["ID"].Value,
-                //        correct = Convert.ToBoolean(xA.Attributes["correct"].Value),
-                //        text = xA["Answer"].InnerText
-                //    };
-                //    q.answerList.Add(a);
-                //}
+                foreach (XmlNode xA in xAList)
+                {
+                    Answer a = new Answer()
+                    {
+                        id = xA.Attributes["ansID"].Value,
+                        correct = Convert.ToBoolean(xA.Attributes["correct"].Value),
+                        text = xA["Answer"].InnerText
+                    };
+                    answerList.Add(a);
+                }
+                q.answerList = answerList;
                 tempQList.Add(q);
             }
-            System.Diagnostics.Debug.WriteLine(tempQList[5].question);
+            System.Diagnostics.Debug.WriteLine(tempQList[5].answerList);
             
             #endregion
         }

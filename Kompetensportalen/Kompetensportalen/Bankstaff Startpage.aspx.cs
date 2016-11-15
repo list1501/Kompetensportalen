@@ -60,7 +60,7 @@ namespace Kompetensportalen
         {
             labelQuestion.Text = "";
 
-            rBAnswers.Items.Clear();
+            //rBAnswers.Items.Clear();
             chBAnswers.Items.Clear();
 
             var currentQuestion = test.question[questionnumber];

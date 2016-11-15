@@ -20,6 +20,27 @@ namespace Kompetensportalen
         public XmlDocument sourceFile { get; set; }
         public List<Question> questions { get; set; }
 
+        #region Get questions from test
+
+        #region Method to get a question
+        public Question getQuestion(int id)
+        {
+            int qID = id;
+            Question newQuestion = new Question();
+            foreach (Question q in questions)
+            {
+                if (q.id == qID)
+                {
+                    newQuestion = q;
+                }
+            }
+            return newQuestion;
+        }
+        #endregion
+
+        #endregion
+
+
         //Method to get questions in random order from XML source file
         public void createTest()
         {
@@ -62,7 +83,7 @@ namespace Kompetensportalen
             //    }
             //    c++;
             //}
-    }
+        }
 
 
         //Question answerlist = new Question();
@@ -84,6 +105,5 @@ namespace Kompetensportalen
         //    {
         //        label1.text = "Du klarade inte detta test.";
         //    }
-        }
     }
 }

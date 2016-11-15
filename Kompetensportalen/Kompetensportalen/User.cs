@@ -32,20 +32,9 @@ namespace Kompetensportalen
             newTest.date = today;
             newTest.testType = testType;
             newTest.sourceFile = newSQL.DbToXml(testType); //Create source file from XML stored in database
+            newTest.questions = new List<Question>();
 
-            #region Randomise questions and add to object from XML
-
-            int n = 25;
-            int c = 0;
-
-            if (testType == 2)
-            {
-                n = 15;
-            }
-            else if (testType == 1)
-            {
-                n = 25;
-            }
+            #region Get test from XML
 
             //Read from XML to temp object before randomising
             List<Question> tempQList = new List<Question>();
@@ -62,7 +51,8 @@ namespace Kompetensportalen
                     question = xQ["description"].InnerText,
                     feedbackCorrect = xQ["feedbackCorrect"].InnerText,
                     feedbackWrong = xQ["feedbackWrong"].InnerText,
-                    answerList = new List<Answer>()                    
+                    answerList = new List<Answer>(),
+                    userAnswerList = new List<Answer>()                    
                 };
 
                 foreach (XmlNode node in xQ.ChildNodes)
@@ -80,8 +70,40 @@ namespace Kompetensportalen
                 }
                 tempQList.Add(q);              
             }
-            System.Diagnostics.Debug.WriteLine(tempQList[5].answerList[1].text);
+            newTest.questions = tempQList;
             #endregion
+
+            #region Randomise questions into test (Not working yet)
+
+            //int n = tempQList.Count;
+            //int c = 0;
+            //Random rand = new Random();
+            //List<int> id = new List<int>();
+
+            //while (c < n)
+            //{
+            //    bool unique;
+            //    int r = rand.Next(1, n+1);
+            //    foreach (int i in id)
+            //    {
+            //        if (i != r)
+            //        {
+            //            unique = true;
+            //        }
+            //        else if (i == r)
+            //        {
+            //            unique = false;
+            //        }
+                    
+            //    }
+            //    if (unique)
+            //    {
+            //        id.Add(r);
+            //        c++;
+            //    }
+            //}
+            #endregion
+            //System.Diagnostics.Debug.WriteLine(newTest.questions[0].id);
         }
 
         //Method to get user's latest test

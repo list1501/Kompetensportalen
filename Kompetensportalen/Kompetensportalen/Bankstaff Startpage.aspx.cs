@@ -56,8 +56,9 @@ namespace Kompetensportalen
             //}
        } 
 
-    public void DisplayTest(Question test, int questionnumber)
+        public void DisplayTest(Question test, int questionnumber)
         {
+            
             labelQuestion.Text = "";
 
             //rBAnswers.Items.Clear();
@@ -80,9 +81,20 @@ namespace Kompetensportalen
             //        chBAnswers.Items.Add(answer.AnswerText);
             //    }
             //    labelQuestion.Text = "ID: " + currentQuestion.id +  "Fråga: " + currentQuestion.text;
+        }
+
+        public void showTest()
+        {
+            int c = currentUser.newTest.questions.Count;
+
+            for (int i = 0; i < c; i++)
+            {
+                Question q = currentUser.newTest.questions[i];
+
             }
         }
     }
+}
     
     
 

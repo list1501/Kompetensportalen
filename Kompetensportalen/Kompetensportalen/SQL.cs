@@ -229,7 +229,7 @@ namespace Kompetensportalen
                     category2 = (int)_dr["points_category2"],
                     category3 = (int)_dr["points_category3"],
                    
-            };
+                };
                 userTestsforAdmin.Add(seeTests);
             }
             closeConn();

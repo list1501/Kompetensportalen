@@ -75,35 +75,44 @@ namespace Kompetensportalen
 
             #region Randomise questions into test (Not working yet)
 
-            //int n = tempQList.Count;
-            //int c = 0;
-            //Random rand = new Random();
-            //List<int> id = new List<int>();
+            int c = tempQList.Count;
+            List<int> randomList = getRandomList(c);
 
-            //while (c < n)
+            //for (int i = 0; i < randomList.Count; i++)
             //{
-            //    bool unique;
-            //    int r = rand.Next(1, n+1);
-            //    foreach (int i in id)
-            //    {
-            //        if (i != r)
-            //        {
-            //            unique = true;
-            //        }
-            //        else if (i == r)
-            //        {
-            //            unique = false;
-            //        }
-                    
-            //    }
-            //    if (unique)
-            //    {
-            //        id.Add(r);
-            //        c++;
-            //    }
+            //    int r = randomList[i];
+            //    Question q = tempQList[r];
+            //    newTest.questions.Add(q);
+            //}
+            //foreach (int i in randomList)
+            //{
+            //    System.Diagnostics.Debug.WriteLine(randomList[i].ToString());
             //}
             #endregion
-            //System.Diagnostics.Debug.WriteLine(newTest.questions[0].id);
+        }
+
+        //Method to get list of random, unique numbers
+        public List<int> getRandomList(int length)
+        {
+            int l = length;
+            int n = length;
+
+            List<int> possibleNumbers = new List<int>();
+            for (int i = 1; i < l+1; i++)
+            {
+                possibleNumbers.Add(i);
+            }
+
+            List<int> randomList = new List<int>();
+            Random rand = new Random();
+
+            for (int i = 0; i < n; i++)
+            {
+                int r = rand.Next(1, possibleNumbers.Count) - 1;
+                randomList.Add(possibleNumbers[r]);
+                possibleNumbers.RemoveAt(r);
+            }
+            return randomList;
         }
 
         //Method to get user's latest test

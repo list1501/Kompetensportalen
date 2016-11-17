@@ -49,6 +49,24 @@ namespace Kompetensportalen {
         protected global::System.Web.UI.Timer TimerforTest;
         
         /// <summary>
+        /// pnlquestionWAnswer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlquestionWAnswer;
+        
+        /// <summary>
+        /// btnStopTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnStopTest;
+        
+        /// <summary>
         /// questionWAnswer control.
         /// </summary>
         /// <remarks>
@@ -56,32 +74,5 @@ namespace Kompetensportalen {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl questionWAnswer;
-        
-        /// <summary>
-        /// labelQuestion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelQuestion;
-        
-        /// <summary>
-        /// chBAnswers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList chBAnswers;
-        
-        /// <summary>
-        /// rBAnswers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rBAnswers;
     }
 }

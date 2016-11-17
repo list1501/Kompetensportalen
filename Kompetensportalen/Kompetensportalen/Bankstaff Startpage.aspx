@@ -28,13 +28,11 @@
                     <h3>Hem</h3>
                     
                     <asp:Button ID="btnStartTest" runat="server" Text="Starta testet" OnClick="btnStartTest_Click"/>
-                    <asp:Timer ID="TimerforTest" runat="server" Enabled="false" Interval="1000"></asp:Timer>
-                    
-
+                    <asp:Timer ID="TimerforTest" runat="server" Enabled="false" Interval="1000"></asp:Timer>                    
+                    <asp:Panel ID="pnlquestionWAnswer" runat="server" />
+                     <asp:Button ID="btnStopTest" runat="server" Visible="false" Text="Stoppa testet" OnClick="btnStopTest_Click"/>
                     <div runat="server" id="questionWAnswer">
-                    <asp:Label ID="labelQuestion" runat="server" Text=""></asp:Label>
-                    <asp:CheckBoxList ID="chBAnswers" runat="server"></asp:CheckBoxList>
-                    <asp:RadioButtonList ID="rBAnswers" runat="server"></asp:RadioButtonList>
+
                     </div><!--questionWAnswer-->
               
                       </div><!--content-->

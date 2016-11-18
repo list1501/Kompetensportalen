@@ -38,6 +38,8 @@ namespace Kompetensportalen
 
         protected void btnStartTest_Click(object sender, EventArgs e)
         {
+            btnStartTest.Visible = false;
+
             TimerforTest.Enabled = true;
             TimerforTest.Interval = 300000;
             double counter = TimerforTest.Interval;
@@ -47,6 +49,7 @@ namespace Kompetensportalen
             //{                
             //   MessageBox.Show("Tiden är slut!");
             //}
+         
             if (currentUser.qualified && currentUser.lastTestDate.Year == today.Year)
             {
                 currentUser.getLastTest();
@@ -78,6 +81,12 @@ namespace Kompetensportalen
                 pnlquestionWAnswer.Controls.Add(activeQuestion);
                 int answerCount = 1;
 
+                //to get radiobuttons if there is only one correct answer
+
+                //if (q.answerList.FindAll(x => x.correct == true).ToList().Count = 1)
+                //{
+                //    rbList = new RadioButtonList();
+                //}
                 CheckBoxList cbList = new CheckBoxList();
 
                 foreach (var answer in q.answerList)

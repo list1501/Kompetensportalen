@@ -37,37 +37,18 @@ namespace Kompetensportalen
         }
 
         protected void btnStartTest_Click(object sender, EventArgs e)
-        {
-            btnStartTest.Visible = false;
-
-            TimerforTest.Enabled = true;
-            TimerforTest.Interval = 300000;
-            double counter = TimerforTest.Interval;
-
-            //counter++;
-            //if (counter >= 300000)
-            //{                
-            //   MessageBox.Show("Tiden är slut!");
-            //}
-         
+        {               
             if (currentUser.qualified && currentUser.lastTestDate.Year == today.Year)
-            {
-                
+            {               
             }
             else
             {
+                btnStartTest.Visible = false;
                 renderTest(currentUser.newTest.questions);
                 btnStopTest.Visible = true;
             }
-           
-            
-            //when pressing button "End test" timer is stopped;
-            //if (btnStopTest_Click = true)
-            //{
-            //    TimerforTest.Enabled = false;
-            //}
-        } 
-
+        }
+        #region Show Test on Page method
         private void renderTest(List<Question> inputList)
         {
             foreach (Question q in inputList)
@@ -138,12 +119,8 @@ namespace Kompetensportalen
 
                             cbList.Items.Add(li);
                             pnlquestionWAnswer.Controls.Add(cbList);
-                        }                                          
-                }                
-            }
-            }
-        }
-
+                        }}}}}
+        #endregion Show test on page method
         protected void btnStopTest_Click(object sender, EventArgs e)
         {
             //Här måste vi anropa metod för poängräkning och spara testet till användaren

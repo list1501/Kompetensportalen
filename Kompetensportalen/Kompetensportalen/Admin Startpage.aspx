@@ -13,8 +13,6 @@
         <form id="form1" runat="server">
             <div id="menu-top">    		
                 <nav>
-                    <img src="images/euro-1105411_1920.jpg" alt="Sample Photo" />
-
 		            <ul>                  
 		                <li><i><strong><a href="#" title="Startpage"><span>Hemsida</span></a></strong></i></li>
                     </ul>

@@ -15,10 +15,7 @@
     <body>
         <form id="form1" runat="server">	
             <asp:ScriptManager ID="scriptMan" runat="server"></asp:ScriptManager> <!-- SCRIPT MANAGER FOR USING Ajax SCRIPTS -->
-
             <nav>
-                <img src="images/euro-1105411_1920.jpg" alt="Sample Photo" />
-
 		        <ul>                  
 		            <li><i><strong><a href="#" title="Startsida"><span>Startsida</span></a></strong></i></li>
 		        </ul>
@@ -27,13 +24,9 @@
                 <div id="content">                  
                     <h3>Hem</h3>
                     
-                    <asp:Button ID="btnStartTest" runat="server" Text="Starta testet" OnClick="btnStartTest_Click"/>
-                    <asp:Timer ID="TimerforTest" runat="server" Enabled="false" Interval="1000"></asp:Timer>                    
+                    <asp:Button ID="btnStartTest" runat="server" Text="Starta testet" OnClick="btnStartTest_Click"/>                   
                     <asp:Panel ID="pnlquestionWAnswer" runat="server" />
                      <asp:Button ID="btnStopTest" runat="server" Visible="false" Text="Stoppa testet" OnClick="btnStopTest_Click"/>
-                    <div runat="server" id="questionWAnswer">
-
-                    </div><!--questionWAnswer-->
               
                       </div><!--content-->
 
@@ -50,13 +43,12 @@
                 </asp:Panel>
                 <!-- END OF MODAL POPUP -->--%>
                                        
-            </div><!--main--> 
-            
+            </div><!--main-->             
+        </form>
             <footer>
                 <p> Hemsida Skapad av Grupp 12 <br/>
                     Kontaktinformation: <a href="mailto:grupp12@student.miun.se">grupp12@student.miun.se</a>.
                 </p>
             </footer>
-        </form>
     </body>
 </html>

@@ -40,15 +40,6 @@ namespace Kompetensportalen {
         protected global::System.Web.UI.WebControls.Button btnStartTest;
         
         /// <summary>
-        /// TimerforTest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.Timer TimerforTest;
-        
-        /// <summary>
         /// pnlquestionWAnswer control.
         /// </summary>
         /// <remarks>
@@ -65,14 +56,5 @@ namespace Kompetensportalen {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnStopTest;
-        
-        /// <summary>
-        /// questionWAnswer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl questionWAnswer;
     }
 }

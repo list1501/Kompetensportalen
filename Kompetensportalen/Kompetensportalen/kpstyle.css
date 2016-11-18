@@ -107,6 +107,11 @@ div.sections{
     width: 20%;
 }
 
+footer {position: relative;
+	margin-top: -180px; /* negative value of footer height */
+	height: 180px;
+	clear:both;}
+
 #button1{
     background-color: #4CAF50; /* Green */
     border: none;

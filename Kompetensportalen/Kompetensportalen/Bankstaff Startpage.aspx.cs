@@ -45,7 +45,7 @@ namespace Kompetensportalen
             {
                 btnStartTest.Visible = false;
                 renderTest(currentUser.newTest.questions);
-                btnStopTest.Visible = true;
+                //btnStopTest.Visible = true;
             }
         }
         #region Show Test on Page method

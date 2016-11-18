@@ -81,8 +81,8 @@ img {
     display: block;
     margin:  auto;
     max-width: 95%;
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     margin-right:10px;
     }
 
@@ -106,11 +106,6 @@ div.sections{
     margin: 5px auto;
     width: 20%;
 }
-
-footer {position: relative;
-	margin-top: -180px; /* negative value of footer height */
-	height: 180px;
-	clear:both;}
 
 #button1{
     background-color: #4CAF50; /* Green */

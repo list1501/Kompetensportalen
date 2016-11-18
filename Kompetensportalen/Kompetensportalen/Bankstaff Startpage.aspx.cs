@@ -78,12 +78,41 @@ namespace Kompetensportalen
                 int answerCount = 1;
 
                 //to get radiobuttons if there is only one correct answer
+                if (q.answerList.FindAll(x => x.correct == true).ToList().Count == 1)
+                {
+                    RadioButtonList rbList = new RadioButtonList();
 
-                //if (q.answerList.FindAll(x => x.correct == true).ToList().Count = 1)
-                //{
-                //    rbList = new RadioButtonList();
-                //}
-                CheckBoxList cbList = new CheckBoxList();
+                    foreach (var answer in q.answerList)
+                    {
+                        ListItem li = new ListItem();
+
+                        if (answer.text.IndexOf(".jpg") > 0)
+                        {
+                            li.Text = answerCount.ToString();
+                            li.Value = answer.id;
+                            li.Selected = answer.correct;
+                            Image newImg = new Image();
+                            newImg.ImageUrl = answer.text;
+
+                            rbList.Items.Add(li);
+                            pnlquestionWAnswer.Controls.Add(rbList);
+                            pnlquestionWAnswer.Controls.Add(newImg);
+                        }
+                        else
+                        {
+                            li.Text = answer.text;
+                            li.Value = answer.id;
+                            li.Selected = answer.correct;
+
+                            rbList.Items.Add(li);
+                            pnlquestionWAnswer.Controls.Add(rbList);
+                        }
+                    }
+                }
+                //to get checkbuttons if there is more than one correct answer
+                else
+                {
+                    CheckBoxList cbList = new CheckBoxList();
 
                 foreach (var answer in q.answerList)
                 {         
@@ -111,6 +140,7 @@ namespace Kompetensportalen
                             pnlquestionWAnswer.Controls.Add(cbList);
                         }                                          
                 }                
+            }
             }
         }
 

@@ -52,18 +52,14 @@ namespace Kompetensportalen
          
             if (currentUser.qualified && currentUser.lastTestDate.Year == today.Year)
             {
-                currentUser.getLastTest();
+                
             }
-            else if (currentUser.qualified && currentUser.lastTestDate.Year != today.Year)
+            else
             {
-                renderTest(currentUser.getNewTest(2));
+                renderTest(currentUser.newTest.questions);
                 btnStopTest.Visible = true;
             }
-            else if (currentUser.qualified == false)
-            {
-                renderTest(currentUser.getNewTest(1));
-                btnStopTest.Visible = true;
-            }
+           
             
             //when pressing button "End test" timer is stopped;
             //if (btnStopTest_Click = true)

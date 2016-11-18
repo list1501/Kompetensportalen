@@ -35,8 +35,7 @@ namespace Kompetensportalen
             newTest.questions = new List<Question>();
 
             #region Get test from XML
-
-            //Read from XML to temp object before randomising
+            
             List<Question> tempQList = new List<Question>();
             XmlDocument tempX = newTest.sourceFile;
             XmlNodeList xQList = tempX.SelectNodes("Test/question");

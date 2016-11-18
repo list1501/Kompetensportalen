@@ -45,7 +45,7 @@ namespace Kompetensportalen
             {
                 btnStartTest.Visible = false;
                 renderTest(currentUser.newTest.questions);
-                //btnStopTest.Visible = true;
+                btnStopTest.Visible = true;
             }
         }
         #region Show Test on Page method
@@ -54,9 +54,27 @@ namespace Kompetensportalen
             foreach (Question q in inputList)
             {
                 System.Web.UI.WebControls.Label activeQuestion = new System.Web.UI.WebControls.Label();
-                activeQuestion.Text = q.question;
+                string catequest = q.category.ToString();
+
+                if (q.category == 1)
+                {
+                    catequest = "Produkter och hantering av kundens affärer";
+                    activeQuestion.Text = catequest + ". " + q.question;
+                }
+                else if (q.category == 2)
+                {
+                    catequest = "Ekonomi";
+                    activeQuestion.Text = catequest + ". " + q.question;
+                }
+                else if (q.category == 3)
+                {
+                    catequest = "Etik och regelverk";
+                    activeQuestion.Text = catequest + ". " + q.question;
+                }
+
                 pnlquestionWAnswer.Controls.Add(activeQuestion);
-                int answerCount = 1;
+
+                int answerCount = 1;                
 
                 //to get radiobuttons if there is only one correct answer
                 if (q.answerList.FindAll(x => x.correct == true).ToList().Count == 1)

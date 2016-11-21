@@ -39,7 +39,8 @@ namespace Kompetensportalen
         protected void btnStartTest_Click(object sender, EventArgs e)
         {               
             if (currentUser.qualified && currentUser.lastTestDate.Year == today.Year)
-            {               
+            {
+                //Do the method for showing tests instead              
             }
             else
             {
@@ -113,11 +114,11 @@ namespace Kompetensportalen
                 {
                     CheckBoxList cbList = new CheckBoxList();
 
-                foreach (var answer in q.answerList)
-                {         
+                    foreach (var answer in q.answerList)
+                    {
                         ListItem li = new ListItem();
 
-                        if (answer.text.IndexOf(".jpg")>0)
+                        if (answer.text.IndexOf(".jpg") > 0)
                         {
                             li.Text = answerCount.ToString();
                             li.Value = answer.id;
@@ -137,10 +138,16 @@ namespace Kompetensportalen
 
                             cbList.Items.Add(li);
                             pnlquestionWAnswer.Controls.Add(cbList);
-                        }}}}}
+                        }
+                    }
+                }
+            }
+        }
+
         #endregion Show test on page method
         protected void btnStopTest_Click(object sender, EventArgs e)
         {
+
             //Här måste vi anropa metod för poängräkning och spara testet till användaren
         }
     }

@@ -15,6 +15,8 @@ namespace Kompetensportalen
 {
     public partial class Admin_Startpage : System.Web.UI.Page
     {
+        SQL openconn = new SQL();
+        List<Test> testlist;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,11 +25,13 @@ namespace Kompetensportalen
 
         protected void btnSeeTests_Click(object sender, EventArgs e)
         {
+            //testslist = openconn.getTestsAdmin();
+            //ListBox1.Items.Add(testslist.ToString());
+            //openconn.closeConn();
+
             table.Visible = true;
-
-            //getTestsAdmin();
-
             table.Rows.Clear();
+            openconn.getTestsAdmin();
 
             HtmlTableRow rowHeader = new HtmlTableRow();
 
@@ -46,7 +50,7 @@ namespace Kompetensportalen
             category1.InnerText = "Kategori 1";
             category2.InnerText = "Kategori 2";
             category3.InnerText = "Kategori 3";
-
+            
             rowHeader.Cells.Add(username);
             rowHeader.Cells.Add(date);
             rowHeader.Cells.Add(passed);
@@ -57,9 +61,9 @@ namespace Kompetensportalen
 
             table.Rows.Add(rowHeader);
 
-            List<Test> testlist = new List <Test>();
+            testlist = new List <Test>();
 
-            foreach (var user in testlist)
+            foreach (Test tests in testlist)
             {
                 HtmlTableRow testRows = new HtmlTableRow();
                 table.Rows.Add(testRows);
@@ -80,15 +84,15 @@ namespace Kompetensportalen
                 testRows.Cells.Add(uscat2);
                 testRows.Cells.Add(uscat3);
 
-                usname.InnerText = user.employee;
-                usdate.InnerText = user.date.ToString();
-                uspassed.InnerText = user.passed.ToString();
-                ustotalp.InnerText = user.totalPoints.ToString();
-                uscat1.InnerText = user.category1.ToString();
-                uscat2.InnerText = user.category2.ToString();
-                uscat3.InnerText = user.category3.ToString();
-            }
-    }
+                usname.InnerText = tests.employee;
+                usdate.InnerText = tests.date.ToString();
+                uspassed.InnerText = tests.passed.ToString();
+                ustotalp.InnerText = tests.totalPoints.ToString();
+                uscat1.InnerText = tests.category1.ToString();
+                uscat2.InnerText = tests.category2.ToString();
+                uscat3.InnerText = tests.category3.ToString();            
+        }
+        }
     }
 }
 

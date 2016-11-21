@@ -28,7 +28,6 @@
                         </div>
 
                 <table id="table" runat="server" border="1" visible="false"></table> 
-
                         <div class="Section">
                         </div>       
                     </div><!--main--> 

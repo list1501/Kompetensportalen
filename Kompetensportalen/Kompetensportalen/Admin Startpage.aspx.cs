@@ -10,6 +10,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.Data.SqlClient;
 using System.Web.UI.HtmlControls;
+using System.Globalization;
 
 namespace Kompetensportalen
 {
@@ -25,18 +26,16 @@ namespace Kompetensportalen
 
         protected void btnSeeTests_Click(object sender, EventArgs e)
         {
-            //testslist = openconn.getTestsAdmin();
-            //ListBox1.Items.Add(testslist.ToString());
-            //openconn.closeConn();
-
+            btnSeeTests.Text = "Uppdatera tabell";
             table.Visible = true;
             table.Rows.Clear();
-            openconn.getTestsAdmin();
+            
 
             HtmlTableRow rowHeader = new HtmlTableRow();
 
             HtmlTableCell username = new HtmlTableCell("th");
             HtmlTableCell date = new HtmlTableCell("th");
+            HtmlTableCell type = new HtmlTableCell("th");
             HtmlTableCell passed = new HtmlTableCell("th");
             HtmlTableCell totalpoints = new HtmlTableCell("th");
             HtmlTableCell category1 = new HtmlTableCell("th");
@@ -45,7 +44,8 @@ namespace Kompetensportalen
 
             username.InnerText = "Användarnamn";
             date.InnerText = "Datum";
-            passed.InnerText = "Godkänd";
+            type.InnerText = "Test";
+            passed.InnerText = "Resultat";
             totalpoints.InnerText = "Totalpoäng";
             category1.InnerText = "Kategori 1";
             category2.InnerText = "Kategori 2";
@@ -53,6 +53,7 @@ namespace Kompetensportalen
             
             rowHeader.Cells.Add(username);
             rowHeader.Cells.Add(date);
+            rowHeader.Cells.Add(type);
             rowHeader.Cells.Add(passed);
             rowHeader.Cells.Add(totalpoints);
             rowHeader.Cells.Add(category1);
@@ -62,6 +63,7 @@ namespace Kompetensportalen
             table.Rows.Add(rowHeader);
 
             testlist = new List <Test>();
+            testlist = openconn.getTestsAdmin();
 
             foreach (Test tests in testlist)
             {
@@ -70,14 +72,34 @@ namespace Kompetensportalen
 
                 HtmlTableCell usname = new HtmlTableCell();
                 HtmlTableCell usdate = new HtmlTableCell();
+                HtmlTableCell ustype = new HtmlTableCell();
                 HtmlTableCell uspassed = new HtmlTableCell();
                 HtmlTableCell ustotalp = new HtmlTableCell();
                 HtmlTableCell uscat1 = new HtmlTableCell();
                 HtmlTableCell uscat2 = new HtmlTableCell();
                 HtmlTableCell uscat3 = new HtmlTableCell();
 
+                string typeofTest = "";
+                if (tests.testType == 1)
+                {
+                    typeofTest = "Licensieringstest";
+                }
+                else
+                    typeofTest = "Kunskapstest";
+
+                string passeds = "";
+                if (tests.passed == true)
+                {
+                    passeds = "Godkänd";
+                }
+                else
+                    passeds = "Ej Godkänd";
+
+                var dateOnlyString = tests.date.ToShortDateString(); //Return 00/00/0000
+
                 testRows.Cells.Add(usname);
                 testRows.Cells.Add(usdate);
+                testRows.Cells.Add(ustype);
                 testRows.Cells.Add(uspassed);
                 testRows.Cells.Add(ustotalp);
                 testRows.Cells.Add(uscat1);
@@ -85,8 +107,9 @@ namespace Kompetensportalen
                 testRows.Cells.Add(uscat3);
 
                 usname.InnerText = tests.employee;
-                usdate.InnerText = tests.date.ToString();
-                uspassed.InnerText = tests.passed.ToString();
+                usdate.InnerText = dateOnlyString;
+                ustype.InnerText = typeofTest;
+                uspassed.InnerText = passeds;
                 ustotalp.InnerText = tests.totalPoints.ToString();
                 uscat1.InnerText = tests.category1.ToString();
                 uscat2.InnerText = tests.category2.ToString();

@@ -27,12 +27,17 @@
                             <asp:Button ID="btnSeeTests" runat="server" Text="Se lista över användare och deras prov" OnClick="btnSeeTests_Click"/>
                         </div>
 
+                        <div style="overflow-x:auto;">
                 <table id="table" runat="server" border="1" visible="false"></table> 
+                            </div>
+
+
                         <div class="Section">
                         </div>       
                     </div><!--main--> 
                 </div><!--content-->
             </div><!--menu-top-->
+          
 
             <div id="wrapper-footer">
                 <footer>

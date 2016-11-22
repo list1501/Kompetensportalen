@@ -214,12 +214,12 @@ namespace Kompetensportalen
             string sql = "SELECT employee, date, type, passed, total_points, points_category1, points_category2, points_category3 FROM finished_tests ORDER BY date DESC";
             _cmd = new NpgsqlCommand(sql, _conn);
             _dr = sqlQuery();
-            Test tests;
+            Test newTest;
 
             List<Test> testlist = new List<Test>();
             while (_dr.Read())
             {
-                tests = new Test()
+                newTest = new Test()
                 {
                     employee = _dr["employee"].ToString(),
                     date = (DateTime)_dr["date"],
@@ -230,7 +230,7 @@ namespace Kompetensportalen
                     category2 = (int)_dr["points_category2"],
                     category3 = (int)_dr["points_category3"],                   
                 };               
-                testlist.Add(tests);
+                testlist.Add(newTest);
             }
             closeConn();
             return testlist;

@@ -18,6 +18,7 @@ namespace Kompetensportalen
 
         //public void countPoints()
         //{
+        //    //måste ha en ifsats här, måste vi inte flytta fråge-kategorierna hit istället? 
         //    int counter = 0;
         //    while (correct == true)
         //    {

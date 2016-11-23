@@ -16,19 +16,7 @@ namespace Kompetensportalen
         public List<Answer> answerList { get; set; }
         public List<Answer> userAnswerList { get; set; }
 
-        //public void countPoints()
-        //{
-        //    måste ha en ifsats här, måste vi inte flytta fråge - kategorierna hit istället? 
-        //    int count = 0;
-
-        //    for (int i = 0; i < question.Length; i++)
-        //        if (question[correct[i].tostring] == i)
-        //        {
-        //            count++;
-        //        }
-
-        //    
-        //}
+       
 
 
 

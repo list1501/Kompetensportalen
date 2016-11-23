@@ -90,7 +90,8 @@ namespace Kompetensportalen
         ////method pass och fail
         //public void passorfail()
         //{
-        //    //om man först själv räknar ut hur många frågor som är antal rätt % osv...
+        //    //om man först själv räknar ut hur många frågor som är antal rätt % osv... 
+              //kan inte tänka längre
         //    if (category1 == 13 && category2 == 13 && category3 == 10 && totalPoints < 50)
         //    {
         //        label1.text = "grattis du klarade testet";

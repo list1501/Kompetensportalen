@@ -147,6 +147,7 @@ namespace Kompetensportalen
         #endregion Show test on page method
         protected void btnStopTest_Click(object sender, EventArgs e)
         {
+            RadioButtonList rbList = new RadioButtonList();
 
             //Här måste vi anropa metod för poängräkning och spara testet till användaren
         }

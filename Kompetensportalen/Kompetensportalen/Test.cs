@@ -44,13 +44,13 @@ namespace Kompetensportalen
         public void countPoints()
         {
             //måste ha en ifsats här, måste vi inte flytta fråge - kategorierna hit istället? 
-            int count = 0;
+            //int count = 0;
 
-            for (int i = 0; i < question.Length; i++)
-                if (question[correct[i].tostring] == i)
-                {
-                    count++;
-                }
+            //for (int i = 0; i < question.Length; i++)
+            //    if (question[correct[i].tostring] == i)
+            //    {
+            //        count++;
+            //    }
 
 
         }
@@ -61,20 +61,20 @@ namespace Kompetensportalen
         {
             //om man först själv räknar ut hur många frågor som är antal rätt % osv... 
             //kan inte tänka längre
-            if (category1 == 13 && category2 == 13 && category3 == 10 && totalPoints < 50)
-            {
-                label1.text = "grattis du klarade testet";
-                answerlist.userAnswerList.Add(answer);
-                XmlElement svar = new XmlElement("Svar",
-                new XmlAttribute("answer"));
-                Doc.Root.Add(svar);
-                doc.save(answer.xml);
-            }
+            //if (category1 == 13 && category2 == 13 && category3 == 10 && totalPoints < 50)
+            //{
+            //    label1.text = "grattis du klarade testet";
+            //    answerlist.userAnswerList.Add(answer);
+            //    XmlElement svar = new XmlElement("Svar",
+            //    new XmlAttribute("answer"));
+            //    Doc.Root.Add(svar);
+            //    doc.save(answer.xml);
+            //}
 
-            else
-            {
-                label1.text = "Du klarade inte detta test.";
-            }
+            //else
+            //{
+            //    label1.text = "Du klarade inte detta test.";
+            //}
         }
         #endregion
     }

@@ -27,10 +27,7 @@ namespace Kompetensportalen
         //            count++;
         //        }
 
-        //    while (correct == true)
-        //    {
-        //        count++;
-        //    }
+        //    
         //}
 
 

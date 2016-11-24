@@ -5,9 +5,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
+using System.Web.UI.HtmlControls;
 
 namespace Kompetensportalen
 {
@@ -55,26 +55,31 @@ namespace Kompetensportalen
         {
             foreach (Question q in inputList)
             {
-                System.Web.UI.WebControls.Label activeQuestion = new System.Web.UI.WebControls.Label();
-                string catequest = q.category.ToString();
+                HtmlGenericControl div = new HtmlGenericControl("div");
+                div.Attributes.Add("ID", q.id.ToString());
+
+                Label activeCategory = new Label();
+                Label activeQuestion = new Label();
+                string catequest;
 
                 if (q.category == 1)
                 {
                     catequest = "Produkter och hantering av kundens affärer";
-                    activeQuestion.Text = catequest + ". " + q.question;
                 }
                 else if (q.category == 2)
                 {
                     catequest = "Ekonomi";
-                    activeQuestion.Text = catequest + ". " + q.question;
                 }
-                else if (q.category == 3)
+                else
                 {
                     catequest = "Etik och regelverk";
-                    activeQuestion.Text = catequest + ". " + q.question;
                 }
+                activeCategory.Text = catequest;
+                activeQuestion.Text = q.question;
+                div.Controls.Add(activeCategory);
+                div.Controls.Add(activeQuestion);
 
-                pnlquestionWAnswer.Controls.Add(activeQuestion);
+                pnlquestionWAnswer.Controls.Add(div);
 
                 //Get radiobuttons if there is only one correct answer
                 if (q.answerList.FindAll(x => x.correct == true).ToList().Count == 1)
@@ -87,13 +92,14 @@ namespace Kompetensportalen
 
                         if (answer.text.IndexOf(".jpg") > 0)
                         {
-                            li.Value = answer.id;
                             Image newImg = new Image();
                             newImg.ImageUrl = answer.text;
+                            li.Value = answer.id;
+                            li.Text = "<img href='" + newImg.ImageUrl + "'>";
 
                             rbList.Items.Add(li);
-                            pnlquestionWAnswer.Controls.Add(rbList);
-                            pnlquestionWAnswer.Controls.Add(newImg);
+                            div.Controls.Add(rbList);
+                            div.Controls.Add(newImg);
                         }
                         else
                         {
@@ -101,7 +107,7 @@ namespace Kompetensportalen
                             li.Value = answer.id;
 
                             rbList.Items.Add(li);
-                            pnlquestionWAnswer.Controls.Add(rbList);
+                            div.Controls.Add(rbList);
                         }
                     }
                 }
@@ -116,13 +122,16 @@ namespace Kompetensportalen
 
                         if (answer.text.IndexOf(".jpg") > 0)
                         {
-                            li.Value = answer.id;
                             Image newImg = new Image();
                             newImg.ImageUrl = answer.text;
+                            li.Value = answer.id;
+                            li.Text = "<img href='" + newImg.ImageUrl + "'>";
+                            //li.Value = answer.id;
+                            //Image newImg = new Image();
+                            //newImg.ImageUrl = answer.text;
 
                             cbList.Items.Add(li);
-                            pnlquestionWAnswer.Controls.Add(cbList);
-                            pnlquestionWAnswer.Controls.Add(newImg);
+                            div.Controls.Add(cbList);
                         }
                         else
                         {
@@ -130,7 +139,7 @@ namespace Kompetensportalen
                             li.Value = answer.id;
 
                             cbList.Items.Add(li);
-                            pnlquestionWAnswer.Controls.Add(cbList);
+                            div.Controls.Add(cbList);
                         }
                     }
                 }
@@ -138,6 +147,8 @@ namespace Kompetensportalen
         }
 
         #endregion Show test on page method
+
+        #region End test and save to file
         protected void btnStopTest_Click(object sender, EventArgs e)
         {
             //Run method to add user's answers to correct questions
@@ -149,7 +160,7 @@ namespace Kompetensportalen
             //Hide stop-button and show start-button
             btnStopTest.Visible = false;
 
-            //Check if user is now allowed to see last test and show button with correct text
+            //Check if user is now allowed to see last test and show button with appropriate text
             //Also pre-load appropriate test for user
             if (currentUser.qualified)
             {            
@@ -165,10 +176,13 @@ namespace Kompetensportalen
             btnStartTest.Visible = true;
         }
 
+        //Method to add user's answers to correct questions
         public void addAnswersToQuestion()
         {
             
         }
+
+        #endregion End test and save to file
     }
 }                
             

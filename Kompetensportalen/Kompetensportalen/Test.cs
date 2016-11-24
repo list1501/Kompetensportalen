@@ -43,16 +43,7 @@ namespace Kompetensportalen
         #region Count points and percent
         public void countPoints()
         {
-            //måste ha en ifsats här, måste vi inte flytta fråge - kategorierna hit istället? 
-            //int count = 0;
-
-            //for (int i = 0; i < question.Length; i++)
-            //    if (question[correct[i].tostring] == i)
-            //    {
-            //        count++;
-            //    }
-
-
+           
         }
 
         

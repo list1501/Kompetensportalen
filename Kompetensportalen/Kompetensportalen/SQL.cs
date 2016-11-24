@@ -178,8 +178,44 @@ namespace Kompetensportalen
             closeConn();
 
             return oldTest;
-        }   
+        }
+
+        public List<Test> getTestsAdmin()
+        {
+            openConn();
+            string sql = "SELECT employee, date, type, passed, total_points, points_category1, points_category2, points_category3 FROM finished_tests ORDER BY date DESC";
+            _cmd = new NpgsqlCommand(sql, _conn);
+            _dr = sqlQuery();
+            Test newTest;
+
+            List<Test> testlist = new List<Test>();
+            while (_dr.Read())
+            {
+                newTest = new Test()
+                {
+                    employee = _dr["employee"].ToString(),
+                    date = (DateTime)_dr["date"],
+                    testType = (int)_dr["type"],
+                    passed = (bool)_dr["passed"],
+                    totalPoints = (int)_dr["total_points"],
+                    category1 = (int)_dr["points_category1"],
+                    category2 = (int)_dr["points_category2"],
+                    category3 = (int)_dr["points_category3"],
+                };
+                testlist.Add(newTest);
+            }
+            closeConn();
+            return testlist;
+        }
         #endregion Get XML from Database
+
+        #region Send XML to Database
+        public void saveTestToDB(Test test)
+        {
+
+        }
+
+        #endregion
 
         //Method to get selected user's test history
         public List<Test> getTestHistory(string usr)
@@ -208,32 +244,6 @@ namespace Kompetensportalen
             return testHistory;
         }
 
-        public List<Test> getTestsAdmin()
-        {
-            openConn();
-            string sql = "SELECT employee, date, type, passed, total_points, points_category1, points_category2, points_category3 FROM finished_tests ORDER BY date DESC";
-            _cmd = new NpgsqlCommand(sql, _conn);
-            _dr = sqlQuery();
-            Test newTest;
-
-            List<Test> testlist = new List<Test>();
-            while (_dr.Read())
-            {
-                newTest = new Test()
-                {
-                    employee = _dr["employee"].ToString(),
-                    date = (DateTime)_dr["date"],
-                    testType = (int)_dr["type"],
-                    passed = (bool)_dr["passed"],
-                    totalPoints = (int)_dr["total_points"],
-                    category1 = (int)_dr["points_category1"],
-                    category2 = (int)_dr["points_category2"],
-                    category3 = (int)_dr["points_category3"],                   
-                };               
-                testlist.Add(newTest);
-            }
-            closeConn();
-            return testlist;
-       }             
+                     
     }
 }

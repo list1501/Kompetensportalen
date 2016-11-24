@@ -15,6 +15,7 @@ namespace Kompetensportalen
     {
         User currentUser = Loginpage.currentLogin;
         DateTime today = DateTime.Today;
+        SQL newSQL = new SQL();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -75,9 +76,7 @@ namespace Kompetensportalen
 
                 pnlquestionWAnswer.Controls.Add(activeQuestion);
 
-                int answerCount = 1;                
-
-                //to get radiobuttons if there is only one correct answer
+                //Get radiobuttons if there is only one correct answer
                 if (q.answerList.FindAll(x => x.correct == true).ToList().Count == 1)
                 {
                     RadioButtonList rbList = new RadioButtonList();
@@ -88,9 +87,7 @@ namespace Kompetensportalen
 
                         if (answer.text.IndexOf(".jpg") > 0)
                         {
-                            li.Text = answerCount.ToString();
                             li.Value = answer.id;
-                            li.Selected = answer.correct;
                             Image newImg = new Image();
                             newImg.ImageUrl = answer.text;
 
@@ -102,14 +99,13 @@ namespace Kompetensportalen
                         {
                             li.Text = answer.text;
                             li.Value = answer.id;
-                            li.Selected = answer.correct;
 
                             rbList.Items.Add(li);
                             pnlquestionWAnswer.Controls.Add(rbList);
                         }
                     }
                 }
-                //to get checkbuttons if there is more than one correct answer
+                //Get checkbuttons if there is more than one correct answer
                 else
                 {
                     CheckBoxList cbList = new CheckBoxList();
@@ -120,9 +116,7 @@ namespace Kompetensportalen
 
                         if (answer.text.IndexOf(".jpg") > 0)
                         {
-                            li.Text = answerCount.ToString();
                             li.Value = answer.id;
-                            li.Selected = answer.correct;
                             Image newImg = new Image();
                             newImg.ImageUrl = answer.text;
 
@@ -134,7 +128,6 @@ namespace Kompetensportalen
                         {
                             li.Text = answer.text;
                             li.Value = answer.id;
-                            li.Selected = answer.correct;
 
                             cbList.Items.Add(li);
                             pnlquestionWAnswer.Controls.Add(cbList);
@@ -147,7 +140,19 @@ namespace Kompetensportalen
         #endregion Show test on page method
         protected void btnStopTest_Click(object sender, EventArgs e)
         {
-            //Här måste vi anropa metod för poängräkning och spara testet till användaren
+            addAnswersToQuestion();
+            newSQL.saveTestToDB(currentUser.newTest);
+            btnStopTest.Visible = false;
+            if (currentUser.qualified)
+            {
+                btnStartTest.Text = "Titta på senaste testet";
+                currentUser.getLastTest();
+            }
+        }
+
+        public void addAnswersToQuestion()
+        {
+            
         }
     }
 }                

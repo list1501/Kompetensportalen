@@ -20,15 +20,12 @@
 		            <li><i><strong><a href="#" title="Startsida"><span>Startsida</span></a></strong></i></li>
 		        </ul>
             </nav>
-            <div class="main">
-                <div id="content">                  
-                    <h3>Hem</h3>
-                    
-                    <asp:Button ID="btnStartTest" runat="server" Text="Starta testet" OnClick="btnStartTest_Click"/>                   
-                    <asp:Panel ID="pnlquestionWAnswer" runat="server" />
-                     <asp:Button ID="btnStopTest" runat="server" Visible="false" Text="Stoppa testet" OnClick="btnStopTest_Click"/>
-              
-                      </div><!--content-->
+            <div class="main">                  
+                <h3>Hem</h3>
+                   
+                <asp:Button ID="btnStartTest" runat="server" Text="Starta testet" OnClick="btnStartTest_Click"/>                   
+                <asp:Panel ID="pnlquestionWAnswer" runat="server" />
+                <asp:Button ID="btnStopTest" runat="server" Visible="false" Text="Stoppa testet" OnClick="btnStopTest_Click"/>
 
                 <%--<!-- MODAL POPUP STARTS HERE -->
                 <ajax:ModalPopupExtender ID="mpeTest" runat="server" PopupControlID="panelTest" TargetControlID="btnStartTest" CancelControlID="btnCancel" BackgroundCssClass="modalBackground">

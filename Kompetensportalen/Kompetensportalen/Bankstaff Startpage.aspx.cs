@@ -179,7 +179,13 @@ namespace Kompetensportalen
         //Method to add user's answers to correct questions
         public void addAnswersToQuestion()
         {
-            
+            List<Answer> userAnswers = new List<Answer>();
+            int c = currentUser.newTest.questions.Count();
+
+            for (int i = 0; i < c; i++)
+            {
+
+            }
         }
 
         #endregion End test and save to file

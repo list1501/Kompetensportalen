@@ -180,11 +180,18 @@ namespace Kompetensportalen
         public void addAnswersToQuestion()
         {
             List<Answer> userAnswers = new List<Answer>();
-            int c = currentUser.newTest.questions.Count();
+            List<Question> questions = currentUser.newTest.questions;
+            int c = questions.Count();
 
             for (int i = 0; i < c; i++)
             {
-
+                Question currentQuestion = questions[i];
+                int qId = questions[i].id;
+                var div = (HtmlGenericControl)FindControl(i.ToString());
+                if (div.HasControls())
+                {
+                    
+                }
             }
         }
 

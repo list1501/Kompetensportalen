@@ -23,7 +23,7 @@
             <div class="main">                  
                 <h3>Hem</h3>
                    
-                <asp:Button ID="btnStartTest" runat="server" Text="Starta testet" OnClick="btnStartTest_Click"/>                   
+                <asp:Button ID="btnStartTest" runat="server" OnClick="btnStartTest_Click"/>                   
                 <asp:Panel ID="pnlquestionWAnswer" runat="server" />
                 <asp:Button ID="btnStopTest" runat="server" Visible="false" Text="Stoppa testet" OnClick="btnStopTest_Click"/>
 

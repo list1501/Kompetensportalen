@@ -30,7 +30,7 @@ namespace Kompetensportalen
                 btnStartTest.Text = "Starta ÅKU-test";
                 currentUser.getNewTest(2);
             }
-            else if (currentUser.qualified == false) //Här kan vi lägga till en metodjämförelse om vi vill för att kolla om den som inte är godkänd får göra provet än. /Martin
+            else if (!currentUser.qualified) //Här kan vi lägga till en metodjämförelse om vi vill för att kolla om den som inte är godkänd får göra provet än. /Martin
             {
                 btnStartTest.Text = "Starta licensieringstest";
                 currentUser.getNewTest(1);
@@ -140,14 +140,29 @@ namespace Kompetensportalen
         #endregion Show test on page method
         protected void btnStopTest_Click(object sender, EventArgs e)
         {
+            //Run method to add user's answers to correct questions
             addAnswersToQuestion();
+
+            //Run method to export test-xml to DB
             newSQL.saveTestToDB(currentUser.newTest);
+
+            //Hide stop-button and show start-button
             btnStopTest.Visible = false;
+
+            //Check if user is now allowed to see last test and show button with correct text
+            //Also pre-load appropriate test for user
             if (currentUser.qualified)
-            {
+            {            
                 btnStartTest.Text = "Titta på senaste testet";
                 currentUser.getLastTest();
             }
+            else if (!currentUser.qualified)
+            {
+                btnStartTest.Text = "Starta licensieringstest";
+                currentUser.getNewTest(1);
+            }
+
+            btnStartTest.Visible = true;
         }
 
         public void addAnswersToQuestion()

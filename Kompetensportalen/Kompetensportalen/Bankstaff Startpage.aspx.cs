@@ -175,6 +175,11 @@ namespace Kompetensportalen
                 btnStartTest.Text = "Starta licensieringstest";
                 currentUser.getNewTest(1);
             }
+
+            //method pass or fail
+            //Test newtest = new Test();
+            //newtest.passorfail();
+            //label1.Text = newtest.passorfail().tostring();
             
         }
 

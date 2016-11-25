@@ -16,7 +16,19 @@ namespace Kompetensportalen
         public List<Answer> answerList { get; set; }
         public List<Answer> userAnswerList { get; set; }
 
-       
+       public void countPoints()
+        {
+            int count = 0;
+
+            //for (int i = 0; i < question.Length; i++)
+            //    if (question[correct[i].ToString] == i)
+            //    {
+            //        count++;
+            //    }
+
+
+        }
+
 
 
 
@@ -24,4 +36,4 @@ namespace Kompetensportalen
 
 
     }
-    }
+}

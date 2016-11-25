@@ -47,10 +47,10 @@ namespace Kompetensportalen
         //method pass och fail
         public void passorfail()
         {
-            int cat1 = 60 / 100;
-            int cat2 = 60 / 100;
-            int cat3 = 60 / 100;
-            int total = 70 / 100;
+            int cat1 = (60 * 100)/100;
+            int cat2 = (60 * 100)/100;
+            int cat3 = (60 * 100)/100;
+            int total = (70 * 100)/100;
 
             if (category1 <= cat1 && category2 <= cat2 && category3 <= cat3 && totalPoints <= total)
             {

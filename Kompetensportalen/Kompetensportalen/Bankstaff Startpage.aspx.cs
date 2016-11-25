@@ -9,6 +9,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.Web.UI.HtmlControls;
 
+
 namespace Kompetensportalen
 {
     public partial class Bankstaff_Startpage : System.Web.UI.Page
@@ -100,6 +101,7 @@ namespace Kompetensportalen
                             li.Value = answer.id;
                             li.Text = "<img href='" + newImg.ImageUrl + "'>";
 
+                           
                             rbList.Items.Add(li);
                             div.Controls.Add(rbList);
                             div.Controls.Add(newImg);

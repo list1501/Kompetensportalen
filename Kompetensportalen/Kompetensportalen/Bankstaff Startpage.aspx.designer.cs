@@ -85,6 +85,15 @@ namespace Kompetensportalen {
         protected global::System.Web.UI.WebControls.Panel panelTest;
         
         /// <summary>
+        /// testContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel testContent;
+        
+        /// <summary>
         /// btnCancel control.
         /// </summary>
         /// <remarks>

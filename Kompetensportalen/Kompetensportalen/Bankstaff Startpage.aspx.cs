@@ -35,20 +35,22 @@ namespace Kompetensportalen
                 btnStartTest.Text = "Starta licensieringstest";
                 currentUser.getNewTest(1);
             }
+
+            renderTest(currentUser.newTest.questions);
         }
 
         protected void btnStartTest_Click(object sender, EventArgs e)
         {               
-            if (currentUser.qualified && currentUser.lastTestDate.Year == today.Year)
-            {
-                //Do the method for showing tests instead              
-            }
-            else
-            {
-                btnStartTest.Visible = false;
-                renderTest(currentUser.newTest.questions);
-                btnStopTest.Visible = true;
-            }
+            //if (currentUser.qualified && currentUser.lastTestDate.Year == today.Year)
+            //{
+            //    //Do the method for showing tests instead              
+            //}
+            //else
+            //{
+            //    btnStartTest.Visible = false;
+            //    renderTest(currentUser.newTest.questions);
+            //    btnStopTest.Visible = true;
+            //}
         }
         #region Show Test on Page method
         private void renderTest(List<Question> inputList)
@@ -79,7 +81,7 @@ namespace Kompetensportalen
                 div.Controls.Add(activeCategory);
                 div.Controls.Add(activeQuestion);
 
-                pnlquestionWAnswer.Controls.Add(div);
+                testContent.Controls.Add(div);
 
                 //Get radiobuttons if there is only one correct answer
                 if (q.answerList.FindAll(x => x.correct == true).ToList().Count == 1)

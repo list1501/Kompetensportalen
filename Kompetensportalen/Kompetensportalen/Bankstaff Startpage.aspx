@@ -23,22 +23,23 @@
             <div class="main">                  
                 <h3>Hem</h3>
                    
-                <asp:Button ID="btnStartTest" runat="server" OnClick="btnStartTest_Click"/>                   
-                <asp:Panel ID="pnlquestionWAnswer" runat="server" />
-                <asp:Button ID="btnStopTest" runat="server" Visible="false" Text="Stoppa testet" OnClick="btnStopTest_Click"/>
+                <asp:Button ID="btnStartTest" runat="server"/>                   
+                <!--<asp:Panel ID="pnlquestionWAnswer" runat="server" />
+                <asp:Button ID="btnStopTest" runat="server" Visible="false" Text="Stoppa testet" OnClick="btnStopTest_Click"/>-->
 
-                <%--<!-- MODAL POPUP STARTS HERE -->
-                <ajax:ModalPopupExtender ID="mpeTest" runat="server" PopupControlID="panelTest" TargetControlID="btnStartTest" CancelControlID="btnCancel" BackgroundCssClass="modalBackground">
+                <!-- MODAL POPUP STARTS HERE -->
+                <ajax:ModalPopupExtender ID="mpeTest" runat="server" PopupControlID="panelTest" TargetControlID="btnStartTest" CancelControlID="btnCancel" BackgroundCssClass="modalBackground" RepositionMode="RepositionOnWindowResizeAndScroll">
                 </ajax:ModalPopupExtender>
 
                 <asp:Label ID="label1" runat="server" Text=""></asp:Label>
                 <asp:Panel ID="panelTest" runat="server" CssClass="modalPopup" align="center" style="display:none">
                    <br />
-                    <asp:RadioButtonList ID="RadioButtonList1" runat="server"></asp:RadioButtonList>
-                    <asp:CheckBoxList ID="CheckBoxList1" runat="server"></asp:CheckBoxList>
+                    <asp:Panel ID="testContent" runat="server" CssClass="modalContent">
+
+                    </asp:Panel>
                     <asp:Button ID="btnCancel" runat="server" Text="Avbryt test" />
                 </asp:Panel>
-                <!-- END OF MODAL POPUP -->--%>
+                <!-- END OF MODAL POPUP -->
                                        
             </div><!--main-->             
         </form>

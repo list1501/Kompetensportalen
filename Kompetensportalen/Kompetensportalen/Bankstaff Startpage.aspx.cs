@@ -67,15 +67,15 @@ namespace Kompetensportalen
 
                 if (q.category == 1)
                 {
-                    catequest = "Produkter och hantering av kundens affärer";
+                    catequest = "Produkter och hantering av kundens affärer. ";
                 }
                 else if (q.category == 2)
                 {
-                    catequest = "Ekonomi";
+                    catequest = "Ekonomi. ";
                 }
                 else
                 {
-                    catequest = "Etik och regelverk";
+                    catequest = "Etik och regelverk. ";
                 }
                 activeCategory.Text = catequest;
                 activeQuestion.Text = q.question;

@@ -19,6 +19,8 @@ namespace Kompetensportalen
         public int totalPoints { get; set; }
         public XmlDocument sourceFile { get; set; }
         public List<Question> questions { get; set; }
+        public List<Answer> answerlist { get; set; }
+        public List<User> useranswer { get; set; }
 
         #region Get questions from test
 
@@ -46,30 +48,33 @@ namespace Kompetensportalen
            
         }
 
-        
+
         //method pass och fail
-        //public void passorfail()
-        //{
-        //    int cat1 = 60 / 100;
-        //    int cat2 = 60 / 100;
-        //    int cat3 = 60 / 100;
-        //    int total = 70 / 100;
+        public void passorfail()
+        {
+            int cat1 = 60 / 100;
+            int cat2 = 60 / 100;
+            int cat3 = 60 / 100;
+            int total = 70 / 100;
 
-        //    if (category1 <= cat1 && category2 <= cat2 && category3 <= cat3 && totalPoints <= total)
-        //    {
-        //        string passtext = "grattis du klarade testet";
-        //        answerlist.userAnswerList.Add(answer);
-        //        XmlElement svar = new XmlElement("Svar",
-        //        new XmlAttribute("answer"));
-        //        Doc.Root.Add(svar);
-        //        doc.save(answer.xml);
-        //    }
+            if (category1 <= cat1 && category2 <= cat2 && category3 <= cat3 && totalPoints <= total)
+            {
+                string passtext = "grattis du klarade testet";
+                XmlDocument xdoc = new XmlDocument();
+                xdoc.LoadXml(sourceFile.ToString());
+                xdoc.Save("answer.xml");
 
-        //    else
-        //    {
-        //        string failtext = "Du klarade inte detta test.";
-        //    }
-        //}
+                //XmlElement svar = new XmlElement("Svar",
+                //new XmlAttribute("answer"));
+                //Doc.Root.Add(svar);
+                //doc.save(answer.xml);
+            }
+
+            else
+            {
+                string failtext = "Du klarade inte detta test.";
+            }
+        }
         #endregion
     }
 }

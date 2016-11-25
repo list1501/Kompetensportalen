@@ -21,8 +21,8 @@ namespace Kompetensportalen
         public List<Question> questions { get; set; }
         public List<Answer> answerlist { get; set; }
         public List<User> useranswer { get; set; }
-        public string passtext;
-        public string failtext;
+        public string text;
+        
         
 
 
@@ -59,7 +59,7 @@ namespace Kompetensportalen
             if (category1 <= cat1 && category2 <= cat2 && category3 <= cat3 && totalPoints <= total)
             {
 
-                passtext = "grattis, du klarar dig!";
+                text = "grattis, du klarar dig!";
                 XmlDocument xdoc = new XmlDocument();
                 xdoc.LoadXml(sourceFile.ToString());
                 xdoc.Save("answer.xml");
@@ -72,7 +72,7 @@ namespace Kompetensportalen
 
             else
             {
-                failtext = "Du klarade inte ditt test";
+                text = "Du klarade inte ditt test";
             }
         }
         #endregion

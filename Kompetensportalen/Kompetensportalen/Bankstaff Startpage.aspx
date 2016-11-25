@@ -32,8 +32,7 @@
                 </ajax:ModalPopupExtender>
 
                 <asp:Label ID="label1" runat="server" Text=""></asp:Label>
-                <asp:Panel ID="panelTest" runat="server" CssClass="modalPopup" align="center" style="display:none">
-                   <br />
+                <asp:Panel ID="panelTest" runat="server" CssClass="modalPopup" align="center" style="display:none" ScrollBars="Vertical">
                     <asp:Panel ID="testContent" runat="server" CssClass="modalContent">
 
                     </asp:Panel>

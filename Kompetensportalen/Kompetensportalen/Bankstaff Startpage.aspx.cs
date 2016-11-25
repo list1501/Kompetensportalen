@@ -163,9 +163,6 @@ namespace Kompetensportalen
             //Run method to export test-xml to DB
             newSQL.saveTestToDB(currentUser.newTest);
 
-            //Hide stop-button and show start-button
-            btnStopTest.Visible = false;
-
             //Check if user is now allowed to see last test and show button with appropriate text
             //Also pre-load appropriate test for user
             if (currentUser.qualified)
@@ -178,8 +175,7 @@ namespace Kompetensportalen
                 btnStartTest.Text = "Starta licensieringstest";
                 currentUser.getNewTest(1);
             }
-
-            btnStartTest.Visible = true;
+            
         }
 
         //Method to add user's answers to correct questions
@@ -246,6 +242,22 @@ namespace Kompetensportalen
             currentUser.newTest.questions = questions;
 
             System.Diagnostics.Debug.WriteLine(currentUser.newTest.questions[4].userAnswerList[0].id);
+        }
+
+        public void addAnswersToXML()
+        {
+            XmlDocument doc = currentUser.newTest.sourceFile;
+            XmlNodeList xQlist = doc.SelectNodes("Test/question");
+
+            int c = currentUser.newTest.questions.Count;
+
+            for (int i = 0; i < c; i++)
+            {
+                Question q = currentUser.newTest.questions[i];
+                int qID = q.id;
+
+
+            }
         }
 
         #endregion End test and save to file

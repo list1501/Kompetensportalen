@@ -25,7 +25,7 @@
                    
                 <asp:Button ID="btnStartTest" runat="server"/>                   
                 <!--<asp:Panel ID="pnlquestionWAnswer" runat="server" />
-                <asp:Button ID="btnStopTest" runat="server" Visible="false" Text="Stoppa testet" OnClick="btnStopTest_Click"/>-->
+                
 
                 <!-- MODAL POPUP STARTS HERE -->
                 <ajax:ModalPopupExtender ID="mpeTest" runat="server" PopupControlID="panelTest" TargetControlID="btnStartTest" CancelControlID="btnCancel" BackgroundCssClass="modalBackground" RepositionMode="RepositionOnWindowResizeAndScroll">
@@ -37,6 +37,8 @@
 
                     </asp:Panel>
                     <asp:Button ID="btnCancel" runat="server" Text="Avbryt test" />
+                    <asp:Button ID="btnStopTest" runat="server" Visible="false" Text="Stoppa testet" OnClick="btnStopTest_Click"/>
+
                 </asp:Panel>
                 <!-- END OF MODAL POPUP -->
                                        

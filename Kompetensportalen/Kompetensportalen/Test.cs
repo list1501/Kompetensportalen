@@ -43,12 +43,7 @@ namespace Kompetensportalen
         #endregion
 
         #region Count points and percent
-        public void countPoints()
-        {
-           
-        }
-
-
+       
         //method pass och fail
         public void passorfail()
         {

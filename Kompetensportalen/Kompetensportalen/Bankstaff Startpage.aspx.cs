@@ -253,6 +253,9 @@ namespace Kompetensportalen
         {
             XmlDocument doc = currentUser.newTest.sourceFile;
             XmlNodeList xQlist = doc.SelectNodes("Test/question");
+            //doc.Load("Test");
+            //XmlDocument newDoc = new XmlDocument();
+            //newDoc.Load("test");
 
             int c = currentUser.newTest.questions.Count;
 
@@ -263,6 +266,11 @@ namespace Kompetensportalen
 
 
             }
+
+            //XmlNode insertNode = doc.SelectSingleNode("Test/question");
+            //insertNode.AppendChild(c);
+            //xmldoc.Save("test");
+            
         }
 
         #endregion End test and save to file

@@ -85,6 +85,7 @@ namespace Kompetensportalen
                 if (q.answerList.FindAll(x => x.correct == true).ToList().Count == 1)
                 {
                     RadioButtonList rbList = new RadioButtonList();
+                    rbList.ID = q.id.ToString();
 
                     foreach (var answer in q.answerList)
                     {
@@ -115,6 +116,7 @@ namespace Kompetensportalen
                 else
                 {
                     CheckBoxList cbList = new CheckBoxList();
+                    cbList.ID = q.id.ToString();
 
                     foreach (var answer in q.answerList)
                     {
@@ -178,21 +180,68 @@ namespace Kompetensportalen
 
         //Method to add user's answers to correct questions
         public void addAnswersToQuestion()
-        {
-            List<Answer> userAnswers = new List<Answer>();
+        {            
             List<Question> questions = currentUser.newTest.questions;
             int c = questions.Count();
 
             for (int i = 0; i < c; i++)
             {
                 Question currentQuestion = questions[i];
+                List<Answer> currentAnswers = currentQuestion.answerList;
+                List<Answer> userAnswers = new List<Answer>();
+
                 int qId = questions[i].id;
-                var div = (HtmlGenericControl)FindControl(i.ToString());
-                if (div.HasControls())
+                Control div = FindControl(qId.ToString());
+                
+                foreach (Control ctrl in div.Controls)
                 {
-                    
+                    if (ctrl is RadioButtonList)
+                    {
+                        RadioButtonList rblist = (RadioButtonList)ctrl;
+
+                        for (int rb = 0; rb < rblist.Items.Count; rb++)
+                        {
+                            if (rblist.Items[rb].Selected)
+                            {
+                                ListItem li = rblist.Items[rb];
+                                Answer currentAnswer = currentAnswers[rb];
+                                Answer userAnswer = new Answer()
+                                {
+                                    id = li.Value,
+                                    correct = currentAnswer.correct,
+                                    text = currentAnswer.text
+                                };
+                                userAnswers.Add(userAnswer);
+                            }
+                        }
+                    }
+                    else if (ctrl is CheckBoxList)
+                    {
+                        CheckBoxList cblist = (CheckBoxList)ctrl;
+
+                        for (int cb = 0; cb < cblist.Items.Count; cb++)
+                        {
+                            if (cblist.Items[cb].Selected)
+                            {
+                                ListItem li = cblist.Items[cb];
+                                Answer currentAnswer = currentAnswers[cb];
+                                Answer userAnswer = new Answer()
+                                {
+                                    id = li.Value,
+                                    correct = currentAnswer.correct,
+                                    text = currentAnswer.text
+                                };
+                                userAnswers.Add(userAnswer);
+                            }
+                        }
+                    }
+                    currentQuestion.userAnswerList = userAnswers;
                 }
+                questions[i] = currentQuestion;
             }
+            currentUser.newTest.questions = questions;
+
+            System.Diagnostics.Debug.WriteLine(currentUser.newTest.questions[4].userAnswerList[0].id);
         }
 
         #endregion End test and save to file

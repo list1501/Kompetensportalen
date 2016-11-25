@@ -48,25 +48,28 @@ namespace Kompetensportalen
 
         
         //method pass och fail
-        public void passorfail()
-        {
-            //om man först själv räknar ut hur många frågor som är antal rätt % osv... 
-            //kan inte tänka längre
-            //if (category1 == 13 && category2 == 13 && category3 == 10 && totalPoints < 50)
-            //{
-            //    label1.text = "grattis du klarade testet";
-            //    answerlist.userAnswerList.Add(answer);
-            //    XmlElement svar = new XmlElement("Svar",
-            //    new XmlAttribute("answer"));
-            //    Doc.Root.Add(svar);
-            //    doc.save(answer.xml);
-            //}
+        //public void passorfail()
+        //{
+        //    int cat1 = 60 / 100;
+        //    int cat2 = 60 / 100;
+        //    int cat3 = 60 / 100;
+        //    int total = 70 / 100;
 
-            //else
-            //{
-            //    label1.text = "Du klarade inte detta test.";
-            //}
-        }
+        //    if (category1 <= cat1 && category2 <= cat2 && category3 <= cat3 && totalPoints <= total)
+        //    {
+        //        string passtext = "grattis du klarade testet";
+        //        answerlist.userAnswerList.Add(answer);
+        //        XmlElement svar = new XmlElement("Svar",
+        //        new XmlAttribute("answer"));
+        //        Doc.Root.Add(svar);
+        //        doc.save(answer.xml);
+        //    }
+
+        //    else
+        //    {
+        //        string failtext = "Du klarade inte detta test.";
+        //    }
+        //}
         #endregion
     }
 }

@@ -267,10 +267,10 @@ namespace Kompetensportalen
 
             }
 
-            //XmlNode insertNode = doc.SelectSingleNode("Test/question");
+            XmlNode insertNode = doc.SelectSingleNode("Test/question");
             //insertNode.AppendChild(c);
             //xmldoc.Save("test");
-            
+
         }
 
         #endregion End test and save to file

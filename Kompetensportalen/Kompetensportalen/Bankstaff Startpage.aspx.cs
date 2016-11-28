@@ -131,7 +131,7 @@ namespace Kompetensportalen
                             Image newImg = new Image();
                             newImg.ImageUrl = answer.text;
                             li.Value = answer.id;
-                            li.Text = "<img href='" + newImg.ImageUrl + "'>";
+                            li.Text = "<img src='" + newImg.ImageUrl + "'>";
                             //li.Value = answer.id;
                             //Image newImg = new Image();
                             //newImg.ImageUrl = answer.text;
@@ -159,9 +159,6 @@ namespace Kompetensportalen
         {
             //Run method to add user's answers to correct questions
             addAnswersToQuestion();
-
-            //Run method to add user's answers to XML-source file
-            addAnswersToXML();
 
             //Run method to export test-xml to DB
             newSQL.saveTestToDB(currentUser.newTest);

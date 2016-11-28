@@ -41,7 +41,7 @@ namespace Kompetensportalen
             HtmlTableCell date = new HtmlTableCell("th");
             HtmlTableCell type = new HtmlTableCell("th");
 
-            username.InnerText = "Användarnamn";
+            username.InnerText = "Användare";
             date.InnerText = "Senaste Försök";
             type.InnerText = "Test som måste utföras";
 
@@ -96,14 +96,10 @@ namespace Kompetensportalen
             HtmlTableRow rowHeader = new HtmlTableRow();
 
             HtmlTableCell username = new HtmlTableCell("th");
-            HtmlTableCell date = new HtmlTableCell("th");
-            HtmlTableCell type = new HtmlTableCell("th");
 
-            username.InnerText = "Användarnamn";
-            date.InnerText = "Senaste Testdatum";
+            username.InnerText = "Licensierade Användare";
 
             rowHeader.Cells.Add(username);
-            rowHeader.Cells.Add(date);
 
             table.Rows.Add(rowHeader);
 
@@ -116,15 +112,12 @@ namespace Kompetensportalen
                 table.Rows.Add(testRows);
 
                 HtmlTableCell usname = new HtmlTableCell();
-                HtmlTableCell usdate = new HtmlTableCell();
 
                 var dateOnlyString = user.lastTestDate.ToShortDateString(); //Return 00/00/0000
 
                 testRows.Cells.Add(usname);
-                testRows.Cells.Add(usdate);
 
                 usname.InnerText = user.username;
-                usdate.InnerText = dateOnlyString;
             }
         }
 
@@ -144,7 +137,7 @@ namespace Kompetensportalen
             HtmlTableCell date = new HtmlTableCell("th");
             HtmlTableCell type = new HtmlTableCell("th");
 
-            username.InnerText = "Användarnamn";
+            username.InnerText = "Användare";
             date.InnerText = "Senaste Testdatum";
             type.InnerText = "Test som måste utföras";
 
@@ -196,7 +189,6 @@ namespace Kompetensportalen
             table.Visible = true;
             table.Rows.Clear();
 
-
             HtmlTableRow rowHeader = new HtmlTableRow();
 
             HtmlTableCell username = new HtmlTableCell("th");
@@ -208,9 +200,9 @@ namespace Kompetensportalen
             HtmlTableCell category2 = new HtmlTableCell("th");
             HtmlTableCell category3 = new HtmlTableCell("th");
 
-            username.InnerText = "Användarnamn";
+            username.InnerText = "Användare";
             date.InnerText = "Datum";
-            type.InnerText = "Test";
+            type.InnerText = "Senast slutfört test";
             passed.InnerText = "Resultat";
             totalpoints.InnerText = "Totalpoäng";
             category1.InnerText = "Kategori 1";

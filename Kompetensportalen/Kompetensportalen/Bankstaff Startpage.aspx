@@ -21,9 +21,7 @@
 		        </ul>
             </nav>
             <div class="main">                  
-                <h3>Hem</h3>
-                   
-                <asp:Image runat="server"></asp:Image>
+                <h3>Hem</h3>                  
 
                 <asp:Button ID="btnStartTest" runat="server"/>                   
                 <!--<asp:Panel ID="pnlquestionWAnswer" runat="server" />

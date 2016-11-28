@@ -130,6 +130,7 @@
     <Content Include="Admin Startpage.aspx" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="TestResult.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +160,13 @@
     <Compile Include="Question.cs" />
     <Compile Include="SQL.cs" />
     <Compile Include="Test.cs" />
+    <Compile Include="TestResult.aspx.cs">
+      <DependentUpon>TestResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestResult.aspx.designer.cs">
+      <DependentUpon>TestResult.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup />

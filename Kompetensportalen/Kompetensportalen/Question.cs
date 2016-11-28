@@ -18,21 +18,26 @@ namespace Kompetensportalen
 
         
 
-        public void countPoints()
+        public void correctAnswer()
         {
-            int numAnswers = 0;
-
-            for (int i = 0; i < answerList.Count; i++)
+            bool isCorrect = false;
+            foreach (Answer ua in userAnswerList)
             {
-                if (answerList[i].correct)
+                if (ua.correct)
                 {
-                    numAnswers++;
+                    isCorrect = true;
                 }
-
-                               
-               
-                
+                else
+                {
+                    isCorrect = false;
+                }
             }
+            if (isCorrect)
+            {
+                correct = true;
+            }
+            
+
 
 
             

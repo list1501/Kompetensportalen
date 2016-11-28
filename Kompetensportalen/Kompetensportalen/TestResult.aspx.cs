@@ -9,9 +9,13 @@ namespace Kompetensportalen
 {
     public partial class TestResult : System.Web.UI.Page
     {
+        User currentUser = Loginpage.currentLogin;
+        DateTime today = DateTime.Today;
+        SQL newSQL = new SQL();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            currentUser.getLastTest();
         }
     }
 }

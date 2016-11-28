@@ -168,7 +168,7 @@ namespace Kompetensportalen
                 //Show a message about checking all answers
                 System.Windows.Forms.MessageBox.Show("Du har inte kryssat i rätt antal svar för samtliga frågor. \r\n" +
                     "Gå tillbaka och kontrollera dina svar så du har rätt antal på varje fråga.", "OBS!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Exclamation);
-                //Go back to test
+                 //Go back to test
             }
             else if (passed)
             {

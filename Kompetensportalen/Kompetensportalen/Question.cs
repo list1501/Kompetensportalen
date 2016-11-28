@@ -16,6 +16,9 @@ namespace Kompetensportalen
         public List<Answer> answerList { get; set; }
         public List<Answer> userAnswerList { get; set; }
         Test nyttest = new Test();
+        public bool allacheckade { get; set; }
+
+        
 
         public void countPoints()
         {
@@ -28,9 +31,15 @@ namespace Kompetensportalen
                     points++;
                 }
 
-                else
+                               
+                if (allacheckade == true)
                 {
+                    //testet skickas
+                }
 
+                else if (allacheckade == false)
+                {
+                    //du har missat att svara på någonting
                 }
 
                 nyttest.passorfail();

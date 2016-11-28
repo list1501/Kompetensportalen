@@ -210,7 +210,7 @@ namespace Kompetensportalen
             _cmd.Parameters.AddWithValue("xml", xml.ToString());  //Lite osäker på om den måste vara .ToString() för att databasen ska ta emot eller inte. Kan kolla upp detta.
 
             _cmd.ExecuteNonQuery();
-
+            closeConn();
 
         }
 

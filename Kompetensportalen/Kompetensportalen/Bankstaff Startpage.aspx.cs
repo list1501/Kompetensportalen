@@ -132,9 +132,6 @@ namespace Kompetensportalen
                             newImg.ImageUrl = answer.text;
                             li.Value = answer.id;
                             li.Text = "<img src='" + newImg.ImageUrl + "'>";
-                            //li.Value = answer.id;
-                            //Image newImg = new Image();
-                            //newImg.ImageUrl = answer.text;
 
                             cbList.Items.Add(li);
                             div.Controls.Add(cbList);

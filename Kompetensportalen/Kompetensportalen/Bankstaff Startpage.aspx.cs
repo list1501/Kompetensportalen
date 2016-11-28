@@ -57,6 +57,7 @@ namespace Kompetensportalen
         private void renderTest(List<Question> inputList)
         {
             testContent.Controls.Clear();
+                        
             foreach (Question q in inputList)
             {
                 HtmlGenericControl div = new HtmlGenericControl("div");
@@ -148,6 +149,7 @@ namespace Kompetensportalen
                     }
                 }
             }
+           
         }
 
         #endregion Show test on page method

@@ -157,6 +157,8 @@ namespace Kompetensportalen
             //Run method to add user's answers to correct questions
             addAnswersToQuestion();
 
+            //Emma's method
+
             //Run method to add user's answers to XML-source file
             addAnswersToXML();
 
@@ -170,7 +172,7 @@ namespace Kompetensportalen
                 btnStartTest.Text = "Titta på senaste testet";
                 currentUser.getLastTest();
             }
-            else if (!currentUser.qualified)
+            else if (!currentUser.qualified || currentUser.lastTestDate.Year != today.Year)
             {
                 btnStartTest.Text = "Starta licensieringstest";
                 currentUser.getNewTest(1);
@@ -197,11 +199,14 @@ namespace Kompetensportalen
 
                 int qId = questions[i].id;
                 Control div = FindControl(qId.ToString());
-                
+                bool allRbAnswered = false;
+                bool allCbAnswered = false;
+
                 foreach (Control ctrl in div.Controls)
                 {
                     if (ctrl is RadioButtonList)
                     {
+                        bool answered = false;
                         RadioButtonList rblist = (RadioButtonList)ctrl;
 
                         for (int rb = 0; rb < rblist.Items.Count; rb++)
@@ -217,7 +222,27 @@ namespace Kompetensportalen
                                     text = currentAnswer.text
                                 };
                                 userAnswers.Add(userAnswer);
+                                answered = true;
                             }
+                            else
+                            {
+                                if (answered)
+                                {
+                                    answered = true;
+                                }
+                                else
+                                {
+                                    answered = false;
+                                }
+                            }
+                        }
+                        if (answered)
+                        {
+                            allRbAnswered = true;
+                        }
+                        else if (!answered)
+                        {
+                            allRbAnswered = false;
                         }
                     }
                     else if (ctrl is CheckBoxList)
@@ -238,6 +263,7 @@ namespace Kompetensportalen
                                 };
                                 userAnswers.Add(userAnswer);
                             }
+                            
                         }
                     }
                     currentQuestion.userAnswerList = userAnswers;
@@ -246,7 +272,7 @@ namespace Kompetensportalen
             }
             currentUser.newTest.questions = questions;
 
-            System.Diagnostics.Debug.WriteLine(currentUser.newTest.questions[4].userAnswerList[0].id);
+            //System.Diagnostics.Debug.WriteLine(currentUser.newTest.questions[4].userAnswerList[0].id);
         }
 
         public void addAnswersToXML()

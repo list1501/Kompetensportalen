@@ -252,10 +252,6 @@ namespace Kompetensportalen
         public void addAnswersToXML()
         {
             XmlDocument doc = currentUser.newTest.sourceFile;
-            XmlNodeList xQlist = doc.SelectNodes("Test/question");
-            //doc.Load("Test");
-            //XmlDocument newDoc = new XmlDocument();
-            //newDoc.Load("test");
 
             int c = currentUser.newTest.questions.Count;
 
@@ -264,13 +260,21 @@ namespace Kompetensportalen
                 Question q = currentUser.newTest.questions[i];
                 int qID = q.id;
 
+                XmlNode insertNode = doc.GetElementById(qID.ToString());
 
+                if (q.userAnswerList != null)
+                {
+                    foreach (Answer a in q.userAnswerList)
+                    {
+                        XmlElement userAnswer = doc.CreateElement("userAnswer");
+                        XmlAttribute attr = doc.CreateAttribute("ID");
+                        attr.Value = a.id.ToString();
+                        userAnswer.Attributes.Append(attr);
+                        insertNode.AppendChild(userAnswer);
+                    }
+                }                
             }
-
-            XmlNode insertNode = doc.SelectSingleNode("Test/question");
-            //insertNode.AppendChild(c);
-            //xmldoc.Save("test");
-
+            currentUser.newTest.sourceFile = doc;
         }
 
         #endregion End test and save to file

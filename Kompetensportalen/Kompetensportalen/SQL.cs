@@ -189,12 +189,29 @@ namespace Kompetensportalen
             DateTime testDate = test.date;
             int testType = test.testType;
             bool passed = test.passed;
+            int totalPoints = test.totalPoints;
             int category1 = test.category1;
             int category2 = test.category2;
             int category3 = test.category3;
-            int totalPoints = test.totalPoints;
             XmlDocument xml = test.sourceFile;
-            string sql;
+            string sql = "INSERT INTO finished_tests (employee, date, type, passed, total_points, points_category1, points_category2, points_category3, xml)" +
+                "values (@employee, @date, @type, @passed, @total, @cat1, @cat2, @cat3, @xml)";
+
+            openConn();
+            _cmd = new NpgsqlCommand(sql, _conn);
+            _cmd.Parameters.AddWithValue("employee", employee);
+            _cmd.Parameters.AddWithValue("date", testDate);
+            _cmd.Parameters.AddWithValue("type", testType);
+            _cmd.Parameters.AddWithValue("passed", passed);
+            _cmd.Parameters.AddWithValue("total", totalPoints);
+            _cmd.Parameters.AddWithValue("cat1", category1);
+            _cmd.Parameters.AddWithValue("cat2", category2);
+            _cmd.Parameters.AddWithValue("cat3", category3);
+            _cmd.Parameters.AddWithValue("xml", xml.ToString());  //Lite osäker på om den måste vara .ToString() för att databasen ska ta emot eller inte. Kan kolla upp detta.
+
+            _cmd.ExecuteNonQuery();
+
+
         }
 
         #endregion

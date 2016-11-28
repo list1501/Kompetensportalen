@@ -99,7 +99,7 @@ namespace Kompetensportalen
                             Image newImg = new Image();
                             newImg.ImageUrl = answer.text;
                             li.Value = answer.id;
-                            li.Text = "<img href='" + newImg.ImageUrl + "'>";
+                            li.Text = "<img src='" + newImg.ImageUrl + "'>";
 
                            
                             rbList.Items.Add(li);

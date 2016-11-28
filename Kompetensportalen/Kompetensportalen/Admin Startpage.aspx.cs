@@ -18,18 +18,157 @@ namespace Kompetensportalen
     {
         SQL openconn = new SQL();
         List<Test> testlist;
+        List<User> userlist;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             User currentUser = Loginpage.currentLogin;
-        }
+        }      
 
-        protected void btnSeeTests_Click(object sender, EventArgs e)
+        protected void btnSeeUncertified_Click(object sender, EventArgs e)
         {
-            btnSeeTests.Text = "Uppdatera tabell";
+            btnSeeUncertified.Enabled = false;
             table.Visible = true;
             table.Rows.Clear();
-            
+
+            HtmlTableRow rowHeader = new HtmlTableRow();
+
+            HtmlTableCell username = new HtmlTableCell("th");
+            HtmlTableCell date = new HtmlTableCell("th");
+            HtmlTableCell type = new HtmlTableCell("th");
+
+            username.InnerText = "Användarnamn";
+            date.InnerText = "Senaste Testdatum";
+
+            rowHeader.Cells.Add(username);
+            rowHeader.Cells.Add(date);
+
+            table.Rows.Add(rowHeader);
+
+            userlist = new List<User>();
+            userlist = openconn.GetNotCertifiedUsersAdmin();
+
+            foreach (User user in userlist)
+            {
+                HtmlTableRow testRows = new HtmlTableRow();
+                table.Rows.Add(testRows);
+
+                HtmlTableCell usname = new HtmlTableCell();
+                HtmlTableCell usdate = new HtmlTableCell();
+
+                var dateOnlyString = user.lastTestDate.ToShortDateString(); //Return 00/00/0000
+
+                testRows.Cells.Add(usname);
+                testRows.Cells.Add(usdate);
+
+                usname.InnerText = user.username;
+                usdate.InnerText = dateOnlyString;
+            }
+        }
+
+        protected void btnSeeCertified_Click(object sender, EventArgs e)
+        {
+            btnSeeCertified.Enabled = false;
+            table.Visible = true;
+            table.Rows.Clear();
+
+            HtmlTableRow rowHeader = new HtmlTableRow();
+
+            HtmlTableCell username = new HtmlTableCell("th");
+            HtmlTableCell date = new HtmlTableCell("th");
+            HtmlTableCell type = new HtmlTableCell("th");
+
+            username.InnerText = "Användarnamn";
+            date.InnerText = "Senaste Testdatum";
+
+            rowHeader.Cells.Add(username);
+            rowHeader.Cells.Add(date);
+
+            table.Rows.Add(rowHeader);
+
+            userlist = new List<User>();
+            userlist = openconn.GetCertifiedUsersAdmin();
+
+            foreach (User user in userlist)
+            {
+                HtmlTableRow testRows = new HtmlTableRow();
+                table.Rows.Add(testRows);
+
+                HtmlTableCell usname = new HtmlTableCell();
+                HtmlTableCell usdate = new HtmlTableCell();
+
+                var dateOnlyString = user.lastTestDate.ToShortDateString(); //Return 00/00/0000
+
+                testRows.Cells.Add(usname);
+                testRows.Cells.Add(usdate);
+
+                usname.InnerText = user.username;
+                usdate.InnerText = dateOnlyString;
+            }
+        }
+
+        protected void btnSeeUsersforAnnualCheck_Click(object sender, EventArgs e)
+        {
+            btnSeeUsersforAnnualCheck.Enabled = false;
+
+            btnSeeAllUsers.Text = "Uppdatera tabell";
+            table.Visible = true;
+            table.Rows.Clear();
+
+            HtmlTableRow rowHeader = new HtmlTableRow();
+
+            HtmlTableCell username = new HtmlTableCell("th");
+            HtmlTableCell date = new HtmlTableCell("th");
+            HtmlTableCell type = new HtmlTableCell("th");
+
+            username.InnerText = "Användarnamn";
+            date.InnerText = "Senaste Testdatum";
+            type.InnerText = "Test som måste utföras";
+
+            rowHeader.Cells.Add(username);
+            rowHeader.Cells.Add(date);
+            rowHeader.Cells.Add(type);
+
+            table.Rows.Add(rowHeader);
+
+            userlist = new List<User>();
+            userlist = openconn.GetUsersForAnnualCheck();
+
+            foreach (User user in userlist)
+            {
+                HtmlTableRow testRows = new HtmlTableRow();
+                table.Rows.Add(testRows);
+
+                HtmlTableCell usname = new HtmlTableCell();
+                HtmlTableCell usdate = new HtmlTableCell();
+                HtmlTableCell ustype = new HtmlTableCell();
+
+                string typeofTest = "";
+                if (user.qualified == true)
+                {
+                    typeofTest = "Kunskapstest";
+                }
+                else
+                    typeofTest = "Licensieringstest";               
+
+                var dateOnlyString = user.lastTestDate.ToShortDateString(); //Return 00/00/0000
+
+                testRows.Cells.Add(usname);
+                testRows.Cells.Add(usdate);
+                testRows.Cells.Add(ustype);
+
+                usname.InnerText = user.username;
+                usdate.InnerText = dateOnlyString;
+                ustype.InnerText = typeofTest;
+            }
+        }
+
+        protected void btnSeeAllUsers_Click(object sender, EventArgs e)
+        {
+            btnSeeAllUsers.Enabled = false;
+            table.Visible = true;
+            table.Rows.Clear();
+
 
             HtmlTableRow rowHeader = new HtmlTableRow();
 
@@ -50,7 +189,7 @@ namespace Kompetensportalen
             category1.InnerText = "Kategori 1";
             category2.InnerText = "Kategori 2";
             category3.InnerText = "Kategori 3";
-            
+
             rowHeader.Cells.Add(username);
             rowHeader.Cells.Add(date);
             rowHeader.Cells.Add(type);
@@ -62,8 +201,8 @@ namespace Kompetensportalen
 
             table.Rows.Add(rowHeader);
 
-            testlist = new List <Test>();
-            testlist = openconn.getTestsAdmin();
+            testlist = new List<Test>();
+            testlist = openconn.getallUsersAdmin();
 
             foreach (Test tests in testlist)
             {
@@ -113,8 +252,8 @@ namespace Kompetensportalen
                 ustotalp.InnerText = tests.totalPoints.ToString();
                 uscat1.InnerText = tests.category1.ToString();
                 uscat2.InnerText = tests.category2.ToString();
-                uscat3.InnerText = tests.category3.ToString();            
-        }
+                uscat3.InnerText = tests.category3.ToString();
+            }
         }
     }
 }

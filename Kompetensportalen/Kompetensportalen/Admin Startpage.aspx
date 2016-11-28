@@ -24,7 +24,10 @@
                     <div class="main">
                         <div class="Section">
                             <h3>Hemsida</h3>
-                            <asp:Button ID="btnSeeTests" runat="server" Text="Se lista över användare och deras prov" OnClick="btnSeeTests_Click"/>
+                            <asp:Button ID="btnSeeAllUsers" runat="server" Text="Alla användare" OnClick="btnSeeAllUsers_Click"/>
+                            <asp:Button ID="btnSeeUncertified" runat="server" Text="Ej licensierade användare" OnClick="btnSeeUncertified_Click"/>
+                            <asp:Button ID="btnSeeCertified" runat="server" Text="Licensierade användare" OnClick="btnSeeCertified_Click"/>
+                            <asp:Button ID="btnSeeUsersforAnnualCheck" runat="server" Text="Användare som måste ta årligt kunskapstest" OnClick="btnSeeUsersforAnnualCheck_Click"/>
                         </div>
 
                         <div style="overflow-x:auto;">

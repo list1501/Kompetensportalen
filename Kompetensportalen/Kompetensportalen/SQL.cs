@@ -217,34 +217,6 @@ namespace Kompetensportalen
         #endregion
 
         #region Get test history
-        public List<Test> getTestsAdmin()
-        {
-            openConn();
-            string sql = "SELECT employee, date, type, passed, total_points, points_category1, points_category2, points_category3 FROM finished_tests ORDER BY date DESC";
-            _cmd = new NpgsqlCommand(sql, _conn);
-            _dr = sqlQuery();
-            Test newTest;
-
-            List<Test> testlist = new List<Test>();
-            while (_dr.Read())
-            {
-                newTest = new Test()
-                {
-                    employee = _dr["employee"].ToString(),
-                    date = (DateTime)_dr["date"],
-                    testType = (int)_dr["type"],
-                    passed = (bool)_dr["passed"],
-                    totalPoints = (int)_dr["total_points"],
-                    category1 = (int)_dr["points_category1"],
-                    category2 = (int)_dr["points_category2"],
-                    category3 = (int)_dr["points_category3"],
-                };
-                testlist.Add(newTest);
-            }
-            closeConn();
-            return testlist;
-        }
-
         //Method to get selected user's test history
         public List<Test> getTestHistory(string usr)
         {
@@ -273,6 +245,106 @@ namespace Kompetensportalen
         }
         #endregion
 
+        public List<Test> getallUsersAdmin()
+        {
+            openConn();
+            string sql = "SELECT employee, date, type, passed, total_points, points_category1, points_category2, points_category3 FROM finished_tests ORDER BY date DESC";
+            _cmd = new NpgsqlCommand(sql, _conn);
+            _dr = sqlQuery();
+            Test newTest;
 
+            List<Test> testlist = new List<Test>();
+            while (_dr.Read())
+            {
+                newTest = new Test()
+                {
+                    employee = _dr["employee"].ToString(),
+                    date = (DateTime)_dr["date"],
+                    testType = (int)_dr["type"],
+                    passed = (bool)_dr["passed"],
+                    totalPoints = (int)_dr["total_points"],
+                    category1 = (int)_dr["points_category1"],
+                    category2 = (int)_dr["points_category2"],
+                    category3 = (int)_dr["points_category3"],
+                };
+                testlist.Add(newTest);
+            }
+            closeConn();
+            return testlist;
+        }
+
+        public List<User> GetUsersForAnnualCheck()
+        {        
+            openConn();
+            string sql = "SELECT * FROM employee left join finished_tests on employee.username = finished_tests.employee where employee.latest_test < CURRENT_TIMESTAMP - INTERVAL '1' YEAR AND employee.qualified = true ORDER BY date DESC";
+            _cmd = new NpgsqlCommand(sql, _conn);
+            _dr = sqlQuery();
+            User annualtest;
+
+            List<User> annuallist = new List<User>();
+            while (_dr.Read())
+            {
+                annualtest = new User()
+                {
+                    username = _dr["employee"].ToString(),
+                    lastTestDate = (DateTime)_dr["date"],
+                    usertype = (int)_dr["type"],
+                    qualified = (bool)_dr["passed"],
+
+                };
+                annuallist.Add(annualtest);
+            }
+            closeConn();
+            return annuallist;
+        }
+
+        public List<User> GetNotCertifiedUsersAdmin()
+        {
+            openConn();
+            string sql = "SELECT * FROM employee left join finished_tests on employee.username = finished_tests.employee where passed = false ORDER BY date DESC";
+            _cmd = new NpgsqlCommand(sql, _conn);
+            _dr = sqlQuery();
+            User uncertified;
+
+            List<User> uncertifiedlist = new List<User>();
+            while (_dr.Read())
+            {
+                uncertified = new User()
+                {
+                    username = _dr["employee"].ToString(),
+                    lastTestDate = (DateTime)_dr["date"],
+                    usertype = (int)_dr["type"],
+                    qualified = (bool)_dr["passed"],
+
+                };
+                uncertifiedlist.Add(uncertified);
+            }
+            closeConn();
+            return uncertifiedlist;
+        }
+        public List<User> GetCertifiedUsersAdmin()
+        {
+            openConn();
+            string sql = "SELECT * FROM employee left join finished_tests on employee.username = finished_tests.employee where passed = true ORDER BY date DESC";
+            _cmd = new NpgsqlCommand(sql, _conn);
+            _dr = sqlQuery();
+            User uncertified;
+
+            List<User> uncertifiedlist = new List<User>();
+            while (_dr.Read())
+            {
+                uncertified = new User()
+                {
+                    username = _dr["employee"].ToString(),
+                    lastTestDate = (DateTime)_dr["date"],
+                    usertype = (int)_dr["type"],
+                    qualified = (bool)_dr["passed"],
+
+                };
+                uncertifiedlist.Add(uncertified);
+            }
+            closeConn();
+            return uncertifiedlist;
+        }
     }
 }

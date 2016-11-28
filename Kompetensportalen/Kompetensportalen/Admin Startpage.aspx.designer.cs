@@ -22,13 +22,40 @@ namespace Kompetensportalen {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// btnSeeTests control.
+        /// btnSeeAllUsers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSeeTests;
+        protected global::System.Web.UI.WebControls.Button btnSeeAllUsers;
+        
+        /// <summary>
+        /// btnSeeUncertified control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSeeUncertified;
+        
+        /// <summary>
+        /// btnSeeCertified control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSeeCertified;
+        
+        /// <summary>
+        /// btnSeeUsersforAnnualCheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSeeUsersforAnnualCheck;
         
         /// <summary>
         /// table control.

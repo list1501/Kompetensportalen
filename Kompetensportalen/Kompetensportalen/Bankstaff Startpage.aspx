@@ -37,7 +37,7 @@
 
                     </asp:Panel>
                     <asp:Button ID="btnCancel" runat="server" Text="Avbryt test" />
-                    <asp:Button ID="btnStopTest" runat="server" Text="Stoppa testet" OnClick="btnStopTest_Click"/>
+                    <asp:Button ID="btnStopTest" runat="server" Text="Avsluta & Spara testet" OnClick="btnStopTest_Click"/>
 
                 </asp:Panel>
                 <!-- END OF MODAL POPUP -->

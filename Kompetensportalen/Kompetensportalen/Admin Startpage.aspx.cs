@@ -42,10 +42,12 @@ namespace Kompetensportalen
             HtmlTableCell type = new HtmlTableCell("th");
 
             username.InnerText = "Användarnamn";
-            date.InnerText = "Senaste Testdatum";
+            date.InnerText = "Senaste Försök";
+            type.InnerText = "Test som måste utföras";
 
             rowHeader.Cells.Add(username);
             rowHeader.Cells.Add(date);
+            rowHeader.Cells.Add(type);
 
             table.Rows.Add(rowHeader);
 
@@ -59,15 +61,26 @@ namespace Kompetensportalen
 
                 HtmlTableCell usname = new HtmlTableCell();
                 HtmlTableCell usdate = new HtmlTableCell();
+                HtmlTableCell ustype = new HtmlTableCell();
+
+                string typeofTest = "";
+                if (user.qualified == true)
+                {
+                    typeofTest = "Kunskapstest";
+                }
+                else
+                    typeofTest = "Licensieringstest";
 
                 var dateOnlyString = user.lastTestDate.ToShortDateString(); //Return 00/00/0000
 
                 testRows.Cells.Add(usname);
                 testRows.Cells.Add(usdate);
+                testRows.Cells.Add(ustype);
 
                 usname.InnerText = user.username;
                 usdate.InnerText = dateOnlyString;
-            }
+                ustype.InnerText = typeofTest;            
+        }
         }
 
         protected void btnSeeCertified_Click(object sender, EventArgs e)

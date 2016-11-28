@@ -212,7 +212,16 @@ namespace Kompetensportalen
         #region Send XML to Database
         public void saveTestToDB(Test test)
         {
-
+            string employee = test.employee;
+            DateTime testDate = test.date;
+            int testType = test.testType;
+            bool passed = test.passed;
+            int category1 = test.category1;
+            int category2 = test.category2;
+            int category3 = test.category3;
+            int totalPoints = test.totalPoints;
+            XmlDocument xml = test.sourceFile;
+            string sql;
         }
 
         #endregion

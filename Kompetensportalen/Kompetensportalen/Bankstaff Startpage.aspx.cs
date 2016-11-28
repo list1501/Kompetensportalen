@@ -199,14 +199,11 @@ namespace Kompetensportalen
 
                 int qId = questions[i].id;
                 Control div = FindControl(qId.ToString());
-                bool allRbAnswered = false;
-                bool allCbAnswered = false;
 
                 foreach (Control ctrl in div.Controls)
                 {
                     if (ctrl is RadioButtonList)
                     {
-                        bool answered = false;
                         RadioButtonList rblist = (RadioButtonList)ctrl;
 
                         for (int rb = 0; rb < rblist.Items.Count; rb++)
@@ -222,28 +219,8 @@ namespace Kompetensportalen
                                     text = currentAnswer.text
                                 };
                                 userAnswers.Add(userAnswer);
-                                answered = true;
                             }
-                            else
-                            {
-                                if (answered)
-                                {
-                                    answered = true;
-                                }
-                                else
-                                {
-                                    answered = false;
-                                }
-                            }
-                        }
-                        if (answered)
-                        {
-                            allRbAnswered = true;
-                        }
-                        else if (!answered)
-                        {
-                            allRbAnswered = false;
-                        }
+                        }  
                     }
                     else if (ctrl is CheckBoxList)
                     {

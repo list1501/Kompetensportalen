@@ -15,17 +15,66 @@ namespace Kompetensportalen
         public bool correct { get; set; }
         public List<Answer> answerList { get; set; }
         public List<Answer> userAnswerList { get; set; }
+        Test nyttest = new Test();
+        public bool allacheckade { get; set; }
 
-       public void countPoints()
+        
+
+        public void countPoints()
         {
-            int count = 0;
+            int points = 0;
 
-            //for (int i = 0; i < question.Length; i++)
-            //    if (question[correct[i].ToString] == i)
+            for (int i = 0; i < answerList.Count; i++)
+            {
+                if (answerList[i] == userAnswerList[i])
+                {
+                    points++;
+                }
+
+                               
+                if (allacheckade == true)
+                {
+                    //testet skickas
+                }
+
+                else if (allacheckade == false)
+                {
+                    //du har missat att svara på någonting
+                }
+
+                nyttest.passorfail();
+
+            }
+
+
+            
+
+            //int count = 0; 
+
+            //for (int i = 0; i < userAnswerList.Count; i++)
+            //{
+            //    string svar = userAnswerList[i].ToString();
+
+            //    foreach (Answer item in answerList)
             //    {
-            //        count++;
-            //    }
+            //        if (svar == item.ToString())
+            //        {
+            //            count++;
+            //        }
+            //    }                           
+            //    nyttest.passorfail();
+            //}
 
+            //    if (userAnswerList == answerList)
+            //{
+            //    int count = 0;
+
+            //    for (int i = 0; i < question.Length; i++)
+            //        if (question[correct[i].ToString] == i)
+            //        {
+            //            count++;
+            //        }
+            //}
 
         }
 

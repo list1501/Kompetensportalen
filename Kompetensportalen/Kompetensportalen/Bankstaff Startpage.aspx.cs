@@ -246,7 +246,6 @@ namespace Kompetensportalen
                                 };
                                 userAnswers.Add(userAnswer);
                             }
-                            
                         }
                     }
                     currentQuestion.userAnswerList = userAnswers;

@@ -158,12 +158,21 @@ namespace Kompetensportalen
             addAnswersToQuestion();
 
             //Emma's method
+            bool passed = currentUser.newTest.passOrFail();
 
-            //Run method to add user's answers to XML-source file
-            addAnswersToXML();
+            if (!passed)
+            {
+                //Show a message about checking all answers
+            }
+            else if (passed)
+            {
+                //Run method to add user's answers to XML-source file
+                addAnswersToXML();
 
-            //Run method to export test-xml to DB
-            newSQL.saveTestToDB(currentUser.newTest);
+                //Run method to export test-xml to DB
+                newSQL.saveTestToDB(currentUser.newTest);
+            }
+
 
             //Check if user is now allowed to see last test and show button with appropriate text
             //Also pre-load appropriate test for user

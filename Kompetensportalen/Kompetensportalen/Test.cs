@@ -134,7 +134,7 @@ namespace Kompetensportalen
                 cat2Percent = (cat2Points / cat2) * 100;
                 cat3Percent = (cat3Points / cat3) * 100;
 
-                if (totalPercent >= 70 && cat1Percent >= 60 && cat2Percent >= 60 && cat3Percent <= 60)
+                if (totalPercent >= 70 && cat1Percent >= 60 && cat2Percent >= 60 && cat3Percent >= 60)
                 {
                     passed = true;
                 }

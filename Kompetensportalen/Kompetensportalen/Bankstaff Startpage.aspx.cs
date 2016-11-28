@@ -57,6 +57,7 @@ namespace Kompetensportalen
         private void renderTest(List<Question> inputList)
         {
             testContent.Controls.Clear();
+            //hittade metoden testContent.ControlStyle.Dispose();, vill dock inte funka vet inte riktigt vad den gr heller
                         
             foreach (Question q in inputList)
             {

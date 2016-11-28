@@ -28,6 +28,10 @@ namespace Kompetensportalen
         protected void btnSeeUncertified_Click(object sender, EventArgs e)
         {
             btnSeeUncertified.Enabled = false;
+            btnSeeCertified.Enabled = true;
+            btnSeeUsersforAnnualCheck.Enabled = true;
+            btnSeeAllUsers.Enabled = true;
+
             table.Visible = true;
             table.Rows.Clear();
 
@@ -69,6 +73,10 @@ namespace Kompetensportalen
         protected void btnSeeCertified_Click(object sender, EventArgs e)
         {
             btnSeeCertified.Enabled = false;
+            btnSeeUncertified.Enabled = true;
+            btnSeeUsersforAnnualCheck.Enabled = true;
+            btnSeeAllUsers.Enabled = true;
+
             table.Visible = true;
             table.Rows.Clear();
 
@@ -110,8 +118,10 @@ namespace Kompetensportalen
         protected void btnSeeUsersforAnnualCheck_Click(object sender, EventArgs e)
         {
             btnSeeUsersforAnnualCheck.Enabled = false;
+            btnSeeUncertified.Enabled = true;
+            btnSeeCertified.Enabled = true;
+            btnSeeAllUsers.Enabled = true;
 
-            btnSeeAllUsers.Text = "Uppdatera tabell";
             table.Visible = true;
             table.Rows.Clear();
 
@@ -166,6 +176,10 @@ namespace Kompetensportalen
         protected void btnSeeAllUsers_Click(object sender, EventArgs e)
         {
             btnSeeAllUsers.Enabled = false;
+            btnSeeUncertified.Enabled = true;
+            btnSeeCertified.Enabled = true;
+            btnSeeUsersforAnnualCheck.Enabled = true;
+
             table.Visible = true;
             table.Rows.Clear();
 

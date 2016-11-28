@@ -163,6 +163,9 @@ namespace Kompetensportalen
             if (!passed)
             {
                 //Show a message about checking all answers
+                System.Windows.Forms.MessageBox.Show("Du har inte kryssat i rätt antal svar för samtliga frågor. \r\n" +
+                    "Gå tillbaka och kontrollera dina svar så du har rätt antal på varje fråga.", "OBS!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Exclamation);
+                //Go back to test
             }
             else if (passed)
             {
@@ -176,7 +179,7 @@ namespace Kompetensportalen
 
             //Check if user is now allowed to see last test and show button with appropriate text
             //Also pre-load appropriate test for user
-            if (currentUser.qualified)
+            if (currentUser.qualified && currentUser.lastTestDate.Year == today.Year)
             {            
                 btnStartTest.Text = "Titta på senaste testet";
                 currentUser.getLastTest();
@@ -186,12 +189,6 @@ namespace Kompetensportalen
                 btnStartTest.Text = "Starta licensieringstest";
                 currentUser.getNewTest(1);
             }
-
-            //method pass or fail
-            //Test newtest = new Test();
-            //newtest.passorfail();
-            //label1.Text = newtest.passorfail().tostring();
-            
         }
 
         //Method to add user's answers to correct questions
@@ -259,6 +256,12 @@ namespace Kompetensportalen
             currentUser.newTest.questions = questions;
 
             //System.Diagnostics.Debug.WriteLine(currentUser.newTest.questions[4].userAnswerList[0].id);
+        }
+
+        //Method to get feedback and present to user
+        public void getFeedback()
+        {
+
         }
 
         public void addAnswersToXML()

@@ -157,6 +157,9 @@ namespace Kompetensportalen
             //Run method to add user's answers to correct questions
             addAnswersToQuestion();
 
+            //Run method to add user's answers to XML-source file
+            addAnswersToXML();
+
             //Run method to export test-xml to DB
             newSQL.saveTestToDB(currentUser.newTest);
 

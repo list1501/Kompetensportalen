@@ -179,7 +179,27 @@ namespace Kompetensportalen
 
             return oldTest;
         }
+        
+        #endregion Get XML from Database
 
+        #region Send XML to Database
+        public void saveTestToDB(Test test)
+        {
+            string employee = test.employee;
+            DateTime testDate = test.date;
+            int testType = test.testType;
+            bool passed = test.passed;
+            int category1 = test.category1;
+            int category2 = test.category2;
+            int category3 = test.category3;
+            int totalPoints = test.totalPoints;
+            XmlDocument xml = test.sourceFile;
+            string sql;
+        }
+
+        #endregion
+
+        #region Get test history
         public List<Test> getTestsAdmin()
         {
             openConn();
@@ -207,24 +227,6 @@ namespace Kompetensportalen
             closeConn();
             return testlist;
         }
-        #endregion Get XML from Database
-
-        #region Send XML to Database
-        public void saveTestToDB(Test test)
-        {
-            string employee = test.employee;
-            DateTime testDate = test.date;
-            int testType = test.testType;
-            bool passed = test.passed;
-            int category1 = test.category1;
-            int category2 = test.category2;
-            int category3 = test.category3;
-            int totalPoints = test.totalPoints;
-            XmlDocument xml = test.sourceFile;
-            string sql;
-        }
-
-        #endregion
 
         //Method to get selected user's test history
         public List<Test> getTestHistory(string usr)
@@ -252,7 +254,8 @@ namespace Kompetensportalen
             closeConn();
             return testHistory;
         }
+        #endregion
 
-                     
+
     }
 }

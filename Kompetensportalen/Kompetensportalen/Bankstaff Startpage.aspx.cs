@@ -56,6 +56,7 @@ namespace Kompetensportalen
         #region Show Test on Page method
         private void renderTest(List<Question> inputList)
         {
+            testContent.Controls.Clear();
             foreach (Question q in inputList)
             {
                 HtmlGenericControl div = new HtmlGenericControl("div");

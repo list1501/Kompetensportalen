@@ -14,9 +14,7 @@ namespace Kompetensportalen
         public string feedbackWrong { get; set; }
         public bool correct { get; set; }
         public List<Answer> answerList { get; set; }
-        public List<Answer> userAnswerList { get; set; }
-
-        
+        public List<Answer> userAnswerList { get; set; }       
 
         public void correctAnswer()
         {
@@ -36,12 +34,8 @@ namespace Kompetensportalen
             {
                 correct = true;
             }
-            
 
-
-
-            
-
+            #region commented code
             //int count = 0; 
 
             //for (int i = 0; i < userAnswerList.Count; i++)
@@ -70,12 +64,6 @@ namespace Kompetensportalen
             //}
 
         }
-
-
-
-
-
-
-
+        #endregion commented code
     }
 }

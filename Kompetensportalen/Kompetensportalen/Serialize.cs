@@ -9,7 +9,6 @@ namespace Kompetensportalen
 {
     public static class Serialize
     {
-
         // http://stackoverflow.com/questions/2434534/serialize-an-object-to-string
         //Must be in a static class as it is to work with more than one type of object
 

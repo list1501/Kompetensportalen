@@ -138,16 +138,12 @@ namespace Kompetensportalen
                 {
                     passed = true;
                 }
-
             //    return true;
             //}
             //else
             //{
             //    return false;
             //}
-
-
-
         }
     }
 }  

@@ -56,8 +56,8 @@ namespace Kompetensportalen
         #region Show Test on Page method
         private void renderTest(List<Question> inputList)
         {
-            testContent.Controls.Clear();
-            
+            testContent.Controls.Clear();           
+
             foreach (Question q in inputList)
             {
                 HtmlGenericControl div = new HtmlGenericControl("div");
@@ -161,23 +161,23 @@ namespace Kompetensportalen
             addAnswersToQuestion();
 
             //method pass or fail
-            bool passed = currentUser.newTest.passOrFail();
+            currentUser.newTest.passOrFail();
 
-            if (!passed)
-            {
-                //Show a message about checking all answers
-                System.Windows.Forms.MessageBox.Show("Du har inte kryssat i rätt antal svar för samtliga frågor. \r\n" +
-                    "Gå tillbaka och kontrollera dina svar så du har rätt antal på varje fråga.", "OBS!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Exclamation);
-                 //Go back to test
-            }
-            else if (passed)
-            {
+            //if (!passed)
+            //{
+            //    //Show a message about checking all answers
+            //    System.Windows.Forms.MessageBox.Show("Du har inte kryssat i rätt antal svar för samtliga frågor. \r\n" +
+            //        "Gå tillbaka och kontrollera dina svar så du har rätt antal på varje fråga.", "OBS!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Exclamation);
+            //     //Go back to test
+            //}
+            //else if (passed)
+            //{
                 //Run method to add user's answers to XML-source file
                 addAnswersToXML();
 
                 //Run method to export test-xml to DB
                 newSQL.saveTestToDB(currentUser.newTest);
-            }
+            //}
 
 
             //Check if user is now allowed to see last test and show button with appropriate text

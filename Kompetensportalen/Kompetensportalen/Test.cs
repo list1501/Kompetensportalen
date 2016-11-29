@@ -45,35 +45,35 @@ namespace Kompetensportalen
         #region Count points and percent
        
         //method pass och fail
-        public bool passOrFail()
+        public void passOrFail()
         {
-            bool allChecked = false;
+            //bool allChecked = false;
 
-            foreach (Question q in questions)
-            {
-                int numCorrectAnswers = 0;
-                int numUserAnswers = q.userAnswerList.Count;
+            //foreach (Question q in questions)
+            //{
+            //    int numCorrectAnswers = 0;
+            //    int numUserAnswers = q.userAnswerList.Count;
 
-                foreach (Answer a in q.answerList)
-                {
-                    if (a.correct)
-                    {
-                        numCorrectAnswers++;
-                    }
-                }
+            //    foreach (Answer a in q.answerList)
+            //    {
+            //        if (a.correct)
+            //        {
+            //            numCorrectAnswers++;
+            //        }
+            //    }
 
-                if (numCorrectAnswers == numUserAnswers)
-                {
-                    allChecked = true;
-                }
-                else
-                {
-                    allChecked = false;
-                }
-            }
+            //    if (numCorrectAnswers == numUserAnswers)
+            //    {
+            //        allChecked = true;
+            //    }
+            //    else
+            //    {
+            //        allChecked = false;
+            //    }
+            //}
 
-            if (allChecked)
-            {
+            //if (allChecked)
+            //{
                 //Number of questions in each category
                 int cat1 = 0;
                 int cat2 = 0;
@@ -139,16 +139,18 @@ namespace Kompetensportalen
                     passed = true;
                 }
 
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
 
 
 
         }
-        #endregion
     }
-}
+}  
+#endregion
+//}
+//}

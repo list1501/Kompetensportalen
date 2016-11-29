@@ -10,7 +10,7 @@ namespace Kompetensportalen
     public static class Serialize
     {
 
-        //Helper class to Serialize Class directly to String. Found on here: http://stackoverflow.com/questions/2434534/serialize-an-object-to-string
+        // http://stackoverflow.com/questions/2434534/serialize-an-object-to-string
         //Must be in a static class as it is to work with more than one type of object
 
         public static string Serializing<T>(this T toSerialize)
@@ -28,5 +28,4 @@ namespace Kompetensportalen
             return (T)xmlSerializer.Deserialize(textReader);
         }
     }
-}
 }

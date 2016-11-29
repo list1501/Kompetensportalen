@@ -8,6 +8,7 @@ using System.Web.Configuration;
 using System.Web.UI;
 using System.Data;
 using System.Xml;
+using System.IO;
 
 namespace Kompetensportalen
 {
@@ -194,6 +195,13 @@ namespace Kompetensportalen
             int category2 = test.category2;
             int category3 = test.category3;
             XmlDocument xml = test.sourceFile;
+
+            StringWriter sw = new StringWriter();
+            XmlTextWriter tw = new XmlTextWriter(sw);
+            xml.WriteTo(tw);
+
+            string xmlString = tw.ToString();
+
             string sql = "INSERT INTO finished_tests (employee, date, type, passed, total_points, points_category1, points_category2, points_category3, xml)" +
                 "values (@employee, @date, @type, @passed, @total, @cat1, @cat2, @cat3, @xml)";
 
@@ -207,7 +215,7 @@ namespace Kompetensportalen
             _cmd.Parameters.AddWithValue("cat1", category1);
             _cmd.Parameters.AddWithValue("cat2", category2);
             _cmd.Parameters.AddWithValue("cat3", category3);
-            _cmd.Parameters.AddWithValue("xml", xml.ToString());  //Lite osäker på om den måste vara .ToString() för att databasen ska ta emot eller inte. Kan kolla upp detta.
+            _cmd.Parameters.AddWithValue("xml", xmlString);  //Lite osäker på om den måste vara .ToString() för att databasen ska ta emot eller inte. Kan kolla upp detta.
 
             _cmd.ExecuteNonQuery();
             closeConn();

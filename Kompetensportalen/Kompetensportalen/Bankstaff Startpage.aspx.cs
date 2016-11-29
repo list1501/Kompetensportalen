@@ -57,8 +57,7 @@ namespace Kompetensportalen
         private void renderTest(List<Question> inputList)
         {
             testContent.Controls.Clear();
-            //hittade metoden testContent.ControlStyle.Dispose();, vill dock inte funka vet inte riktigt vad den gr heller
-                        
+            
             foreach (Question q in inputList)
             {
                 HtmlGenericControl div = new HtmlGenericControl("div");
@@ -161,7 +160,7 @@ namespace Kompetensportalen
             //Run method to add user's answers to correct questions
             addAnswersToQuestion();
 
-            //Emma's method
+            //method pass or fail
             bool passed = currentUser.newTest.passOrFail();
 
             if (!passed)

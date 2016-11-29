@@ -148,28 +148,6 @@ namespace Kompetensportalen
 
 
 
-            //int cat1 = (60 * 100)/100;
-            //int cat2 = (60 * 100)/100;
-            //int cat3 = (60 * 100)/100;
-            //int total = (70 * 100)/100;
-
-            //if (category1 <= cat1 && category2 <= cat2 && category3 <= cat3 && totalPoints <= total)
-            //{
-                
-            //    XmlDocument xdoc = new XmlDocument();
-            //    xdoc.LoadXml(sourceFile.ToString());
-            //    xdoc.Save("answer.xml");
-
-            //    //XmlElement svar = new XmlElement("Svar",
-            //    //new XmlAttribute("answer"));
-            //    //Doc.Root.Add(svar);
-            //    //doc.save(answer.xml);
-            //}
-
-            //else
-            //{
-
-            //}
         }
         #endregion
     }

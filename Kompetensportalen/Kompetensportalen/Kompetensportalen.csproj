@@ -158,6 +158,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.cs" />
+    <Compile Include="Serialize.cs" />
     <Compile Include="SQL.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="TestResult.aspx.cs">
